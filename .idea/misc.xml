@@ -4,7 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_btm_nav_my_page.xml" value="0.152" />
+        <entry key="app/src/main/res/drawable/rectangle_fill_1c2e52_radius_10.xml" value="0.168" />
+        <entry key="app/src/main/res/drawable/rectangle_fill_e6e6e6_radius_10.xml" value="0.167" />
+        <entry key="app/src/main/res/drawable/rectangle_stroke_e6e6e6_radius_10.xml" value="0.167" />
+        <entry key="app/src/main/res/drawable/selector_signin_btn.xml" value="0.167" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.10677083333333333" />
+        <entry key="app/src/main/res/layout/activtiy_signin.xml" value="0.4825949367088608" />
         <entry key="app/src/main/res/layout/fragment_alarm.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.14114583333333333" />
