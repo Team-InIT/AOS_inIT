@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="viewmodel"
+            type="com.swu.aos_init.presentation.ui.sign.signin.SignInViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="85dp"
+            android:fontFamily="@font/pretandard_bold"
             android:text="@string/sign_in_title"
             android:textColor="@color/color_1C2E52"
             app:layout_constraintStart_toStartOf="@+id/iv_logo_txt"
@@ -49,10 +52,13 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="41dp"
             android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+            android:fontFamily="@font/pretendard_regular"
             android:hint="@string/sign_in_id_hint"
             android:inputType="text"
+            android:maxLines="1"
             android:paddingHorizontal="18dp"
             android:paddingVertical="16dp"
+            android:text="@{viewmodel.id}"
             android:textColor="@color/color_000000"
             android:textColorHint="@color/color_828282"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,10 +71,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+            android:fontFamily="@font/pretendard_regular"
             android:hint="@string/sign_in_pw_hint"
             android:inputType="textPassword"
+            android:maxLines="1"
             android:paddingHorizontal="18dp"
             android:paddingVertical="16dp"
+            android:text="@{viewmodel.pw}"
             android:textColor="@color/color_000000"
             android:textColorHint="@color/color_828282"
             app:layout_constraintEnd_toEndOf="@+id/etv_id"
@@ -82,6 +91,7 @@
             android:layout_marginTop="42dp"
             android:background="@drawable/selector_signin_btn"
             android:enabled="false"
+            android:fontFamily="@font/pretandard_bold"
             android:text="@string/sign_in"
             android:textColor="@color/selector_singin_txt"
             app:layout_constraintEnd_toEndOf="@id/etv_pw"
@@ -101,6 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
                 android:text="@string/sign_in_find_id"
                 android:textColor="@color/color_828282"
                 android:textSize="14sp"
@@ -117,6 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/pretendard_regular"
                 android:text="@string/sign_in_find_pw"
                 android:textColor="@color/color_828282"
                 android:textSize="14sp"
@@ -133,6 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/pretendard_regular"
                 android:text="@string/sign_in_sign_up"
                 android:textColor="@color/color_828282"
                 android:textSize="14sp"
