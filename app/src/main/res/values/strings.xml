@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">AOS_inIT</string>
+    <string name="app_name">inIT</string>
+    
+    <!-- Main -->
+    
+    <!-- Home -->
+    <string name="home">홈</string>
+    
+    <!-- Search -->
+    <string name="search">검색</string>
+    
+    <!-- Feed -->
+    <string name="feed">피드</string>
+    
+    <!-- Alarm -->
+    <string name="alarm">알림</string>
+
+    <!-- MyPage -->
+    <string name="mypage">마이페이지</string>
+    
 </resources>
