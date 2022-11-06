@@ -1,9 +1,11 @@
 package com.swu.aos_init.presentation.ui.sign.signup
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivitySignupBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.ui.sign.signin.SignInViewModel
 
 class SignUpActivity : BaseActivity<ActivitySignupBinding>(R.layout.activity_signup) {
 

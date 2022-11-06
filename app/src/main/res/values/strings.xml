@@ -31,6 +31,8 @@
     <string name="sign_up_step_two_id_error">아이디가 중복되었습니다.</string>
     <string name="sign_up_step_two_pw_error">비밀번호가 일치하지 않습니다.</string>
 
+    <string name="sign_up_org_step_one_phone_num">%s-%s</string>
+
 
     <!-- Home -->
     <string name="home">홈</string>

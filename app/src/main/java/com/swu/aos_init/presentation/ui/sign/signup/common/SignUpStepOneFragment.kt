@@ -2,13 +2,18 @@ package com.swu.aos_init.presentation.ui.sign.signup.common
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.FragmentSignupStepOneBinding
 import com.swu.aos_init.presentation.base.BaseFragment
+import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
 
 class SignUpStepOneFragment :
     BaseFragment<FragmentSignupStepOneBinding>(R.layout.fragment_signup_step_one) {
+
+    private val signUpViewModel: SignUpViewModel by viewModels()
 
     private var selectedState = false
 
