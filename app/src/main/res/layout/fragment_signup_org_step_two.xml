@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,6 +9,170 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_signup_org_two_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/sign_up_org_step_two_info"
+                    android:textColor="@color/color_191919"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="42dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_org_step_two_type"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etv_org_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_org_step_two_type_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_org_step_two_business_num"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etv_business_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_org_step_two_business_num_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_org_step_two_org_name"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etv_org_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_org_step_two_org_name_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_org_step_two_owner_name"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etv_owner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_org_step_two_owner_name_hint"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_org_step_two_address"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+
+                <EditText
+                    android:id="@+id/etv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_org_step_two_address_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_signup_default_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="36dp"
+                    android:background="@drawable/selector_signin_btn"
+                    android:enabled="false"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:paddingVertical="18dp"
+                    android:text="@string/sign_up_org_step_two_done"
+                    android:textColor="@color/selector_singin_txt" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
