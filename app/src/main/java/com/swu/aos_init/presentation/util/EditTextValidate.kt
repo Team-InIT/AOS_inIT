@@ -68,21 +68,21 @@ object EditTextValidate {
             else if (beforeLength < afterLength) {
                 if (afterLength == 5 && text.toString().indexOf("-") < 0) {
                     editText.setText(
-                        context.getString(R.string.sign_up_org_step_one_phone_num).format(
+                        context.getString(R.string.sign_up_org_step_one_phone_num_txt).format(
                             text.toString().substring(0, 3),
                             text.toString().substring(3, text.length)
                         )
                     )
                 } else if (afterLength == 10) {
                     editText.setText(
-                        context.getString(R.string.sign_up_org_step_one_phone_num).format(
+                        context.getString(R.string.sign_up_org_step_one_phone_num_txt).format(
                             text.toString().substring(0, 8),
                             text.toString().substring(8, text.length)
                         )
                     )
                 } else if (afterLength == 15) {
                     editText.setText(
-                        context.getString(R.string.sign_up_org_step_one_phone_num).format(
+                        context.getString(R.string.sign_up_org_step_one_phone_num_txt).format(
                             text.toString().substring(0, 13),
                             text.toString().substring(13, text.length)
                         )
