@@ -41,7 +41,7 @@
                 android:textColor="@color/color_191919"
                 android:textSize="14sp" />
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
@@ -49,15 +49,16 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cv_plan"
-                    android:layout_width="88dp"
-                    android:layout_height="99dp"
-                    android:layout_alignParentStart="true"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginEnd="30dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cv_design"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@android:color/transparent"
                     app:strokeColor="@color/selector_signup_default_one_btn_stroke"
                     app:strokeWidth="1dp">
 
@@ -101,15 +102,16 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cv_design"
-                    android:layout_width="88dp"
-                    android:layout_height="99dp"
-                    android:layout_centerInParent="true"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginEnd="30dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cv_develop"
+                    app:layout_constraintStart_toEndOf="@id/cv_plan"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@android:color/transparent"
                     app:strokeColor="@color/selector_signup_default_one_btn_stroke"
                     app:strokeWidth="1dp">
 
@@ -153,15 +155,16 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cv_develop"
-                    android:layout_width="88dp"
-                    android:layout_height="99dp"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
                     android:layout_alignParentEnd="true"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cv_design"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@android:color/transparent"
                     app:strokeColor="@color/selector_signup_default_one_btn_stroke"
                     app:strokeWidth="1dp">
 
@@ -202,7 +205,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -214,6 +217,7 @@
                 android:textSize="14sp" />
 
             <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_interest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
@@ -227,7 +231,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_web"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -246,7 +250,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_application"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -265,7 +269,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_commerce_shopping_mall"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -284,7 +288,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_default_software"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -303,7 +307,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_publishing"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -322,7 +326,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_word_press"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -341,7 +345,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_embedded"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -360,7 +364,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_product"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -379,7 +383,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_game"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
@@ -398,7 +402,7 @@
                     android:fontFamily="@font/pretendard_regular"
                     android:paddingVertical="8dp"
                     android:text="@string/sign_up_default_step_two_ect"
-                    android:textColor="@color/color_828282"
+                    android:textColor="@color/selector_signup_default_one_txt"
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:chipCornerRadius="12dp"
