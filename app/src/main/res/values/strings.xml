@@ -29,7 +29,10 @@
     <string name="sign_up_step_two_id_rule">영문, 숫자를 합하여 6~20자</string>
     <string name="sign_up_step_two_pw_rule">영문, 숫자를 합하여 6~20자</string>
     <string name="sign_up_step_two_id_error">아이디가 중복되었습니다.</string>
+    <string name="sign_up_step_two_pw_correct">비밀번호가 일치합니다.</string>
     <string name="sign_up_step_two_pw_error">비밀번호가 일치하지 않습니다.</string>
+
+    <string name="sign_up_org_step_one_phone_num">%s-%s</string>
 
 
     <!-- Home -->

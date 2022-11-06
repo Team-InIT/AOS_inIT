@@ -8,6 +8,7 @@ import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivitySigninBinding
 import com.swu.aos_init.presentation.base.BaseActivity
 import com.swu.aos_init.presentation.ui.sign.signup.SignUpActivity
+import com.swu.aos_init.presentation.util.EditTextValidate
 
 class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_signin) {
 
@@ -28,12 +29,12 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
     private fun observeSigIn() {
 
         binding.etvId.addTextChangedListener {
-            idState = it!!.isNotEmpty()
+            idState = EditTextValidate.IdValidate(it!!)
             checkBtnState()
         }
 
         binding.etvPw.addTextChangedListener {
-            pwState = it!!.isNotEmpty()
+            pwState = EditTextValidate.PwValidate(it!!)
             checkBtnState()
         }
     }
