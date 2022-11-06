@@ -56,6 +56,7 @@
     <string name="sign_up_default_step_two_plan">PLAN</string>
     <string name="sign_up_default_step_twp_design">DESIGN</string>
     <string name="sign_up_default_step_two_develop">DEVELOP</string>
+    <string name="sign_up_default_step_two_interest">관심분야</string>
     <string name="sign_up_default_step_two_web">웹</string>
     <string name="sign_up_default_step_two_application">애플리케이션</string>
     <string name="sign_up_default_step_two_commerce_shopping_mall">커머스,쇼핑몰</string>
@@ -73,17 +74,17 @@
 
     <!-- Home -->
     <string name="home">홈</string>
-    
+
     <!-- Search -->
     <string name="search">검색</string>
-    
+
     <!-- Feed -->
     <string name="feed">피드</string>
-    
+
     <!-- Alarm -->
     <string name="alarm">알림</string>
 
     <!-- MyPage -->
     <string name="mypage">마이페이지</string>
-    
+
 </resources>
