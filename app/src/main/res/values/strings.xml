@@ -32,22 +32,59 @@
     <string name="sign_up_step_two_pw_correct">비밀번호가 일치합니다.</string>
     <string name="sign_up_step_two_pw_error">비밀번호가 일치하지 않습니다.</string>
 
+    <string name="sign_up_default_step_one_info">기본 정보를\n입력해주세요</string>
+    <string name="sign_up_default_step_one_name">이름</string>
+    <string name="sign_up_default_step_one_name_hint">이름 입력</string>
+    <string name="sign_up_default_step_one_email">이메일</string>
+    <string name="sign_up_default_step_one_email_hint">이메일 입력</string>
+    <string name="sign_up_default_step_one_belong">학교(직장명)</string>
+    <string name="sign_up_default_step_one_belong_hint">학교(직작명) 입력</string>
+    <string name="sign_up_default_step_one_link">오픈카카오톡링크</string>
+    <string name="sign_up_default_step_one_link_hint">오픈카카오톡링크 입력</string>
+    <string name="sign_up_default_step_one_academic_status">학적상태</string>
+    <string name="sign_up_default_step_one_academic_student">학생</string>
+    <string name="sign_up_default_step_one_academic_worker">현업</string>
+    <string name="sign_up_default_step_one_academic_etc">기타</string>
+    <string name="sign_up_default_step_one_academic_sex">성별</string>
+    <string name="sign_up_default_step_one_academic_sex_woman">여성</string>
+    <string name="sign_up_default_step_one_academic_sex_man">남성</string>
+    <string name="sign_up_default_step_one_academic_sex_ect">기타</string>
+    <string name="sign_up_default_step_one_academic_next">다음</string>
+
+    <string name="sign_up_default_step_two_info">포지션과 관심분야를\n선택해주세요</string>
+    <string name="sign_up_default_step_two_position">포지션</string>
+    <string name="sign_up_default_step_two_plan">PLAN</string>
+    <string name="sign_up_default_step_twp_design">DESIGN</string>
+    <string name="sign_up_default_step_two_develop">DEVELOP</string>
+    <string name="sign_up_default_step_two_interest">관심분야</string>
+    <string name="sign_up_default_step_two_web">웹</string>
+    <string name="sign_up_default_step_two_application">애플리케이션</string>
+    <string name="sign_up_default_step_two_commerce_shopping_mall">커머스,쇼핑몰</string>
+    <string name="sign_up_default_step_two_default_software">일반 소프트웨어</string>
+    <string name="sign_up_default_step_two_publishing">퍼블리싱</string>
+    <string name="sign_up_default_step_two_word_press">워드프레스</string>
+    <string name="sign_up_default_step_two_embedded">임베디드</string>
+    <string name="sign_up_default_step_two_product">제품</string>
+    <string name="sign_up_default_step_two_game">게임</string>
+    <string name="sign_up_default_step_two_ect">기타</string>
+    <string name="sign_up_default_step_two_done">완료</string>
+
     <string name="sign_up_org_step_one_phone_num">%s-%s</string>
 
 
     <!-- Home -->
     <string name="home">홈</string>
-    
+
     <!-- Search -->
     <string name="search">검색</string>
-    
+
     <!-- Feed -->
     <string name="feed">피드</string>
-    
+
     <!-- Alarm -->
     <string name="alarm">알림</string>
 
     <!-- MyPage -->
     <string name="mypage">마이페이지</string>
-    
+
 </resources>

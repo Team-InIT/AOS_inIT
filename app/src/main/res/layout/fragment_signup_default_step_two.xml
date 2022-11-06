@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -7,7 +8,425 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_signup_default_one_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:text="@string/sign_up_default_step_two_info"
+                android:textColor="@color/color_191919"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:fontFamily="@font/pretandard_bold"
+                android:text="@string/sign_up_default_step_two_position"
+                android:textColor="@color/color_191919"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_plan"
+                    android:layout_width="88dp"
+                    android:layout_height="99dp"
+                    android:layout_alignParentStart="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/iv_plan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/selector_signup_position_plan_btn"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_signup_default_position_btn">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/sign_up_default_step_two_plan"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_design"
+                    android:layout_width="88dp"
+                    android:layout_height="99dp"
+                    android:layout_centerInParent="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/iv_design"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/selector_signup_position_design_btn"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_signup_default_position_btn">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/sign_up_default_step_twp_design"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_develop"
+                    android:layout_width="88dp"
+                    android:layout_height="99dp"
+                    android:layout_alignParentEnd="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/iv_develop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/selector_signup_position_develop_btn"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_signup_default_position_btn">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/sign_up_default_step_two_develop"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/pretandard_bold"
+                android:text="@string/sign_up_default_step_two_interest"
+                android:textColor="@color/color_191919"
+                android:textSize="14sp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_web"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_application"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_commerce_shopping_mall"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_default_software"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_publishing"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_word_press"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_embedded"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_product"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_game"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/SignUpCustomChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:paddingVertical="8dp"
+                    android:text="@string/sign_up_default_step_two_ect"
+                    android:textColor="@color/color_828282"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:chipCornerRadius="12dp"
+                    app:chipEndPadding="8dp"
+                    app:chipMinTouchTargetSize="0dp"
+                    app:chipStartPadding="8dp"
+                    app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_signup_default_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/selector_signin_btn"
+            android:enabled="false"
+            android:fontFamily="@font/pretandard_bold"
+            android:paddingVertical="18dp"
+            android:text="@string/sign_up_default_step_two_done"
+            android:textColor="@color/selector_singin_txt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

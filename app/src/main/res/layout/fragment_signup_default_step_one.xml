@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,6 +9,328 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_signup_default_one_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/sign_up_default_step_one_info"
+                    android:textColor="@color/color_191919"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="42dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_default_step_one_name"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_default_step_one_name_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_default_step_one_email"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etv_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_default_step_one_email_hint"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_default_step_one_belong"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etv_belong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_default_step_one_belong_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_default_step_one_link"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etv_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/sign_up_default_step_one_link_hint"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_default_step_one_academic_status"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:orientation="horizontal"
+                    app:singleSelection="true">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/btn_status_student"
+                            style="@style/SignUpCustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_regular"
+                            android:paddingVertical="11dp"
+                            android:text="@string/sign_up_default_step_one_academic_student"
+                            android:textColor="@color/color_828282"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:chipCornerRadius="10dp"
+                            app:chipEndPadding="37dp"
+                            app:chipMinTouchTargetSize="0dp"
+                            app:chipStartPadding="37dp"
+                            app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                            app:chipStrokeWidth="1dp"
+                            app:ensureMinTouchTargetSize="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btn_status_worker"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/btn_status_worker"
+                            style="@style/SignUpCustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_regular"
+                            android:paddingVertical="11dp"
+                            android:text="@string/sign_up_default_step_one_academic_worker"
+                            android:textColor="@color/color_828282"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:chipCornerRadius="10dp"
+                            app:chipEndPadding="37dp"
+                            app:chipMinTouchTargetSize="0dp"
+                            app:chipStartPadding="37dp"
+                            app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                            app:chipStrokeWidth="1dp"
+                            app:ensureMinTouchTargetSize="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btn_status_ect"
+                            app:layout_constraintStart_toEndOf="@id/btn_status_student"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/btn_status_ect"
+                            style="@style/SignUpCustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_regular"
+                            android:paddingVertical="11dp"
+                            android:text="@string/sign_up_default_step_one_academic_sex_ect"
+                            android:textColor="@color/color_828282"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:chipCornerRadius="10dp"
+                            app:chipEndPadding="37dp"
+                            app:chipMinTouchTargetSize="0dp"
+                            app:chipStartPadding="37dp"
+                            app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                            app:chipStrokeWidth="1dp"
+                            app:ensureMinTouchTargetSize="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/btn_status_worker"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/sign_up_default_step_one_academic_sex"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:orientation="horizontal"
+                    app:singleSelection="true">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/btn_sex_man"
+                            style="@style/SignUpCustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_regular"
+                            android:paddingVertical="11dp"
+                            android:text="@string/sign_up_default_step_one_academic_sex_man"
+                            android:textColor="@color/color_828282"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:chipCornerRadius="10dp"
+                            app:chipEndPadding="37dp"
+                            app:chipMinTouchTargetSize="0dp"
+                            app:chipStartPadding="37dp"
+                            app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                            app:chipStrokeWidth="1dp"
+                            app:ensureMinTouchTargetSize="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btn_sex_woman"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/btn_sex_woman"
+                            style="@style/SignUpCustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_regular"
+                            android:paddingVertical="11dp"
+                            android:text="@string/sign_up_default_step_one_academic_sex_woman"
+                            android:textColor="@color/color_828282"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:chipCornerRadius="10dp"
+                            app:chipEndPadding="37dp"
+                            app:chipMinTouchTargetSize="0dp"
+                            app:chipStartPadding="37dp"
+                            app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                            app:chipStrokeWidth="1dp"
+                            app:ensureMinTouchTargetSize="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btn_sex_ect"
+                            app:layout_constraintStart_toEndOf="@id/btn_sex_man"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/btn_sex_ect"
+                            style="@style/SignUpCustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pretendard_regular"
+                            android:paddingVertical="11dp"
+                            android:text="@string/sign_up_default_step_one_academic_sex_ect"
+                            android:textColor="@color/color_828282"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:chipCornerRadius="10dp"
+                            app:chipEndPadding="37dp"
+                            app:chipMinTouchTargetSize="0dp"
+                            app:chipStartPadding="37dp"
+                            app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                            app:chipStrokeWidth="1dp"
+                            app:ensureMinTouchTargetSize="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/btn_sex_woman"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_signup_default_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="36dp"
+                    android:background="@drawable/selector_signin_btn"
+                    android:enabled="false"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:paddingVertical="18dp"
+                    android:text="@string/sign_up_default_step_one_academic_next"
+                    android:textColor="@color/selector_singin_txt" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

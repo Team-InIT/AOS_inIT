@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/rectangle_stroke_cecece_radius_10" android:state_selected="false" />
+    <item android:drawable="@drawable/rectangle_fill_1c2e52_radius_10" android:state_selected="true" />
+</selector>
