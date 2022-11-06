@@ -12,6 +12,26 @@
     <string name="sign_in_find_pw">비밀번호 찾기</string>
     <string name="sign_in_sign_up">회원가입</string>
 
+    <string name="sign_up">회원가입</string>
+
+    <string name="sign_up_step_one_info">일반회원과 기업회원 중\n선택해주세오</string>
+    <string name="sign_up_step_one_org">기업회원</string>
+    <string name="sign_up_step_one_default">일반회원</string>
+    <string name="sign_up_step_one_next">다음</string>
+
+    <string name="sign_up_step_two_info">사용할 아이디와 비밀번호를\n입력해주세요</string>
+    <string name="sign_up_step_two_id">아이디</string>
+    <string name="sign_up_step_two_pw">비밀번호</string>
+    <string name="sign_up_step_two_id_hint">아이디 입력</string>
+    <string name="sign_up_step_two_pw_hint_one">비밀번호 입력</string>
+    <string name="sign_up_step_two_pw_hint_two">비밀번호 확인</string>
+    <string name="sign_up_check_id">중복확인</string>
+    <string name="sign_up_step_two_id_rule">영문, 숫자를 합하여 6~20자</string>
+    <string name="sign_up_step_two_pw_rule">영문, 숫자를 합하여 6~20자</string>
+    <string name="sign_up_step_two_id_error">아이디가 중복되었습니다.</string>
+    <string name="sign_up_step_two_pw_error">비밀번호가 일치하지 않습니다.</string>
+
+
     <!-- Home -->
     <string name="home">홈</string>
     
