@@ -46,8 +46,8 @@
     <string name="sign_up_default_step_one_academic_worker">현업</string>
     <string name="sign_up_default_step_one_academic_etc">기타</string>
     <string name="sign_up_default_step_one_academic_sex">성별</string>
-    <string name="sign_up_default_step_one_academic_sex_woman">남성</string>
-    <string name="sign_up_default_step_one_academic_sex_man">여성</string>
+    <string name="sign_up_default_step_one_academic_sex_woman">여성</string>
+    <string name="sign_up_default_step_one_academic_sex_man">남성</string>
     <string name="sign_up_default_step_one_academic_sex_ect">기타</string>
     <string name="sign_up_default_step_one_academic_next">다음</string>
 
