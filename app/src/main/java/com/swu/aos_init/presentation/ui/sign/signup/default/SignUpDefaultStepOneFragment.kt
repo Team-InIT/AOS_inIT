@@ -3,13 +3,17 @@ package com.swu.aos_init.presentation.ui.sign.signup.default
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.FragmentSignupDefaultStepOneBinding
 import com.swu.aos_init.presentation.base.BaseFragment
+import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
 
 class SignUpDefaultStepOneFragment :
     BaseFragment<FragmentSignupDefaultStepOneBinding>(R.layout.fragment_signup_default_step_one) {
+
+    private val signUpViewModel: SignUpViewModel by activityViewModels()
 
     private var nameState = false
     private var emailState = false
@@ -21,11 +25,17 @@ class SignUpDefaultStepOneFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setProgressValue()
+
         checkTxtState()
         checkAcademicState()
         checkSexState()
 
         moveToDefaultSignUpTwo()
+    }
+
+    private fun setProgressValue() {
+        signUpViewModel.setProgress(3)
     }
 
     private fun checkTxtState() {

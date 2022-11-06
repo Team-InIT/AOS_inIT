@@ -20,8 +20,14 @@ class SignUpStepOneFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setProgressValue()
+
         initSelectEvent()
         moveToSignUpTwo()
+    }
+
+    private fun setProgressValue() {
+        signUpViewModel.setProgress(1)
     }
 
     private fun initSelectEvent() {

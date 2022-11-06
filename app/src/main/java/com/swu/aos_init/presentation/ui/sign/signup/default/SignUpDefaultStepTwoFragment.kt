@@ -3,16 +3,19 @@ package com.swu.aos_init.presentation.ui.sign.signup.default
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.core.view.forEach
 import androidx.core.view.get
 import androidx.core.view.indices
+import androidx.fragment.app.activityViewModels
 import com.google.android.material.chip.Chip
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.FragmentSignupDefaultStepTwoBinding
 import com.swu.aos_init.presentation.base.BaseFragment
+import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
 
 class SignUpDefaultStepTwoFragment :
     BaseFragment<FragmentSignupDefaultStepTwoBinding>(R.layout.fragment_signup_default_step_two) {
+
+    private val signUpViewModel: SignUpViewModel by activityViewModels()
 
     private var positionState = false
     private var interestState = false
@@ -20,10 +23,16 @@ class SignUpDefaultStepTwoFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setProgressValue()
+
         checkPositionState()
         checkInterestedState()
 
         moveToLoginState()
+    }
+
+    private fun setProgressValue() {
+        signUpViewModel.setProgress(4)
     }
 
     private fun checkPositionState() {

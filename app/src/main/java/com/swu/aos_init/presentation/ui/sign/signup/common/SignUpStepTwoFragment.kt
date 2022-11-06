@@ -26,11 +26,17 @@ class SignUpStepTwoFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setProgressValue()
+
         isRegularId()
         isRegularPw()
         isSamePw()
 
         initNextBtnEvent()
+    }
+
+    private fun setProgressValue() {
+        signUpViewModel.setProgress(2)
     }
 
     // 아이디 정규식 체크
