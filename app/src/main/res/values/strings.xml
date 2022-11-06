@@ -51,6 +51,22 @@
     <string name="sign_up_default_step_one_academic_sex_ect">기타</string>
     <string name="sign_up_default_step_one_academic_next">다음</string>
 
+    <string name="sign_up_default_step_two_info">포지션과 관심분야를\n선택해주세요</string>
+    <string name="sign_up_default_step_two_position">포지션</string>
+    <string name="sign_up_default_step_two_plan">PLAN</string>
+    <string name="sign_up_default_step_twp_design">DESIGN</string>
+    <string name="sign_up_default_step_two_develop">DEVELOP</string>
+    <string name="sign_up_default_step_two_web">웹</string>
+    <string name="sign_up_default_step_two_application">애플리케이션</string>
+    <string name="sign_up_default_step_two_commerce_shopping_mall">커머스,쇼핑몰</string>
+    <string name="sign_up_default_step_two_default_software">일반 소프트웨어</string>
+    <string name="sign_up_default_step_two_publishing">퍼블리싱</string>
+    <string name="sign_up_default_step_two_word_press">워드프레스</string>
+    <string name="sign_up_default_step_two_embedded">임베디드</string>
+    <string name="sign_up_default_step_two_product">제품</string>
+    <string name="sign_up_default_step_two_game">게임</string>
+    <string name="sign_up_default_step_two_ect">기타</string>
+    <string name="sign_up_default_step_two_done">완료</string>
 
     <string name="sign_up_org_step_one_phone_num">%s-%s</string>
 
