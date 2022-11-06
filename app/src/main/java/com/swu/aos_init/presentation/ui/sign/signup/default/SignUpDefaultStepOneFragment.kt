@@ -2,9 +2,8 @@ package com.swu.aos_init.presentation.ui.sign.signup.default
 
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
 import androidx.core.widget.addTextChangedListener
-import com.google.android.material.chip.Chip
+import androidx.navigation.fragment.findNavController
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.FragmentSignupDefaultStepOneBinding
 import com.swu.aos_init.presentation.base.BaseFragment
@@ -19,44 +18,77 @@ class SignUpDefaultStepOneFragment :
     private var academicStatusState = false
     private var sexState = false
 
-    val academicSelectionList = mutableListOf<View>()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        checkSelectionState()
+        checkTxtState()
+        checkAcademicState()
+        checkSexState()
+
+        moveToDefaultSignUpTwo()
     }
 
     private fun checkTxtState() {
 
-        val editTextList =
-            mutableListOf(binding.etvName, binding.etvEmail, binding.etvBelong, binding.etvLink)
+        binding.apply {
+            etvName.addTextChangedListener { // 이름
+                nameState = it?.length!! >= 1
+                checkBtnState()
+            }
 
-    }
+            etvEmail.addTextChangedListener { // 이메일
+                emailState = it?.length!! >= 1
+                checkBtnState()
+            }
 
-    private fun checkSelectionState() {
-        academicSelectionList.addAll(listOf(binding.btnStatusStudent,binding.btnStatusWorker,binding.btnStatusEct))
-        academicSelectionList[0].setOnClickListener { setSingleSelectBtnEvent(it) }
-        academicSelectionList[1].setOnClickListener { setSingleSelectBtnEvent(it) }
-        academicSelectionList[2].setOnClickListener { setSingleSelectBtnEvent(it) }
-    }
+            etvBelong.addTextChangedListener { // 소속
+                belongState = it?.length!! >= 1
+                checkBtnState()
+            }
 
-    private fun setSingleSelectBtnEvent(selectedView: View) {
-        // 숫자 select 함수
-        fun getSingleSelectNum(view: View) {
-            if (view.isSelected) { // 선택 o 상태면 -> select false
-                view.isSelected = false
-            } else { // 선택 x 상태면 -> select true
-                academicSelectionList.filter { it.isSelected }
-                    .forEach { it.isSelected = false } // 켜져있는 다른 요소들 select false
-                view.isSelected = true
+            etvLink.addTextChangedListener { // 링크
+                linkState = it?.length!! >= 1
+                checkBtnState()
             }
         }
 
-        when (selectedView) {
-            academicSelectionList[0] -> getSingleSelectNum(academicSelectionList[0])
-            academicSelectionList[1] -> getSingleSelectNum(academicSelectionList[1])
-            academicSelectionList[2] -> getSingleSelectNum(academicSelectionList[2])
+    }
+
+    private fun checkAcademicState() {
+        val academicSelectionList = mutableListOf(binding.btnStatusStudent, binding.btnStatusWorker, binding.btnStatusEct)
+
+        for (i in academicSelectionList.indices) {
+            academicSelectionList[i].setOnClickListener {
+                if (academicSelectionList[i].isSelected) {
+                    academicSelectionList[i].isSelected = false
+                } else {
+                    academicSelectionList[i].isSelected = true
+                    academicSelectionList.filterNot { it == academicSelectionList[i] }
+                        .forEach { it.isSelected = false }
+                }
+
+                academicStatusState = academicSelectionList.any { it.isSelected }
+                checkBtnState()
+            }
+        }
+    }
+
+    private fun checkSexState() {
+        val sexSelectionList = mutableListOf(binding.btnSexMan, binding.btnSexWoman, binding.btnSexEct)
+
+        for (i in sexSelectionList.indices) {
+            sexSelectionList[i].setOnClickListener {
+                if (sexSelectionList[i].isSelected) {
+                    sexSelectionList[i].isSelected = false
+                } else {
+                    sexSelectionList[i].isSelected = true
+                    sexSelectionList.filterNot { it == sexSelectionList[i] }
+                        .forEach { it.isSelected = false }
+                }
+
+                sexState = sexSelectionList.any { it.isSelected }
+                checkBtnState()
+            }
         }
     }
 
@@ -64,5 +96,11 @@ class SignUpDefaultStepOneFragment :
     private fun checkBtnState() {
         binding.btnSignupDefaultOne.isEnabled =
             nameState && emailState && belongState && linkState && academicStatusState && sexState
+    }
+
+    private fun moveToDefaultSignUpTwo() {
+        binding.btnSignupDefaultOne.setOnClickListener {
+            this.findNavController().navigate(R.id.action_signUpDefaultStepOneFragment_to_signUpDefaultStepTwoFragment)
+        }
     }
 }
