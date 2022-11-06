@@ -84,6 +84,7 @@
     <string name="sign_up_org_step_two_type_hint">기업형태 입력</string>
     <string name="sign_up_org_step_two_business_num">사업자등록번호</string>
     <string name="sign_up_org_step_two_business_num_hint">사업자등록번호 입력</string>
+    <string name="sign_up_org_step_two_business_num_txt">%s-%s</string>
     <string name="sign_up_org_step_two_org_name">회사명</string>
     <string name="sign_up_org_step_two_org_name_hint">회사명 입력</string>
     <string name="sign_up_org_step_two_owner_name">대표자명</string>

@@ -3,11 +3,13 @@ package com.swu.aos_init.presentation.ui.sign.signup.org
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.FragmentSignupOrgStepTwoBinding
 import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
+import com.swu.aos_init.presentation.util.EditTextValidate
 
 class SignUpOrgStepTwoFragment :
     BaseFragment<FragmentSignupOrgStepTwoBinding>(R.layout.fragment_signup_org_step_two) {
@@ -24,6 +26,9 @@ class SignUpOrgStepTwoFragment :
         super.onViewCreated(view, savedInstanceState)
 
         setProgressValue()
+
+        checkTxtState()
+        setBusinessNumFormat()
         moveToLoginState()
     }
 
@@ -31,8 +36,42 @@ class SignUpOrgStepTwoFragment :
         signUpViewModel.setProgress(4)
     }
 
+    private fun checkTxtState() {
+        binding.apply {
+            etvOrgType.addTextChangedListener {
+                orgTypeState = it?.length!! >= 1
+                checkBtnState()
+            }
+
+            etvBusinessNum.addTextChangedListener {
+                businessNumState = it?.length!! >= 12
+                checkBtnState()
+            }
+
+            etvOrgName.addTextChangedListener {
+                orgNameState = it?.length!! >= 1
+                checkBtnState()
+            }
+
+            etvOwnerName.addTextChangedListener {
+                ownerNameState = it?.length!! >= 1
+                checkBtnState()
+            }
+
+            etvAddress.addTextChangedListener {
+                addressState = it?.length!! >= 1
+                checkBtnState()
+            }
+        }
+    }
+
+    private fun setBusinessNumFormat() {
+        EditTextValidate.businessNumFormantEditText(binding.etvBusinessNum)
+    }
+
     private fun checkBtnState() {
-        binding.btnSignupOrgTwo.isEnabled = orgTypeState && businessNumState && orgNameState && ownerNameState && addressState
+        binding.btnSignupOrgTwo.isEnabled =
+            orgTypeState && businessNumState && orgNameState && ownerNameState && addressState
     }
 
     private fun moveToLoginState() {
