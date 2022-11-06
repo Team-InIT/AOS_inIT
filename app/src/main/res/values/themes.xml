@@ -16,6 +16,7 @@
     </style>
 
     <style name="SignUpCustomChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="rippleColor">@null</item>
         <item name="chipBackgroundColor">@color/selector_signup_default_one_btn</item>
         <item name="android:textColor">@color/selector_signup_default_one_txt</item>
     </style>

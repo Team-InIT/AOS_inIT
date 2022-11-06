@@ -3,9 +3,13 @@ package com.swu.aos_init.presentation.ui.sign.signup.common
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.FragmentSignupStepTwoBinding
 import com.swu.aos_init.presentation.base.BaseFragment
+import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
 import com.swu.aos_init.presentation.util.EditTextValidate
 
 // TODO 서버통신에서 중복체크 후 idCheckState 를 설정할 예정
@@ -17,6 +21,7 @@ class SignUpStepTwoFragment :
     private var pwState = false
     private var pwConfirmState = false
 
+    private val signUpViewModel: SignUpViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,6 +29,8 @@ class SignUpStepTwoFragment :
         isRegularId()
         isRegularPw()
         isSamePw()
+
+        initNextBtnEvent()
     }
 
     // 아이디 정규식 체크
@@ -107,4 +114,14 @@ class SignUpStepTwoFragment :
             idState == true && pwState && true && pwConfirmState == true
     }
 
+    private fun initNextBtnEvent() {
+        val type = signUpViewModel.getSelectedMemberType()
+        binding.btnSignupTwo.setOnClickListener {
+            if (type == 0) {
+                this.findNavController().navigate(R.id.action_signUpStepTwoFragment_to_signUpOrgStepOneFragment)
+            } else {
+                this.findNavController().navigate(R.id.action_signUpStepTwoFragment_to_signUpDefaultStepOneFragment)
+            }
+        }
+    }
 }

@@ -2,7 +2,7 @@ package com.swu.aos_init.presentation.ui.sign.signup.common
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.swu.aos_init.R
@@ -13,7 +13,7 @@ import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
 class SignUpStepOneFragment :
     BaseFragment<FragmentSignupStepOneBinding>(R.layout.fragment_signup_step_one) {
 
-    private val signUpViewModel: SignUpViewModel by viewModels()
+    private val signUpViewModel: SignUpViewModel by activityViewModels()
 
     private var selectedState = false
 
@@ -60,13 +60,17 @@ class SignUpStepOneFragment :
 
     private fun moveToSignUpTwo() {
         binding.btnSignupOne.setOnClickListener {
-            this.findNavController()
-                .navigate(R.id.action_signUpStepOneFragment_to_signUpStepTwoFragment)
+            setSelectedMemberType()
+            this.findNavController().navigate(R.id.action_signUpStepOneFragment_to_signUpStepTwoFragment)
         }
     }
 
     private fun checkBtnState() {
         selectedState = binding.ivOrg.isSelected == true || binding.ivDefault.isSelected == true
         binding.btnSignupOne.isEnabled = selectedState == true
+    }
+
+    private fun setSelectedMemberType() {
+        if (binding.ivOrg.isSelected) signUpViewModel.setSelectedMemberType(0) else signUpViewModel.setSelectedMemberType(1)
     }
 }
