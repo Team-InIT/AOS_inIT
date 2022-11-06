@@ -30,13 +30,13 @@ object EditTextValidate {
     fun IdValidate(content: Editable): Boolean {
         return Pattern.matches(
             idPattern, content.toString()
-        ) && content.length >= 6 && content.length <= 20
+        )
     }
 
     fun PwValidate(content: Editable): Boolean {
         return Pattern.matches(
             pwPattern, content.toString()
-        ) && content.length >= 6 && content.length <= 20
+        )
     }
 
     fun PwConfirmValidate(password: String, content: Editable): Boolean {

@@ -8,6 +8,7 @@ import com.swu.aos_init.databinding.FragmentSignupStepTwoBinding
 import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.util.EditTextValidate
 
+// TODO 서버통신에서 중복체크 후 idCheckState 를 설정할 예정
 class SignUpStepTwoFragment :
     BaseFragment<FragmentSignupStepTwoBinding>(R.layout.fragment_signup_step_two) {
 
@@ -48,7 +49,8 @@ class SignUpStepTwoFragment :
             } else {
                 binding.tvPwRule.setTextColor(resources.getColor(R.color.color_FF0000, null))
             }
-            // checkBtnState()
+
+            checkBtnState()
         }
     }
 
@@ -61,26 +63,48 @@ class SignUpStepTwoFragment :
                 it!!,
                 binding.etvPwTwo.text.toString()
             )
-            if (pwConfirmState) {
-                binding.tvPwError.visibility = View.INVISIBLE
-            } else {
+
+            if (pwState) {
+                if (pwConfirmState) { // 일치
+                    binding.tvPwError.setTextColor(resources.getColor(R.color.color_1C2E52, null))
+                    binding.tvPwError.text = resources.getString(R.string.sign_up_step_two_pw_correct)
+                } else { // 불일치
+                    binding.tvPwError.setTextColor(resources.getColor(R.color.color_FF0000, null))
+                    binding.tvPwError.text = resources.getString(R.string.sign_up_step_two_pw_error)
+                }
+
                 binding.tvPwError.visibility = View.VISIBLE
-            }
-            // checkBtnState()
+
+            } else binding.tvPwError.visibility = View.INVISIBLE
+
+            checkBtnState()
         }
 
         // 비밀번호 확인 -> 비밀번호
         binding.etvPwTwo.addTextChangedListener {
             pwConfirmState =
                 EditTextValidate.setValidate("pwConfirm", it!!, binding.etvPwOne.text.toString())
-            if (pwConfirmState) {
-                binding.tvPwError.visibility = View.INVISIBLE
-            } else {
+
+            if (pwState) {
+                if (pwConfirmState) { // 일치
+                    binding.tvPwError.setTextColor(resources.getColor(R.color.color_1C2E52, null))
+                    binding.tvPwError.text = resources.getString(R.string.sign_up_step_two_pw_correct)
+                } else { // 불일치
+                    binding.tvPwError.setTextColor(resources.getColor(R.color.color_FF0000, null))
+                    binding.tvPwError.text = resources.getString(R.string.sign_up_step_two_pw_error)
+                }
+
                 binding.tvPwError.visibility = View.VISIBLE
-            }
-            // checkBtnState()
+
+            } else binding.tvPwError.visibility = View.INVISIBLE
+
+            checkBtnState()
         }
     }
 
+    private fun checkBtnState() {
+        binding.btnSignupTwo.isEnabled =
+            idState == true && pwState && true && pwConfirmState == true
+    }
 
 }
