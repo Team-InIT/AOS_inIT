@@ -32,7 +32,7 @@
                 android:id="@+id/tv_signup_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/pretendard_regular"
+                android:fontFamily="@font/pretendard_medium"
                 android:text="@string/sign_up"
                 android:textColor="@color/color_191919"
                 android:textSize="16sp"

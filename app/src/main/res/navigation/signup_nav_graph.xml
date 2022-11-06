@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/signup_nav_graph">
+    android:id="@+id/signup_nav_graph"
+    app:startDestination="@id/signUpStepOneFragment">
 
+    <fragment
+        android:id="@+id/signUpStepOneFragment"
+        android:name="com.swu.aos_init.presentation.ui.sign.signup.common.SignUpStepOneFragment"
+        android:label="SignUpStepOneFragment" >
+        <action
+            android:id="@+id/action_signUpStepOneFragment_to_signUpStepTwoFragment"
+            app:destination="@id/signUpStepTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpStepTwoFragment"
+        android:name="com.swu.aos_init.presentation.ui.sign.signup.common.SignUpStepTwoFragment"
+        android:label="SignUpStepTwoFragment" >
+        <action
+            android:id="@+id/action_signUpStepTwoFragment_to_signUpDefaultStepOneFragment"
+            app:destination="@id/signUpDefaultStepOneFragment" />
+        <action
+            android:id="@+id/action_signUpStepTwoFragment_to_signUpOrgStepOneFragment"
+            app:destination="@id/signUpOrgStepOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpDefaultStepOneFragment"
+        android:name="com.swu.aos_init.presentation.ui.sign.signup.default.SignUpDefaultStepOneFragment"
+        android:label="SignUpDefaultStepOneFragment" >
+        <action
+            android:id="@+id/action_signUpDefaultStepOneFragment_to_signUpDefaultStepTwoFragment"
+            app:destination="@id/signUpDefaultStepTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpDefaultStepTwoFragment"
+        android:name="com.swu.aos_init.presentation.ui.sign.signup.default.SignUpDefaultStepTwoFragment"
+        android:label="SignUpDefaultStepTwoFragment" />
+    <fragment
+        android:id="@+id/signUpOrgStepOneFragment"
+        android:name="com.swu.aos_init.presentation.ui.sign.signup.org.SignUpOrgStepOneFragment"
+        android:label="SignUpOrgStepOneFragment" >
+        <action
+            android:id="@+id/action_signUpOrgStepOneFragment_to_signUpOrgStepTwoFragment"
+            app:destination="@id/signUpOrgStepTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpOrgStepTwoFragment"
+        android:name="com.swu.aos_init.presentation.ui.sign.signup.org.SignUpOrgStepTwoFragment"
+        android:label="SignUpOrgStepTwoFragment" />
 </navigation>

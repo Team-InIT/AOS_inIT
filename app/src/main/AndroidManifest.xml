@@ -24,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.ui.sign.signup.SignUpActivity" />
+        <activity android:name=".presentation.ui.sign.signup.SignUpActivity"
+            android:exported="true"/>
 
     </application>
 

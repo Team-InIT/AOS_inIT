@@ -1,11 +1,13 @@
 package com.swu.aos_init.presentation.ui.sign.signin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivitySigninBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.ui.sign.signup.SignUpActivity
 
 class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_signin) {
 
@@ -19,6 +21,8 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
 
         binding.viewmodel = signInViewModel
         observeSigIn()
+
+        moveToSignUp()
     }
 
     private fun observeSigIn() {
@@ -37,4 +41,11 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
     private fun checkBtnState() {
         binding.btnSignin.isEnabled = idState == true && pwState == true
     }
+
+    private fun moveToSignUp() {
+        binding.tvSignup.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
+        }
+    }
+
 }

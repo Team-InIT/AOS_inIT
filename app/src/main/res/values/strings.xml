@@ -13,10 +13,11 @@
     <string name="sign_in_sign_up">회원가입</string>
 
     <string name="sign_up">회원가입</string>
-    <string name="sign_up_info">일반회원과 기업회원 중\n선택해주세오</string>
-    <string name="sign_up_org">기업회원</string>
-    <string name="sign_up_default">일반회원</string>
-    <string name="sign_up_next">다음</string>
+
+    <string name="sign_up_step_one_info">일반회원과 기업회원 중\n선택해주세오</string>
+    <string name="sign_up_step_one_org">기업회원</string>
+    <string name="sign_up_step_one_default">일반회원</string>
+    <string name="sign_up_step_one_next">다음</string>
 
     <!-- Home -->
     <string name="home">홈</string>
