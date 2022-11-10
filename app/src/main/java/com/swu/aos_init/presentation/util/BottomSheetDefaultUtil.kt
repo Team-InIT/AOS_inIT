@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.DialogBottomSheetDefaultBinding
@@ -27,7 +29,9 @@ class BottomSheetDefaultUtil(val type: Int) :
     override fun onAttach(context: Context) {
         super.onAttach(context)
         bottomSheetClickListener = try {
-            parentFragmentManager as BottomSheetClickListener
+            requireParentFragment() as BottomSheetClickListener
+        } catch (e: Exception) {
+            childFragmentManager as BottomSheetClickListener
         } catch (e: Exception) {
             context as BottomSheetClickListener
         }
@@ -53,14 +57,30 @@ class BottomSheetDefaultUtil(val type: Int) :
         setTitle()
         initAdapter()
 
+        setHeight()
+
         initDoneBtn()
+
     }
+
+    private fun setHeight() {
+        dialog?.setOnShowListener {
+            val bottomSheetDialog = it as BottomSheetDialog
+            val parentLayout =
+                bottomSheetDialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            parentLayout?.let { it ->
+                val behaviour = BottomSheetBehavior.from(it)
+                behaviour.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
+    }
+
 
     private fun setTitle() {
         when (type) {
-            ORG_TYPE -> "기업형태"
-            PROJECT_TYPE -> "프로젝트 타입"
-            PROJECT_KIND -> "프로젝트 종류"
+            ORG_TYPE -> binding.tvBottomTitle.text = "기업형태"
+            PROJECT_TYPE -> binding.tvBottomTitle.text = "프로젝트 타입"
+            PROJECT_KIND -> binding.tvBottomTitle.text = "프로젝트 종류"
         }
     }
 
@@ -115,15 +135,15 @@ class BottomSheetDefaultUtil(val type: Int) :
         return selectedTxtList
     }
 
-
     private fun initDoneBtn() {
         binding.btnDone.setOnClickListener {
             bottomSheetClickListener.getSelection(selectedTxtAdapter.getSelectedTxt())
+            dismiss()
         }
     }
 
     private fun checkBtnState() {
-        binding.btnDone.isEnabled = selectedTxtAdapter.getSelectedTxt().isNotEmpty()
+        binding.btnDone.isEnabled = selectedTxtAdapter.getSelectedState()
     }
 
     override fun onDestroyView() {

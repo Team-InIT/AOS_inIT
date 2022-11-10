@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.swu.aos_init.databinding.ItemBottomSheetDefaultListBinding
 
-class SelectedTxtAdapter(val doAfterClick: () -> Unit) :
+class SelectedTxtAdapter(val checkBtnState: () -> Unit) :
     RecyclerView.Adapter<SelectedTxtAdapter.SelectedTxtViewHolder>() {
 
     var itemList = mutableListOf<SelectedTxtData>()
@@ -18,6 +18,7 @@ class SelectedTxtAdapter(val doAfterClick: () -> Unit) :
 
         fun onBind(data: SelectedTxtData) {
             binding.selectedTxtData = data
+            binding.itemTvBottomSheetDefault.isSelected = data.selectedState!!
         }
     }
 
@@ -35,22 +36,26 @@ class SelectedTxtAdapter(val doAfterClick: () -> Unit) :
         holder.onBind(itemList[position])
 
         holder.itemView.setOnClickListener {
-            if (!holder.textView.isSelected) {
-                setAllViewOff()
-                holder.textView.isSelected = true
+            if (holder.textView.isSelected) {
+                itemList[position].selectedState = false
             } else {
-                setAllViewOff()
-            }
+                itemList[position].selectedState = true
 
-            doAfterClick()
+                for (i in itemList.indices) {
+                    if (i != position) {
+                        itemList[i].selectedState = false
+                    }
+                }
+            }
+            notifyItemRangeChanged(0, itemCount)
+            checkBtnState()
         }
     }
 
     override fun getItemCount() = itemList.size
 
-    private fun setAllViewOff() {
-        itemList.forEach { it.selectedState = false }
-        notifyItemRangeChanged(0, itemCount)
+    fun getSelectedState(): Boolean {
+        return itemList.any { it.selectedState == true }
     }
 
     fun getSelectedTxt(): String {
