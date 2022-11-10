@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">inIT</string>
 
+    
+    <!-- Util -->
+    <string name="bottom_sheet_default_org_type">기업형태</string>
+    <string name="bottom_sheet_default_done">완료</string>
+    
     <!-- Main -->
 
     <!-- Sign -->

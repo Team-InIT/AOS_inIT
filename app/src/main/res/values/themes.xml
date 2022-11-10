@@ -20,6 +20,14 @@
         <item name="chipBackgroundColor">@color/selector_signup_default_one_btn</item>
         <item name="android:textColor">@color/selector_signup_default_one_txt</item>
     </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="background">@android:color/transparent</item>
+    </style>
 </resources>
 
 
