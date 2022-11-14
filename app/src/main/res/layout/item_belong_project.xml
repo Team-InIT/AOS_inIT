@@ -5,15 +5,19 @@
 
     <data>
 
+        <variable
+            name="ProjectData"
+            type="com.swu.aos_init.data.response.ResponseProject" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_FFFFFF"
-        app:cardCornerRadius="8dp"
         android:layout_marginVertical="12dp"
+        android:background="@color/color_FFFFFF"
         app:cardBackgroundColor="@color/color_1C2E52"
+        app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pretendard_medium"
+                android:text="@{ProjectData.position}"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +45,7 @@
                 android:id="@+id/tv_dday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{ProjectData.dday}"
                 android:textColor="@color/color_FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -51,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:fontFamily="@font/pretendard_regular"
+                android:text="@{ProjectData.title}"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
                 android:fontFamily="@font/pretendard_medium"
+                android:text="@{ProjectData.part}"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="11sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/pretendard_medium"
+                android:text="@{ProjectData.date}"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
