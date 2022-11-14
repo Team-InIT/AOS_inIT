@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.swu.aos_init.data.response.ResponseProject
 import com.swu.aos_init.databinding.ItemProjectBinding
 
-class ProjectAdapter : ListAdapter<ResponseProject, ProjectAdapter.ProjectViewAdapter>(
+class ProjectRvAdapter : ListAdapter<ResponseProject, ProjectRvAdapter.ProjectViewAdapter>(
     headerDiffUtil
 ) {
 

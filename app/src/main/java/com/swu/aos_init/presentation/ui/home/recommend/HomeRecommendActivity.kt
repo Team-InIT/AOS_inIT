@@ -1,12 +1,11 @@
 package com.swu.aos_init.presentation.ui.home.recommend
 
 import android.os.Bundle
-import androidx.recyclerview.widget.ListAdapter
 import com.swu.aos_init.R
 import com.swu.aos_init.data.response.ResponseProject
 import com.swu.aos_init.databinding.ActivityHomeRecommendBinding
 import com.swu.aos_init.presentation.base.BaseActivity
-import com.swu.aos_init.presentation.ui.home.adapter.ProjectAdapter
+import com.swu.aos_init.presentation.ui.home.adapter.ProjectRvAdapter
 
 // TODO 추후 서버통신 진행예정
 // TODO 추후 서버통신을 위한 data class 변경 예정
@@ -14,7 +13,7 @@ import com.swu.aos_init.presentation.ui.home.adapter.ProjectAdapter
 class HomeRecommendActivity :
     BaseActivity<ActivityHomeRecommendBinding>(R.layout.activity_home_recommend) {
 
-    private lateinit var projectAdapter: ProjectAdapter
+    private lateinit var projectRvAdapter: ProjectRvAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +24,8 @@ class HomeRecommendActivity :
 
     // 더미 연결
     private fun initAdapter() {
-        projectAdapter = ProjectAdapter()
-        projectAdapter.submitList(
+        projectRvAdapter = ProjectRvAdapter()
+        projectRvAdapter.submitList(
             listOf(
                 ResponseProject(
                     "웹",
@@ -56,7 +55,7 @@ class HomeRecommendActivity :
             )
         )
 
-        binding.rvRecommendProject.adapter = projectAdapter
+        binding.rvRecommendProject.adapter = projectRvAdapter
     }
 
     private fun initBackBtn() {
