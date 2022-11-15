@@ -1,6 +1,7 @@
 package com.swu.aos_init.presentation.ui.sign.signup.common
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
@@ -128,6 +129,13 @@ class SignUpStepTwoFragment :
             } else {
                 this.findNavController().navigate(R.id.action_signUpStepTwoFragment_to_signUpDefaultStepOneFragment)
             }
+
+            setCommonSignUpData()
         }
+    }
+
+    private fun setCommonSignUpData() {
+        signUpViewModel.id.value = binding.etvId.text.toString() // 아이디
+        signUpViewModel.pw.value = binding.etvPwTwo.text.toString() // 비밀번호
     }
 }

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.swu.aos_init.data.response.ResponseProject
 import com.swu.aos_init.databinding.ItemBelongProjectBinding
 
-class ProjectVpAdapter(private val itemList:MutableList<ResponseProject>,val myContext: Context):RecyclerView.Adapter<ProjectVpAdapter.ProjectVPHolder>() {
+class ProjectVpAdapter(private val itemList:MutableList<ResponseProject>, val myContext: Context):RecyclerView.Adapter<ProjectVpAdapter.ProjectVPHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectVPHolder {
         val binding = ItemBelongProjectBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -30,7 +30,7 @@ class ProjectVpAdapter(private val itemList:MutableList<ResponseProject>,val myC
     override fun getItemCount(): Int = itemList.size
 
     class ProjectVPHolder(var binding:ItemBelongProjectBinding):RecyclerView.ViewHolder(binding.root){
-        fun bind(data:ResponseProject){
+        fun bind(data: ResponseProject){
             binding.projectData = data
         }
     }

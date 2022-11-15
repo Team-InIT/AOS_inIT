@@ -3,9 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable
-            name="viewmodel"
-            type="com.swu.aos_init.presentation.ui.sign.signin.SignInViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -58,7 +55,6 @@
             android:maxLines="1"
             android:paddingHorizontal="18dp"
             android:paddingVertical="16dp"
-            android:text="@{viewmodel.id}"
             android:textColor="@color/color_000000"
             android:textColorHint="@color/color_828282"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,12 +73,41 @@
             android:maxLines="1"
             android:paddingHorizontal="18dp"
             android:paddingVertical="16dp"
-            android:text="@{viewmodel.pw}"
             android:textColor="@color/color_000000"
             android:textColorHint="@color/color_828282"
             app:layout_constraintEnd_toEndOf="@+id/etv_id"
             app:layout_constraintStart_toStartOf="@id/etv_id"
             app:layout_constraintTop_toBottomOf="@id/etv_id" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_org_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/btn_signin"
+            app:layout_constraintEnd_toEndOf="@id/etv_pw"
+            app:layout_constraintTop_toBottomOf="@id/etv_pw">
+
+            <ImageView
+                android:id="@+id/iv_check_org"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/selector_signin_org_btn"
+                android:checkedButton="@null" />
+
+            <TextView
+                android:id="@+id/tv_check_org"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
+                android:gravity="center"
+                android:text="@string/sign_in_check_org"
+                android:textColor="@color/selector_signin_org_check_txt"
+                android:textSize="14sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_signin"

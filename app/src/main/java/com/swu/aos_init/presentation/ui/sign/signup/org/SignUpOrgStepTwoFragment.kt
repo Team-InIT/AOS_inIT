@@ -7,6 +7,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.swu.aos_init.R
+import com.swu.aos_init.data.request.RequestSignUpCompany
 import com.swu.aos_init.databinding.FragmentSignupOrgStepTwoBinding
 import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
@@ -14,7 +15,8 @@ import com.swu.aos_init.presentation.util.BottomSheetDefaultUtil
 import com.swu.aos_init.presentation.util.EditTextValidate
 
 class SignUpOrgStepTwoFragment :
-    BaseFragment<FragmentSignupOrgStepTwoBinding>(R.layout.fragment_signup_org_step_two), BottomSheetDefaultUtil.BottomSheetClickListener {
+    BaseFragment<FragmentSignupOrgStepTwoBinding>(R.layout.fragment_signup_org_step_two),
+    BottomSheetDefaultUtil.BottomSheetClickListener {
 
     private val signUpViewModel: SignUpViewModel by activityViewModels()
 
@@ -43,7 +45,7 @@ class SignUpOrgStepTwoFragment :
             etvOrgType.setOnClickListener {
                 val bottomSheet = BottomSheetDefaultUtil(0)
                 bottomSheet.setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomBottomSheet)
-                bottomSheet.show(childFragmentManager,"ORG_TYPE")
+                bottomSheet.show(childFragmentManager, "ORG_TYPE")
 
                 checkBtnState()
             }
@@ -81,14 +83,47 @@ class SignUpOrgStepTwoFragment :
 
     private fun moveToLoginState() {
         binding.btnSignupOrgTwo.setOnClickListener {
-            Toast.makeText(requireContext(), "회원가입이 완료되었습니다", Toast.LENGTH_SHORT).show()
-            activity?.finish()
+            setOrgTwoData()
+            tryPostSignUpCompany()
         }
     }
 
-    override fun getSelection(selectedTxt: String) {
+    override fun getSelection(selectedTxt: String, selectedPosition: Int) {
         binding.etvOrgType.text = selectedTxt
+        signUpViewModel.cType.value = selectedPosition
         orgTypeState = true
     }
 
+    private fun setOrgTwoData() {
+        signUpViewModel.apply {
+            cRegistNum.value = binding.etvBusinessNum.text.toString()
+            cName.value = binding.etvOrgName.text.toString()
+            cBoss.value = binding.etvOwnerName.text.toString()
+            cAddress.value = binding.etvAddress.text.toString()
+        }
+    }
+
+    private fun tryPostSignUpCompany() {
+        val requestSignUpCompany = RequestSignUpCompany(
+            cID = signUpViewModel.id.value!!,
+            cPW = signUpViewModel.pw.value!!,
+            cManagerName = signUpViewModel.cManagerName.value!!,
+            cManagerEmail = signUpViewModel.cManagerEmail.value!!,
+            cManagerCall = signUpViewModel.cManagerCall.value!!,
+            cType = signUpViewModel.cType.value!!,
+            cRegistNum = signUpViewModel.cRegistNum.value!!,
+            cName = signUpViewModel.cName.value!!,
+            cBoss = signUpViewModel.cBoss.value!!,
+            cAddress = signUpViewModel.cAddress.value!!
+        )
+
+        signUpViewModel.postSignUpCompanyData(
+            requestSignUpCompany
+        )
+
+        signUpViewModel.signUpCompanyData.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+            if (it.resultCode == 200) activity?.finish()
+        }
+    }
 }
