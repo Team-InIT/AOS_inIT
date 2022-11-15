@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.swu.aos_init.R
-import com.swu.aos_init.data.response.response.ResponseProject
+import com.swu.aos_init.data.response.ResponseProject
 import com.swu.aos_init.databinding.FragmentHomeBinding
 import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.ui.home.adapter.ProjectRvAdapter

@@ -7,7 +7,7 @@
 
         <variable
             name="ProjectData"
-            type="com.swu.aos_init.data.response.response.ResponseProject" />
+            type="com.swu.aos_init.data.response.ResponseProject" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

@@ -1,6 +1,5 @@
-package com.swu.aos_init.data.response
+package com.swu.aos_init.data.service
 
-import com.swu.aos_init.data.response.service.SignService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

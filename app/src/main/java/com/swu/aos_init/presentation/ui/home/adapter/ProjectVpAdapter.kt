@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.swu.aos_init.data.response.response.ResponseProject
+import com.swu.aos_init.data.response.ResponseProject
 import com.swu.aos_init.databinding.ItemBelongProjectBinding
 
 class ProjectVpAdapter(private val itemList:MutableList<ResponseProject>, val myContext: Context):RecyclerView.Adapter<ProjectVpAdapter.ProjectVPHolder>() {
