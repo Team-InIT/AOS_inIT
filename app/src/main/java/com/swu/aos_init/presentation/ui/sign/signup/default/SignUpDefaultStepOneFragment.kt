@@ -111,6 +111,21 @@ class SignUpDefaultStepOneFragment :
     private fun moveToDefaultSignUpTwo() {
         binding.btnSignupDefaultOne.setOnClickListener {
             this.findNavController().navigate(R.id.action_signUpDefaultStepOneFragment_to_signUpDefaultStepTwoFragment)
+            setDefaultOneData()
+        }
+    }
+
+    private fun setDefaultOneData() {
+        val statusList = mutableListOf(binding.btnStatusStudent,binding.btnStatusWorker,binding.btnStatusEct)
+        val sexList = mutableListOf(binding.btnSexMan,binding.btnSexWoman,binding.btnSexEct)
+
+        signUpViewModel.apply {
+            mName.value = binding.etvName.text.toString()
+            mEmail.value = binding.etvEmail.text.toString()
+            mDept.value = binding.etvBelong.text.toString()
+            mChat.value = binding.etvLink.text.toString()
+            mEdu.value = statusList.indexOf(statusList.find { it.isSelected })
+            mGender.value = sexList.indexOf(sexList.find { it.isSelected })
         }
     }
 }

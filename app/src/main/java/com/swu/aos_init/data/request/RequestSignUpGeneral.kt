@@ -9,5 +9,6 @@ data class RequestSignUpGeneral(
     val mID: String,
     val mName: String,
     val mPW: String,
-    val mPosition: Int
+    val mPosition: Int,
+    val mInterest:List<Int>
 )
