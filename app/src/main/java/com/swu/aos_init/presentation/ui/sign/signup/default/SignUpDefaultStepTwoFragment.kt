@@ -1,10 +1,8 @@
 package com.swu.aos_init.presentation.ui.sign.signup.default
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.core.view.forEach
 import androidx.core.view.get
 import androidx.core.view.indices
 import androidx.fragment.app.activityViewModels
@@ -81,7 +79,6 @@ class SignUpDefaultStepTwoFragment :
             Toast.makeText(requireContext(), "회원가입이 완료되었습니다", Toast.LENGTH_SHORT).show()
             setDefaultTwoData()
             tryPostSignUpGeneral()
-            activity?.finish()
         }
     }
 
@@ -128,5 +125,9 @@ class SignUpDefaultStepTwoFragment :
             requestSignUpGeneral
         )
 
+        signUpViewModel.signUpGeneralData.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+            if (it.code == 200) activity?.finish()
+        }
     }
 }

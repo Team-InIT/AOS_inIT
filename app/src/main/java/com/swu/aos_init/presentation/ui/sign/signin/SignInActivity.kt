@@ -2,9 +2,11 @@ package com.swu.aos_init.presentation.ui.sign.signin
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
 import com.swu.aos_init.R
+import com.swu.aos_init.data.request.RequestSignIn
 import com.swu.aos_init.databinding.ActivitySigninBinding
 import com.swu.aos_init.presentation.base.BaseActivity
 import com.swu.aos_init.presentation.ui.sign.signup.SignUpActivity
@@ -17,6 +19,8 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
     private var idState = false
     private var pwState = false
 
+    private var orgState = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -25,6 +29,7 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
         checkOrgState()
 
         moveToSignUp()
+        moveToMain()
     }
 
     private fun observeSigIn() {
@@ -47,10 +52,12 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
                     ivCheckOrg.isSelected = false
                     tvCheckOrg.isSelected = false
                     llOrgCheck.isSelected = false
+                    orgState = false
                 } else {
                     ivCheckOrg.isSelected = true
                     tvCheckOrg.isSelected = true
                     llOrgCheck.isSelected = true
+                    orgState = true
                 }
             }
         }
@@ -63,6 +70,29 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
     private fun moveToSignUp() {
         binding.tvSignup.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
+        }
+    }
+
+    private fun moveToMain() {
+        binding.btnSignin.setOnClickListener {
+            tryPostSignIn()
+        }
+    }
+
+    private fun tryPostSignIn(){
+        val requestSignIn = RequestSignIn(
+            binding.etvId.text.toString(),
+            binding.etvPw.text.toString(),
+            orgState
+        )
+
+        signInViewModel.postSignIn(requestSignIn)
+        signInViewModel.signInData.observe(this) {
+            Toast.makeText(this, it.code, Toast.LENGTH_SHORT).show()
+
+            // TODO 화면이동 구현
+            // if 성공
+            //   startActivity(Intent(this, SignUpActivity::class.java))
         }
     }
 
