@@ -2,7 +2,7 @@ package com.swu.aos_init.presentation.ui.home.recommend
 
 import android.os.Bundle
 import com.swu.aos_init.R
-import com.swu.aos_init.data.response.ResponseProject
+import com.swu.aos_init.data.response.response.ResponseProject
 import com.swu.aos_init.databinding.ActivityHomeRecommendBinding
 import com.swu.aos_init.presentation.base.BaseActivity
 import com.swu.aos_init.presentation.ui.home.adapter.ProjectRvAdapter
