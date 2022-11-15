@@ -89,7 +89,11 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
 
         signInViewModel.postSignIn(requestSignIn)
         signInViewModel.loginData.observe(this) {
-            if (it.messge!!.contains("환영합니다")) { // 로그인 성공
+            if (it.mNum == null && it.cNum != null) { // 로그인 성공
+                Toast.makeText(this, it.messge.toString(), Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            } else if (it.mNum != null && it.cNum == null){
                 Toast.makeText(this, it.messge.toString(), Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
