@@ -89,11 +89,12 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
 
         signInViewModel.postSignIn(requestSignIn)
         signInViewModel.loginData.observe(this) {
-            Toast.makeText(this, it.messge.toString(), Toast.LENGTH_SHORT).show()
-
-            if (it.resultCode == 200) { // 로그인 성공
+            if (it.messge!!.contains("환영합니다")) { // 로그인 성공
+                Toast.makeText(this, it.messge.toString(), Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
+            } else {
+                Toast.makeText(this, "아이디 또는 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
             }
         }
     }

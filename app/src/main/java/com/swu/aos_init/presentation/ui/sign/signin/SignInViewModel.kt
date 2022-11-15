@@ -24,7 +24,6 @@ class SignInViewModel : ViewModel() {
                     Log.d("_signInData", "서버 통신 성공")
                 }
                 .onFailure {
-                    it.printStackTrace()
                     Log.d("_signInData", "서버 통신 실패")
                 }
         }

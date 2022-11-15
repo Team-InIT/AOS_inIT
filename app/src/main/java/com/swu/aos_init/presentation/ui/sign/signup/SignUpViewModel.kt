@@ -77,7 +77,6 @@ class SignUpViewModel : ViewModel() {
                     Log.d("_signUpGeneralData", "서버 통신 성공")
                 }
                 .onFailure {
-                    it.printStackTrace()
                     Log.d("_signUpGeneralData", "서버 통신 실패")
                 }
         }
@@ -92,7 +91,6 @@ class SignUpViewModel : ViewModel() {
                     Log.d("_signUpCompanyData", "서버 통신 성공")
                 }
                 .onFailure {
-                    it.printStackTrace()
                     Log.d("_signUpCompanyData", "서버 통신 실패")
                 }
         }
