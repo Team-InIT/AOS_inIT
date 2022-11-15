@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AOS_inIT"
         tools:targetApi="31">
         <activity
-            android:name=".WriteProjectActivity"
+            android:name=".presentation.ui.home.write.WriteProjectActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.MainActivity"
