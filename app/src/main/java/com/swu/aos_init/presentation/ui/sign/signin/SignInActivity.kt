@@ -2,7 +2,6 @@ package com.swu.aos_init.presentation.ui.sign.signin
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
