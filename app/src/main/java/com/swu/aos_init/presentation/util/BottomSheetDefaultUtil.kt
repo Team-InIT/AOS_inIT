@@ -31,8 +31,6 @@ class BottomSheetDefaultUtil(val type: Int) :
         bottomSheetClickListener = try {
             requireParentFragment() as BottomSheetClickListener
         } catch (e: Exception) {
-            childFragmentManager as BottomSheetClickListener
-        } catch (e: Exception) {
             context as BottomSheetClickListener
         }
     }
