@@ -22,6 +22,7 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
 
         binding.viewmodel = signInViewModel
         observeSigIn()
+        checkOrgState()
 
         moveToSignUp()
     }
@@ -36,6 +37,22 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
         binding.etvPw.addTextChangedListener {
             pwState = EditTextValidate.PwValidate(it!!)
             checkBtnState()
+        }
+    }
+
+    private fun checkOrgState() {
+        binding.apply {
+            llOrgCheck.setOnClickListener {
+                if (llOrgCheck.isSelected) {
+                    ivCheckOrg.isSelected = false
+                    tvCheckOrg.isSelected = false
+                    llOrgCheck.isSelected = false
+                } else {
+                    ivCheckOrg.isSelected = true
+                    tvCheckOrg.isSelected = true
+                    llOrgCheck.isSelected = true
+                }
+            }
         }
     }
 
