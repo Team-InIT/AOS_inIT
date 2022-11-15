@@ -2,13 +2,15 @@ package com.swu.aos_init.presentation.ui.sign.signin
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
 import com.swu.aos_init.R
-import com.swu.aos_init.data.request.RequestSignIn
+import com.swu.aos_init.data.request.RequestLogin
 import com.swu.aos_init.databinding.ActivitySigninBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.ui.MainActivity
 import com.swu.aos_init.presentation.ui.sign.signup.SignUpActivity
 import com.swu.aos_init.presentation.util.EditTextValidate
 
@@ -24,7 +26,6 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.viewmodel = signInViewModel
         observeSigIn()
         checkOrgState()
 
@@ -79,21 +80,21 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
         }
     }
 
-    private fun tryPostSignIn(){
-        val requestSignIn = RequestSignIn(
-            binding.etvId.text.toString(),
-            binding.etvPw.text.toString(),
-            orgState
+    private fun tryPostSignIn() {
+        val requestSignIn = RequestLogin(
+            id = binding.etvId.text.toString(),
+            pw = binding.etvPw.text.toString(),
+            isCompany = orgState
         )
 
         signInViewModel.postSignIn(requestSignIn)
-        signInViewModel.signInData.observe(this) {
-            Toast.makeText(this, it.code, Toast.LENGTH_SHORT).show()
+        signInViewModel.loginData.observe(this) {
+            Toast.makeText(this, it.messge.toString(), Toast.LENGTH_SHORT).show()
 
-            // TODO 화면이동 구현
-            // if 성공
-            //   startActivity(Intent(this, SignUpActivity::class.java))
+            if (it.resultCode == 200) { // 로그인 성공
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
         }
     }
-
 }

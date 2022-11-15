@@ -5,27 +5,27 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.swu.aos_init.data.request.RequestSignIn
-import com.swu.aos_init.data.response.BaseResponse
+import com.swu.aos_init.data.request.RequestLogin
+import com.swu.aos_init.data.response.ResponseLogin
 import com.swu.aos_init.data.service.ServiceCreator
 import kotlinx.coroutines.launch
 
 class SignInViewModel : ViewModel() {
 
-    private val _signInData = MutableLiveData<BaseResponse>()
-    val signInData: LiveData<BaseResponse>
-        get() = _signInData
+    private var _loginData = MutableLiveData<ResponseLogin>()
+    val loginData : LiveData<ResponseLogin>
+        get() = _loginData
 
-    fun postSignIn(requestSignIn: RequestSignIn) {
+    fun postSignIn(requestSignIn: RequestLogin) {
         viewModelScope.launch {
-            kotlin.runCatching { ServiceCreator.signService.postSignIn(requestSignIn) }
+            kotlin.runCatching { ServiceCreator.signService.postLogin(requestSignIn) }
                 .onSuccess {
-                    _signInData.value = it
-                    Log.d("kite", "서버 통신 성공")
+                    _loginData.value = it
+                    Log.d("_signInData", "서버 통신 성공")
                 }
                 .onFailure {
                     it.printStackTrace()
-                    Log.d("kite", "서버 통신 실패")
+                    Log.d("_signInData", "서버 통신 실패")
                 }
         }
     }
