@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivityWriteProjectBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.util.BottomSheetDefaultUtil
 import java.util.*
 
 class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.activity_write_project) {
@@ -19,6 +23,7 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
         initDatePickerDialog()
         initProjectStartDatePickerDialog()
         initProjectEndDatePickerDialog()
+        bottomSheetClickListener()
     }
 
     //뒤로가기 버튼
@@ -84,5 +89,20 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
         datePickerDialog.getButton(
             DatePickerDialog.BUTTON_NEGATIVE
         ).setTextColor(textColor)
+    }
+
+    private fun initBottomSheet(type : Int, tag: String) {
+        val bottomSheet = BottomSheetDefaultUtil(type)
+        bottomSheet.setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomBottomSheet)
+        bottomSheet.show(supportFragmentManager, tag)
+    }
+
+    private fun bottomSheetClickListener() {
+        binding.tvProjectTypeAnswer.setOnClickListener {
+            initBottomSheet(1, "PROJECT_TYPE")
+        }
+        binding.tvProjectTypeAnswer.setOnClickListener {
+            initBottomSheet(2, "PROJECT_KIND")
+        }
     }
 }
