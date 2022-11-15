@@ -138,4 +138,6 @@
     <string name="open_project_person_num">명</string>
     <string name="open_project_stack">기술 스택</string>
     <string name="open_project_detail_description">상세설명</string>
+    <string name="open_project_select">선택해주세요</string>
+    <string name="open_project_on_off">온/오프라인 여부</string>
 </resources>
