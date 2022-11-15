@@ -1,4 +1,4 @@
-package com.swu.aos_init.data.response.response
+package com.swu.aos_init.data.response
 
 class BaseResponse(
     val code: Int = 0,
