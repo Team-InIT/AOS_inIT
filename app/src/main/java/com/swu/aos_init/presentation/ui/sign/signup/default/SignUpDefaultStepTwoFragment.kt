@@ -109,8 +109,8 @@ class SignUpDefaultStepTwoFragment :
 
     private fun tryPostSignUpGeneral() {
         val requestSignUpGeneral = RequestSignUpGeneral(
-            mID = signUpViewModel.mID.value!!,
-            mPW = signUpViewModel.mPW.value!!,
+            mID = signUpViewModel.id.value!!,
+            mPW = signUpViewModel.pw.value!!,
             mName = signUpViewModel.mName.value!!,
             mEmail = signUpViewModel.mEmail.value!!,
             mDept = signUpViewModel.mDept.value!!,
@@ -127,7 +127,7 @@ class SignUpDefaultStepTwoFragment :
 
         signUpViewModel.signUpGeneralData.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-            if (it.code == 200) activity?.finish()
+            if (it.resultCode == 200) activity?.finish()
         }
     }
 }

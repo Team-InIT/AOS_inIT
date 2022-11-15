@@ -23,7 +23,7 @@ class BottomSheetDefaultUtil(val type: Int) :
     private lateinit var selectedTxtAdapter: SelectedTxtAdapter
 
     interface BottomSheetClickListener {
-        fun getSelection(selectedTxt: String)
+        fun getSelection(selectedTxt: String, selectedPosition:Int)
     }
 
     override fun onAttach(context: Context) {
@@ -137,7 +137,9 @@ class BottomSheetDefaultUtil(val type: Int) :
 
     private fun initDoneBtn() {
         binding.btnDone.setOnClickListener {
-            bottomSheetClickListener.getSelection(selectedTxtAdapter.getSelectedTxt())
+            val myItemList = selectedTxtAdapter.itemList
+            val selectedPosition = myItemList.indexOf(myItemList.find { it.selectedState == true })
+            bottomSheetClickListener.getSelection(selectedTxtAdapter.getSelectedTxt(), selectedPosition)
             dismiss()
         }
     }
