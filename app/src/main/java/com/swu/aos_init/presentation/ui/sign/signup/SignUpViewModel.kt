@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.swu.aos_init.data.request.RequestSignUpCompany
 import com.swu.aos_init.data.request.RequestSignUpGeneral
 import com.swu.aos_init.data.response.BaseResponse
 import com.swu.aos_init.data.service.ServiceCreator
@@ -13,8 +14,8 @@ import kotlinx.coroutines.launch
 class SignUpViewModel : ViewModel() {
 
     // 공통 데이터
-    val mID = MutableLiveData<String>()
-    val mPW = MutableLiveData<String>()
+    val id = MutableLiveData<String>()
+    val pw = MutableLiveData<String>()
 
     // 일반 회원 데이터
     val mName = MutableLiveData<String>()
@@ -27,10 +28,22 @@ class SignUpViewModel : ViewModel() {
     val mInterest = MutableLiveData<MutableList<Int>>()
 
     // 기업 회원 데이터
+    val cManagerName = MutableLiveData<String>()
+    val cManagerEmail = MutableLiveData<String>()
+    val cManagerCall = MutableLiveData<String>()
+    val cType = MutableLiveData<Int>()
+    val cRegistNum = MutableLiveData<String>()
+    val cName = MutableLiveData<String>()
+    val cBoss = MutableLiveData<String>()
+    val cAddress = MutableLiveData<String>()
 
     private val _signUpGeneralData = MutableLiveData<BaseResponse>()
     val signUpGeneralData: LiveData<BaseResponse>
         get() = _signUpGeneralData
+
+    private val _signUpCompanyData = MutableLiveData<BaseResponse>()
+    val signUpCompanyData: LiveData<BaseResponse>
+        get() = _signUpCompanyData
 
     private val _selectedMemberType = MutableLiveData<Int>()
     val selectedMemberType: LiveData<Int> = _selectedMemberType
@@ -55,17 +68,30 @@ class SignUpViewModel : ViewModel() {
         }
     }
 
-    // 서버통신
+    // 일반회원 서버통신
     fun postSignUpGeneralData(requestSignUpGeneral: RequestSignUpGeneral) {
         viewModelScope.launch {
             kotlin.runCatching { ServiceCreator.signService.postSignUpGeneral(requestSignUpGeneral) }
                 .onSuccess {
                     _signUpGeneralData.value = it
-                    Log.d("kite", "서버 통신 성공")
+                    Log.d("_signUpGeneralData", "서버 통신 성공")
                 }
                 .onFailure {
-                    it.printStackTrace()
-                    Log.d("kite", "서버 통신 실패")
+                    Log.d("_signUpGeneralData", "서버 통신 실패")
+                }
+        }
+    }
+
+    // 기업회원 서버통신
+    fun postSignUpCompanyData(requestSignUpCompany: RequestSignUpCompany) {
+        viewModelScope.launch {
+            kotlin.runCatching { ServiceCreator.signService.postSignUpCompany(requestSignUpCompany) }
+                .onSuccess {
+                    _signUpCompanyData.value = it
+                    Log.d("_signUpCompanyData", "서버 통신 성공")
+                }
+                .onFailure {
+                    Log.d("_signUpCompanyData", "서버 통신 실패")
                 }
         }
     }

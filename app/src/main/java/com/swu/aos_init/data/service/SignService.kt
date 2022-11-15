@@ -1,6 +1,7 @@
 package com.swu.aos_init.data.service
 
 import com.swu.aos_init.data.request.RequestLogin
+import com.swu.aos_init.data.request.RequestSignUpCompany
 import com.swu.aos_init.data.request.RequestSignUpGeneral
 import com.swu.aos_init.data.response.BaseResponse
 import com.swu.aos_init.data.response.ResponseLogin
@@ -19,5 +20,11 @@ interface SignService {
     @POST("/signUp_general")
     suspend fun postSignUpGeneral(
         @Body body: RequestSignUpGeneral
+    ): BaseResponse
+
+    // 기업 회원 회원가입
+    @POST("/signUp_company")
+    suspend fun postSignUpCompany(
+        @Body body: RequestSignUpCompany
     ): BaseResponse
 }

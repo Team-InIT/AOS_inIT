@@ -135,7 +135,7 @@ class SignUpStepTwoFragment :
     }
 
     private fun setCommonSignUpData() {
-        signUpViewModel.mID.value = binding.etvId.text.toString() // 아이디
-        signUpViewModel.mPW.value = binding.etvPwTwo.text.toString() // 비밀번호
+        signUpViewModel.id.value = binding.etvId.text.toString() // 아이디
+        signUpViewModel.pw.value = binding.etvPwTwo.text.toString() // 비밀번호
     }
 }

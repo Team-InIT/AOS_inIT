@@ -66,6 +66,15 @@ class SignUpOrgStepOneFragment :
         binding.btnSignupOrgOne.setOnClickListener {
             this.findNavController()
                 .navigate(R.id.action_signUpOrgStepOneFragment_to_signUpOrgStepTwoFragment)
+            setOrgOneData()
+        }
+    }
+
+    private fun setOrgOneData() {
+        signUpViewModel.apply {
+            cManagerName.value = binding.etvName.text.toString()
+            cManagerEmail.value = binding.etvEmail.text.toString()
+            cManagerCall.value = binding.etvPhoneNum.text.toString()
         }
     }
 }
