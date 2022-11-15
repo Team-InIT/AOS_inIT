@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.swu.aos_init.data.request.RequestIsDuplicate
 import com.swu.aos_init.data.request.RequestSignUpCompany
 import com.swu.aos_init.data.request.RequestSignUpGeneral
 import com.swu.aos_init.data.response.BaseResponse
@@ -44,6 +45,10 @@ class SignUpViewModel : ViewModel() {
     private val _signUpCompanyData = MutableLiveData<BaseResponse>()
     val signUpCompanyData: LiveData<BaseResponse>
         get() = _signUpCompanyData
+
+    private val _isDuplicateData = MutableLiveData<BaseResponse>()
+    val isDuplicateData: LiveData<BaseResponse>
+        get() = _isDuplicateData
 
     private val _selectedMemberType = MutableLiveData<Int>()
     val selectedMemberType: LiveData<Int> = _selectedMemberType
@@ -92,6 +97,20 @@ class SignUpViewModel : ViewModel() {
                 }
                 .onFailure {
                     Log.d("_signUpCompanyData", "서버 통신 실패")
+                }
+        }
+    }
+
+    // 아이디 중복 체크
+    fun postIsDuplicate(requestIsDuplicate: RequestIsDuplicate) {
+        viewModelScope.launch {
+            kotlin.runCatching { ServiceCreator.signService.postIsDuplicate(requestIsDuplicate) }
+                .onSuccess {
+                    _isDuplicateData.value = it
+                    Log.d("_isDuplicateData", "서버 통신 성공")
+                }
+                .onFailure {
+                    Log.d("_isDuplicateData", "서버 통신 실패")
                 }
         }
     }
