@@ -6,7 +6,7 @@ data class RequestSignUpCompany(
     val cManagerEmail: String,
     val cManagerName: String,
     val cName: String,
-    val cPw: String,
+    val cPW: String,
     val cBoss: String,
     val cRegistNum: String,
     val cAddress: String,

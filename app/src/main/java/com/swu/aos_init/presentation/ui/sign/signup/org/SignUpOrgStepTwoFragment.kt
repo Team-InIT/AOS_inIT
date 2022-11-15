@@ -1,7 +1,6 @@
 package com.swu.aos_init.presentation.ui.sign.signup.org
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
@@ -85,9 +84,7 @@ class SignUpOrgStepTwoFragment :
     private fun moveToLoginState() {
         binding.btnSignupOrgTwo.setOnClickListener {
             setOrgTwoData()
-
-            // Toast.makeText(requireContext(), "회원가입이 완료되었습니다", Toast.LENGTH_SHORT).show()
-            // activity?.finish()
+            tryPostSignUpCompany()
         }
     }
 
@@ -104,10 +101,12 @@ class SignUpOrgStepTwoFragment :
             cBoss.value = binding.etvOwnerName.text.toString()
             cAddress.value = binding.etvAddress.text.toString()
         }
+    }
 
+    private fun tryPostSignUpCompany() {
         val requestSignUpCompany = RequestSignUpCompany(
             cID = signUpViewModel.id.value!!,
-            cPw = signUpViewModel.pw.value!!,
+            cPW = signUpViewModel.pw.value!!,
             cManagerName = signUpViewModel.cManagerName.value!!,
             cManagerEmail = signUpViewModel.cManagerEmail.value!!,
             cManagerCall = signUpViewModel.cManagerCall.value!!,
@@ -117,10 +116,14 @@ class SignUpOrgStepTwoFragment :
             cBoss = signUpViewModel.cBoss.value!!,
             cAddress = signUpViewModel.cAddress.value!!
         )
+
+        signUpViewModel.postSignUpCompanyData(
+            requestSignUpCompany
+        )
+
+        signUpViewModel.signUpCompanyData.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+            if (it.resultCode == 200) activity?.finish()
+        }
     }
-
-    private fun tryPostSignUpCompany() {
-
-    }
-
 }
