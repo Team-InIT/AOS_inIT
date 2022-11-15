@@ -13,6 +13,7 @@
     <string name="sign_in_title">IT 커뮤니티 중개 사이트</string>
     <string name="sign_in_id_hint">아이디를 입력해주세요</string>
     <string name="sign_in_pw_hint">비밀번호를 입력해주세요</string>
+    <string name="sign_in_check_org">기업회원입니다</string>
     <string name="sign_in_find_id">아이디 찾기</string>
     <string name="sign_in_find_pw">비밀번호 찾기</string>
     <string name="sign_in_sign_up">회원가입</string>

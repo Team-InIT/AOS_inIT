@@ -2,11 +2,15 @@ package com.swu.aos_init.presentation.ui.sign.signin
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
 import com.swu.aos_init.R
+import com.swu.aos_init.data.request.RequestLogin
 import com.swu.aos_init.databinding.ActivitySigninBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.ui.MainActivity
 import com.swu.aos_init.presentation.ui.sign.signup.SignUpActivity
 import com.swu.aos_init.presentation.util.EditTextValidate
 
@@ -17,13 +21,16 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
     private var idState = false
     private var pwState = false
 
+    private var orgState = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.viewmodel = signInViewModel
         observeSigIn()
+        checkOrgState()
 
         moveToSignUp()
+        moveToMain()
     }
 
     private fun observeSigIn() {
@@ -39,6 +46,24 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
         }
     }
 
+    private fun checkOrgState() {
+        binding.apply {
+            llOrgCheck.setOnClickListener {
+                if (llOrgCheck.isSelected) {
+                    ivCheckOrg.isSelected = false
+                    tvCheckOrg.isSelected = false
+                    llOrgCheck.isSelected = false
+                    orgState = false
+                } else {
+                    ivCheckOrg.isSelected = true
+                    tvCheckOrg.isSelected = true
+                    llOrgCheck.isSelected = true
+                    orgState = true
+                }
+            }
+        }
+    }
+
     private fun checkBtnState() {
         binding.btnSignin.isEnabled = idState == true && pwState == true
     }
@@ -49,4 +74,27 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
         }
     }
 
+    private fun moveToMain() {
+        binding.btnSignin.setOnClickListener {
+            tryPostSignIn()
+        }
+    }
+
+    private fun tryPostSignIn() {
+        val requestSignIn = RequestLogin(
+            id = binding.etvId.text.toString(),
+            pw = binding.etvPw.text.toString(),
+            isCompany = orgState
+        )
+
+        signInViewModel.postSignIn(requestSignIn)
+        signInViewModel.loginData.observe(this) {
+            Toast.makeText(this, it.messge.toString(), Toast.LENGTH_SHORT).show()
+
+            if (it.resultCode == 200) { // 로그인 성공
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
+        }
+    }
 }
