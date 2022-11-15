@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">inIT</string>
 
-    
+
     <!-- Util -->
     <string name="bottom_sheet_default_org_type">기업형태</string>
     <string name="bottom_sheet_default_done">완료</string>
-    
+
     <!-- Main -->
 
     <!-- Sign -->
@@ -117,4 +117,28 @@
     <!-- MyPage -->
     <string name="mypage">마이페이지</string>
 
+    <!-- Open Project -->
+    <string name="open_project">글쓰기</string>
+    <string name="open_project_name">프로젝트 이름</string>
+    <string name="open_project_type">프로젝트 타입</string>
+    <string name="open_project_kind">프로젝트 종류</string>
+    <string name="open_project_size">프로젝트 규모</string>
+    <string name="open_project_ten_thousand_won">만원</string>
+    <string name="open_project_recruit_time">모집 시기</string>
+    <string name="open_project_going_period">진행 시기</string>
+    <string name="open_project_going_state">진행 상태</string>
+    <string name="open_project_not_idea">아이디어 구상 중</string>
+    <string name="open_project_yes_idea">아이디어 있음</string>
+    <string name="open_project_going_idea">진행 중</string>
+    <string name="open_project_work_time">하루 평균 작업 시간</string>
+    <string name="open_project_time">시간</string>
+    <string name="open_project_recruit_num">모집 인원</string>
+    <string name="open_project_plan">기획</string>
+    <string name="open_project_design">디자인</string>
+    <string name="open_project_develop">개발</string>
+    <string name="open_project_person_num">명</string>
+    <string name="open_project_stack">기술 스택</string>
+    <string name="open_project_detail_description">상세설명</string>
+    <string name="open_project_select">선택해주세요</string>
+    <string name="open_project_on_off">온/오프라인 여부</string>
 </resources>

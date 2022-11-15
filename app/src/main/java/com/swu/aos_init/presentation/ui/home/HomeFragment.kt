@@ -11,6 +11,7 @@ import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.ui.home.adapter.ProjectRvAdapter
 import com.swu.aos_init.presentation.ui.home.adapter.ProjectVpAdapter
 import com.swu.aos_init.presentation.ui.home.recommend.HomeRecommendActivity
+import com.swu.aos_init.presentation.ui.home.write.WriteProjectActivity
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
@@ -23,6 +24,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         initVpAdapter()
         initRvAdapter()
         initShowAllEvent()
+        writeBtnClick()
     }
 
     private fun initVpAdapter() {
@@ -88,6 +90,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private fun initShowAllEvent() {
         binding.tvShowAll.setOnClickListener {
             startActivity(Intent(requireContext(), HomeRecommendActivity::class.java))
+        }
+    }
+
+
+    //글쓰기 뷰 도입
+    private fun writeBtnClick() {
+        binding.fabWriting.setOnClickListener {
+            val intent = Intent(requireActivity(), WriteProjectActivity::class.java)
+            startActivity(intent)
         }
     }
 }
