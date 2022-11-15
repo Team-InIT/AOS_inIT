@@ -29,7 +29,7 @@ interface SignService {
         @Body body: RequestSignUpCompany
     ): BaseResponse
 
-    // 기업 회원 회원가입
+    // 아이디 중복 체크
     @POST("/isDuplicate")
     suspend fun postIsDuplicate(
         @Body body: RequestIsDuplicate

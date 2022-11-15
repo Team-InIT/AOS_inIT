@@ -40,6 +40,7 @@ class SignUpOrgStepTwoFragment :
         signUpViewModel.setProgress(4)
     }
 
+
     private fun checkTxtState() {
         binding.apply {
             etvOrgType.setOnClickListener {
