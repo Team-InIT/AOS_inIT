@@ -1,4 +1,4 @@
-package com.swu.aos_init.data.response
+package com.swu.aos_init.data.response.response
 
 data class ResponseProject(
     val position:String,

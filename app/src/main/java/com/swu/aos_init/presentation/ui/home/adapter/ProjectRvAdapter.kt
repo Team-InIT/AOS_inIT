@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.swu.aos_init.data.response.ResponseProject
+import com.swu.aos_init.data.response.response.ResponseProject
 import com.swu.aos_init.databinding.ItemProjectBinding
 
 class ProjectRvAdapter : ListAdapter<ResponseProject, ProjectRvAdapter.ProjectViewAdapter>(
