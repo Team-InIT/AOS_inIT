@@ -1,5 +1,6 @@
 package com.swu.aos_init.data.service
 
+import com.swu.aos_init.data.request.RequestIsDuplicate
 import com.swu.aos_init.data.request.RequestLogin
 import com.swu.aos_init.data.request.RequestSignUpCompany
 import com.swu.aos_init.data.request.RequestSignUpGeneral
@@ -26,5 +27,11 @@ interface SignService {
     @POST("/signUp_company")
     suspend fun postSignUpCompany(
         @Body body: RequestSignUpCompany
+    ): BaseResponse
+
+    // 기업 회원 회원가입
+    @POST("/isDuplicate")
+    suspend fun postIsDuplicate(
+        @Body body: RequestIsDuplicate
     ): BaseResponse
 }
