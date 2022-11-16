@@ -44,14 +44,17 @@ class SignUpStepTwoFragment :
     private fun checkIdBtnEvent() {
         binding.btnCheckId.setOnClickListener {
             val isCompanyState = signUpViewModel.selectedMemberType.value == 0
-            val requestIsDuplicate = RequestIsDuplicate(isCompanyState,binding.etvId.text.toString())
+            val requestIsDuplicate =
+                RequestIsDuplicate(isCompanyState, binding.etvId.text.toString())
             signUpViewModel.postIsDuplicate(requestIsDuplicate)
-            signUpViewModel.isDuplicateData.observe(viewLifecycleOwner) {
-                if (it.resultCode == 200) {
-                    if (it.message!!.contains("이미")) isDuplicate(true)
-                    else isDuplicate(false)
-                } else {
-                    isDuplicate(false)
+            signUpViewModel.isDuplicateData.observe(viewLifecycleOwner) { event ->
+                event.getContentIfNotHandled()?.let {
+                    if (it.resultCode == 200) {
+                        if (it.message!!.contains("이미")) isDuplicate(true)
+                        else isDuplicate(false)
+                    } else {
+                        isDuplicate(false)
+                    }
                 }
             }
 
@@ -59,12 +62,12 @@ class SignUpStepTwoFragment :
         }
     }
 
-    private fun isDuplicate(state:Boolean) {
+    private fun isDuplicate(state: Boolean) {
         if (state) {
             binding.tvIdError.visibility = View.VISIBLE
             idCheckState = false
             binding.btnCheckId.isEnabled = true
-        } else{
+        } else {
             binding.tvIdError.visibility = View.INVISIBLE
             idCheckState = true
             binding.btnCheckId.isEnabled = false
