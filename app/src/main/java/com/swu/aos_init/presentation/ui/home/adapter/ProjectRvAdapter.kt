@@ -9,7 +9,7 @@ import com.swu.aos_init.data.response.ResponseProject
 import com.swu.aos_init.databinding.ItemProjectBinding
 
 class ProjectRvAdapter : ListAdapter<ResponseProject, ProjectRvAdapter.ProjectViewAdapter>(
-    headerDiffUtil
+    homeDiffUtil
 ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewAdapter {
@@ -30,7 +30,7 @@ class ProjectRvAdapter : ListAdapter<ResponseProject, ProjectRvAdapter.ProjectVi
     }
 
     companion object {
-        private val headerDiffUtil = object : DiffUtil.ItemCallback<ResponseProject>() {
+        private val homeDiffUtil = object : DiffUtil.ItemCallback<ResponseProject>() {
             override fun areItemsTheSame(
                 oldItem: ResponseProject,
                 newItem: ResponseProject
