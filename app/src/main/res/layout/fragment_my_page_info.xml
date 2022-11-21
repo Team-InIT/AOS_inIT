@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,6 +10,413 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/view_top"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/color_A3A3A3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_mypage_basic_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="@string/mypage_basic_info"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_mypage_basic_info_modify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/pretandard_bold"
+                android:text="@string/mypage_edit"
+                android:textColor="@color/color_1C2E52"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_info" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rectangle_stroke_6f6f6f_radius_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_info">
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_email"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_email_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="26dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="stop@gmail.com"
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_info_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_info_email" />
+
+                <View
+                    android:id="@+id/view_my_page_info_1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/color_C8C8C8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_info_email" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_belong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_group"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_mypage_basic_info_email"
+                    app:layout_constraintTop_toBottomOf="@+id/view_my_page_info_1" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_belong_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="서울여자대학교"
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_info_belong"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_mypage_basic_info_email_answer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_info_belong" />
+
+
+                <View
+                    android:id="@+id/view_my_page_info_2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/color_C8C8C8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_info_belong" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_academic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_academic"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_mypage_basic_info_belong"
+                    app:layout_constraintTop_toBottomOf="@+id/view_my_page_info_2" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_academic_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="재학"
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_info_academic"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_mypage_basic_info_belong_answer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_info_academic" />
+
+
+                <View
+                    android:id="@+id/view_my_page_info_3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/color_C8C8C8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_info_academic" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_gender"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_mypage_basic_info_academic"
+                    app:layout_constraintTop_toBottomOf="@+id/view_my_page_info_3" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_gender_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="여성"
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_info_gender"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_mypage_basic_info_academic_answer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_info_gender" />
+
+                <View
+                    android:id="@+id/view_my_page_kind_4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@color/color_C8C8C8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_info_gender" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_kind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_attention_kind"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_mypage_basic_info_academic"
+                    app:layout_constraintTop_toBottomOf="@+id/view_my_page_kind_4" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_info_kind_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="어플리케이션 ･ 일반소프트웨어 "
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_info_kind"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_mypage_basic_info_academic_answer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_info_kind" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/tv_mypage_basic_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="@string/mypage_link"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_mypage_basic_info"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+            <TextView
+                android:id="@+id/tv_mypage_basic_link_modify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretandard_bold"
+                android:text="@string/mypage_edit"
+                android:textColor="@color/color_1C2E52"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_link"
+                app:layout_constraintEnd_toEndOf="@+id/tv_mypage_basic_info_modify"
+                app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_link" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_mypage_link"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="88dp"
+                android:background="@drawable/rectangle_stroke_6f6f6f_radius_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_link">
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_link_github"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_github"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_github_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="26dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="stoop@github.com"
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_link_github" />
+
+                <View
+                    android:id="@+id/view_my_page_info_4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/color_C8C8C8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_link_github" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_link_notion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_notion"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_mypage_basic_link_github"
+                    app:layout_constraintTop_toBottomOf="@+id/view_my_page_info_4" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_notion_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="stop@notion.com"
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_link_notion"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_mypage_basic_github_answer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_link_notion" />
+
+                <View
+                    android:id="@+id/view_my_page_info_5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/color_C8C8C8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_link_notion" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_link_blog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_blog"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_mypage_basic_link_notion"
+                    app:layout_constraintTop_toBottomOf="@+id/view_my_page_info_5" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_blog_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="stop@blog.com"
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_link_blog"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_mypage_basic_notion_answer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_link_blog" />
+
+                <View
+                    android:id="@+id/view_my_page_info_6"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/color_C8C8C8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mypage_basic_link_blog" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_link_kakao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/mypage_blog"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_mypage_basic_link_notion"
+                    app:layout_constraintTop_toBottomOf="@+id/view_my_page_info_6" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_basic_blog_kakao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="stop@blog.com"
+                    android:textColor="@color/color_6F6F6F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_link_kakao"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_mypage_basic_notion_answer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_mypage_basic_link_kakao" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
