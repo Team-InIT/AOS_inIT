@@ -1,13 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_my_page_main_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/color_1C2E52"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_my_page_main_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:text="@string/mypage"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/iv_mypage_setting"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_my_page_main_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_my_page_main_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/ic_settings" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_my_page_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_my_page_main_title" />
+
+            <TextView
+                android:id="@+id/tv_my_page_modify_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rectangle_stroke_a3a3a3_radius_14"
+                android:fontFamily="@font/pretendard_medium"
+                android:paddingStart="10dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="4dp"
+                android:text="프로필 수정"
+                android:textColor="@color/color_A3A3A3"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/iv_my_page_profile"
+                app:layout_constraintStart_toStartOf="@+id/iv_my_page_profile"
+                app:layout_constraintTop_toBottomOf="@+id/iv_my_page_profile" />
+
+            <TextView
+                android:id="@+id/tv_my_page_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="이름"
+                android:layout_marginTop="28dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_my_page_profile"
+                app:layout_constraintTop_toBottomOf="@+id/cl_my_page_main_title" />
+
+
+            <TextView
+                android:id="@+id/tv_my_page_postion"
+                android:text="DEVELOPER"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_medium"
+                android:textColor="@color/color_1C2E52"
+                android:layout_marginStart="8dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_my_page_profile_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_my_page_profile_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_my_page_profile_name"
+                tools:text="DEVELOPER" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:textColor="@color/black"
+                android:text="24글자로한정두자24글자로한정두자24글자로한정두자24글자로한정두자24글자로한정두자24글자로한정두자"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_my_page_profile_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_my_page_profile_name" />
+
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tv_my_page_modify_profile"
+                app:tabGravity="fill"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/color_1C2E52"
+                app:tabTextColor="@color/black" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tab_home" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vp_home" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

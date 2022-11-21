@@ -144,4 +144,25 @@
     <string name="open_project_detail_description">상세설명</string>
     <string name="open_project_select">선택해주세요</string>
     <string name="open_project_on_off">온/오프라인 여부</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--마이페이지-->
+    <string name="mypage_basic_info">기본정보</string>
+    <string name="mypage_edit">수정</string>
+    <string name="mypage_email">이메일</string>
+    <string name="mypage_group">소속</string>
+    <string name="mypage_academic">학적</string>
+    <string name="mypage_gender">성별</string>
+    <string name="mypage_attention_kind">관심분야</string>
+    <string name="mypage_link">링크</string>
+    <string name="mypage_github">깃허브</string>
+    <string name="mypage_notion">노션</string>
+    <string name="mypage_blog">블로그</string>
+    <string name="mypage_open_kakao">오픈카카오톡</string>
+    <string name="mypage_join">참여</string>
+    <string name="mypage_upload">업로드</string>
+    <string name="mypage_approve">승인대기</string>
+    <string name="mypage_zzim">찜</string>
 </resources>
