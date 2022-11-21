@@ -3,6 +3,8 @@ package com.swu.aos_init.presentation.util
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.swu.aos_init.databinding.ItemBottomSheetDefaultListBinding
 
@@ -10,6 +12,7 @@ class SelectedTxtAdapter(val checkBtnState: () -> Unit) :
     RecyclerView.Adapter<SelectedTxtAdapter.SelectedTxtViewHolder>() {
 
     var itemList = mutableListOf<SelectedTxtData>()
+
 
     class SelectedTxtViewHolder(private val binding: ItemBottomSheetDefaultListBinding) :
         RecyclerView.ViewHolder(binding.root) {

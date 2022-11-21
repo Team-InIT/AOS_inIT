@@ -89,7 +89,7 @@ class SignUpOrgStepTwoFragment :
         }
     }
 
-    override fun getSelection(selectedTxt: String, selectedPosition: Int) {
+    override fun getSelection(selectedTxt: String, selectedPosition: Int, type : Int) {
         binding.etvOrgType.text = selectedTxt
         signUpViewModel.cType.value = selectedPosition
         orgTypeState = true

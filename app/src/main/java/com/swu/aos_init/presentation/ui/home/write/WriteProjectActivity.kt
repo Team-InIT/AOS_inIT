@@ -20,8 +20,8 @@ import java.util.*
 
 class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.activity_write_project),BottomSheetDefaultUtil.BottomSheetClickListener {
 
-    private val signUpViewModel: SignUpViewModel by viewModels()
     private var orgTypeState = false
+    private var kindState = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +30,7 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
         initProjectStartDatePickerDialog()
         initProjectEndDatePickerDialog()
         bottomSheetClickListener()
+        finishBtnClickListener()
     }
 
     //뒤로가기 버튼
@@ -100,7 +101,6 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
     private fun initBottomSheet(type : Int, tag: String) {
         val bottomSheet = BottomSheetDefaultUtil(type)
         bottomSheet.setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomBottomSheet)
-        //요기 ㅠ
         bottomSheet.show(supportFragmentManager, tag)
     }
 
@@ -108,13 +108,27 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
         binding.tvProjectTypeAnswer.setOnClickListener {
             initBottomSheet(1, "PROJECT_TYPE")
         }
-        binding.tvProjectTypeAnswer.setOnClickListener {
+        binding.tvProjectTypeKind.setOnClickListener {
             initBottomSheet(2, "PROJECT_KIND")
         }
     }
 
-    override fun getSelection(selectedTxt: String, selectedPosition: Int) {
-        binding.tvProjectTypeAnswer.text = selectedTxt
-        orgTypeState = true
+    override fun getSelection(selectedTxt: String, selectedPosition: Int, type : Int) {
+        if(type == 1) {
+            binding.tvProjectTypeAnswer.text = selectedTxt
+            orgTypeState = true
+        }
+        else if (type == 2) {
+            binding.tvProjectTypeKind.text = selectedTxt
+            kindState = true
+        }
+    }
+
+
+    //완료버튼 클릭 리스너
+    private fun finishBtnClickListener() {
+        binding.btnFinish.setOnClickListener {
+            finish()
+        }
     }
 }
