@@ -125,9 +125,12 @@ class SignUpDefaultStepTwoFragment :
             requestSignUpGeneral
         )
 
-        signUpViewModel.signUpGeneralData.observe(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-            if (it.resultCode == 200) activity?.finish()
+        signUpViewModel.signUpGeneralData.observe(viewLifecycleOwner) { event ->
+            event.getContentIfNotHandled()?.let {
+                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                if (it.resultCode == 200) activity?.finish()
+            }
+
         }
     }
 }

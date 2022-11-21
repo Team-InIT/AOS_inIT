@@ -1,19 +1,18 @@
 package com.swu.aos_init.presentation.ui.sign.signup.common
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.swu.aos_init.R
+import com.swu.aos_init.data.request.RequestIsDuplicate
 import com.swu.aos_init.databinding.FragmentSignupStepTwoBinding
 import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
 import com.swu.aos_init.presentation.util.EditTextValidate
 
-// TODO 서버통신에서 중복체크 후 idCheckState 를 설정할 예정
 class SignUpStepTwoFragment :
     BaseFragment<FragmentSignupStepTwoBinding>(R.layout.fragment_signup_step_two) {
 
@@ -33,11 +32,47 @@ class SignUpStepTwoFragment :
         isRegularPw()
         isSamePw()
 
+        checkIdBtnEvent()
+
         initNextBtnEvent()
     }
 
     private fun setProgressValue() {
         signUpViewModel.setProgress(2)
+    }
+
+    private fun checkIdBtnEvent() {
+        binding.btnCheckId.setOnClickListener {
+            val isCompanyState = signUpViewModel.selectedMemberType.value == 0
+            val requestIsDuplicate =
+                RequestIsDuplicate(isCompanyState, binding.etvId.text.toString())
+            signUpViewModel.postIsDuplicate(requestIsDuplicate)
+            signUpViewModel.isDuplicateData.observe(viewLifecycleOwner) { event ->
+                event.getContentIfNotHandled()?.let {
+                    if (it.resultCode == 200) {
+                        if (it.message!!.contains("이미")) isDuplicate(true)
+                        else isDuplicate(false)
+                    } else {
+                        isDuplicate(false)
+                    }
+                }
+            }
+
+            checkBtnState()
+        }
+    }
+
+    private fun isDuplicate(state: Boolean) {
+        if (state) {
+            binding.tvIdError.visibility = View.VISIBLE
+            idCheckState = false
+            binding.btnCheckId.isEnabled = true
+        } else {
+            binding.tvIdError.visibility = View.INVISIBLE
+            idCheckState = true
+            binding.btnCheckId.isEnabled = false
+            Toast.makeText(requireContext(), "사용 가능한 아이디입니다", Toast.LENGTH_SHORT).show()
+        }
     }
 
     // 아이디 정규식 체크
@@ -46,9 +81,14 @@ class SignUpStepTwoFragment :
             idState = EditTextValidate.setValidate("id", it!!, binding.etvId.text.toString())
             if (idState) {
                 binding.tvIdRule.setTextColor(resources.getColor(R.color.color_000000, null))
+                checkBtnState()
             } else {
                 binding.tvIdRule.setTextColor(resources.getColor(R.color.color_FF0000, null))
+                checkBtnState()
             }
+
+            binding.btnCheckId.isEnabled = true
+            idCheckState = false
         }
     }
 
@@ -81,17 +121,20 @@ class SignUpStepTwoFragment :
             if (pwState) {
                 if (pwConfirmState) { // 일치
                     binding.tvPwError.setTextColor(resources.getColor(R.color.color_1C2E52, null))
-                    binding.tvPwError.text = resources.getString(R.string.sign_up_step_two_pw_correct)
+                    binding.tvPwError.text =
+                        resources.getString(R.string.sign_up_step_two_pw_correct)
                 } else { // 불일치
                     binding.tvPwError.setTextColor(resources.getColor(R.color.color_FF0000, null))
                     binding.tvPwError.text = resources.getString(R.string.sign_up_step_two_pw_error)
                 }
 
                 binding.tvPwError.visibility = View.VISIBLE
+                checkBtnState()
 
-            } else binding.tvPwError.visibility = View.INVISIBLE
-
-            checkBtnState()
+            } else {
+                binding.tvPwError.visibility = View.INVISIBLE
+                checkBtnState()
+            }
         }
 
         // 비밀번호 확인 -> 비밀번호
@@ -102,32 +145,38 @@ class SignUpStepTwoFragment :
             if (pwState) {
                 if (pwConfirmState) { // 일치
                     binding.tvPwError.setTextColor(resources.getColor(R.color.color_1C2E52, null))
-                    binding.tvPwError.text = resources.getString(R.string.sign_up_step_two_pw_correct)
+                    binding.tvPwError.text =
+                        resources.getString(R.string.sign_up_step_two_pw_correct)
+                    checkBtnState()
                 } else { // 불일치
                     binding.tvPwError.setTextColor(resources.getColor(R.color.color_FF0000, null))
                     binding.tvPwError.text = resources.getString(R.string.sign_up_step_two_pw_error)
+                    checkBtnState()
                 }
 
                 binding.tvPwError.visibility = View.VISIBLE
 
-            } else binding.tvPwError.visibility = View.INVISIBLE
-
-            checkBtnState()
+            } else {
+                binding.tvPwError.visibility = View.INVISIBLE
+                checkBtnState()
+            }
         }
     }
 
     private fun checkBtnState() {
         binding.btnSignupTwo.isEnabled =
-            idState == true && pwState && true && pwConfirmState == true
+            idState == true && pwState && true && pwConfirmState == true && idCheckState == true
     }
 
     private fun initNextBtnEvent() {
         val type = signUpViewModel.getSelectedMemberType()
         binding.btnSignupTwo.setOnClickListener {
             if (type == 0) {
-                this.findNavController().navigate(R.id.action_signUpStepTwoFragment_to_signUpOrgStepOneFragment)
+                this.findNavController()
+                    .navigate(R.id.action_signUpStepTwoFragment_to_signUpOrgStepOneFragment)
             } else {
-                this.findNavController().navigate(R.id.action_signUpStepTwoFragment_to_signUpDefaultStepOneFragment)
+                this.findNavController()
+                    .navigate(R.id.action_signUpStepTwoFragment_to_signUpDefaultStepOneFragment)
             }
 
             setCommonSignUpData()

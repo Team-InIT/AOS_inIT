@@ -5,10 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.swu.aos_init.data.request.RequestIsDuplicate
 import com.swu.aos_init.data.request.RequestSignUpCompany
 import com.swu.aos_init.data.request.RequestSignUpGeneral
 import com.swu.aos_init.data.response.BaseResponse
 import com.swu.aos_init.data.service.ServiceCreator
+import com.swu.aos_init.presentation.util.Event
 import kotlinx.coroutines.launch
 
 class SignUpViewModel : ViewModel() {
@@ -37,13 +39,17 @@ class SignUpViewModel : ViewModel() {
     val cBoss = MutableLiveData<String>()
     val cAddress = MutableLiveData<String>()
 
-    private val _signUpGeneralData = MutableLiveData<BaseResponse>()
-    val signUpGeneralData: LiveData<BaseResponse>
+    private val _signUpGeneralData = MutableLiveData<Event<BaseResponse>>()
+    val signUpGeneralData: LiveData<Event<BaseResponse>>
         get() = _signUpGeneralData
 
-    private val _signUpCompanyData = MutableLiveData<BaseResponse>()
-    val signUpCompanyData: LiveData<BaseResponse>
+    private val _signUpCompanyData = MutableLiveData<Event<BaseResponse>>()
+    val signUpCompanyData: LiveData<Event<BaseResponse>>
         get() = _signUpCompanyData
+
+    private val _isDuplicateData = MutableLiveData<Event<BaseResponse>>()
+    val isDuplicateData: LiveData<Event<BaseResponse>>
+        get() = _isDuplicateData
 
     private val _selectedMemberType = MutableLiveData<Int>()
     val selectedMemberType: LiveData<Int> = _selectedMemberType
@@ -73,7 +79,7 @@ class SignUpViewModel : ViewModel() {
         viewModelScope.launch {
             kotlin.runCatching { ServiceCreator.signService.postSignUpGeneral(requestSignUpGeneral) }
                 .onSuccess {
-                    _signUpGeneralData.value = it
+                    _signUpGeneralData.value = Event(it)
                     Log.d("_signUpGeneralData", "서버 통신 성공")
                 }
                 .onFailure {
@@ -87,11 +93,25 @@ class SignUpViewModel : ViewModel() {
         viewModelScope.launch {
             kotlin.runCatching { ServiceCreator.signService.postSignUpCompany(requestSignUpCompany) }
                 .onSuccess {
-                    _signUpCompanyData.value = it
+                    _signUpCompanyData.value = Event(it)
                     Log.d("_signUpCompanyData", "서버 통신 성공")
                 }
                 .onFailure {
                     Log.d("_signUpCompanyData", "서버 통신 실패")
+                }
+        }
+    }
+
+    // 아이디 중복 체크
+    fun postIsDuplicate(requestIsDuplicate: RequestIsDuplicate) {
+        viewModelScope.launch {
+            kotlin.runCatching { ServiceCreator.signService.postIsDuplicate(requestIsDuplicate) }
+                .onSuccess {
+                    _isDuplicateData.value = Event(it)
+                    Log.d("_isDuplicateData", "서버 통신 성공")
+                }
+                .onFailure {
+                    Log.d("_isDuplicateData", "서버 통신 실패")
                 }
         }
     }
