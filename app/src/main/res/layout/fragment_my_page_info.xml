@@ -233,7 +233,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/pretendard_regular"
-                    android:text="어플리케이션 ･ 일반소프트웨어 "
+                    android:text="어플리케이션 ･ 일반소프트웨어"
                     android:textColor="@color/color_6F6F6F"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_mypage_basic_info_kind"

@@ -158,4 +158,8 @@
     <string name="mypage_notion">노션</string>
     <string name="mypage_blog">블로그</string>
     <string name="mypage_open_kakao">오픈카카오톡</string>
+    <string name="mypage_join">참여</string>
+    <string name="mypage_upload">업로드</string>
+    <string name="mypage_approve">승인대기</string>
+    <string name="mypage_zzim">찜</string>
 </resources>
