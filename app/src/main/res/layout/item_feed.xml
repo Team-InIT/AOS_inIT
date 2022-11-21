@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="FeedData"
+            type="com.swu.aos_init.data.response.feed.ResponseFeed" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/color_E8E8E8"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_view_image"
+                    android:layout_width="67dp"
+                    android:layout_height="67dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_feed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@color/black" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="11dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/card_view_image">
+
+                    <TextView
+                        android:id="@+id/tv_feed_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/pretendard_semibold"
+                        android:maxLines="1"
+                        android:text="@{FeedData.title}"
+                        android:textColor="@color/color_000000"
+                        android:textSize="15sp"
+                        tools:text="플투" />
+
+                    <TextView
+                        android:id="@+id/tv_feed_descrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:maxLines="1"
+                        android:text="@{FeedData.description}"
+                        android:textColor="@color/color_000000"
+                        android:textSize="12sp"
+                        tools:text="대학교 및 소모임 단위의 번개 매칭 서비스" />
+
+                    <TextView
+                        android:id="@+id/tv_feed_stack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:maxLines="1"
+                        android:text="@{FeedData.stack}"
+                        android:textColor="@color/color_1C2E52"
+                        android:textSize="10sp"
+                        tools:text="#android #kotlin #MVVM" />
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
