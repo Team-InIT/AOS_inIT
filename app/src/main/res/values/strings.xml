@@ -110,6 +110,9 @@
 
     <!-- Feed -->
     <string name="feed">피드</string>
+    <string name="feed_project_kind">프로젝트 종류 ･ </string>
+    <string name="feed_project_type">프로젝트 타입 ･ </string>
+    <string name="feed_stack">기술스택</string>
 
     <!-- Alarm -->
     <string name="alarm">알림</string>
