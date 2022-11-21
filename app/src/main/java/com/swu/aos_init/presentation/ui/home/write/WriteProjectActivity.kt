@@ -30,6 +30,7 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
         initProjectStartDatePickerDialog()
         initProjectEndDatePickerDialog()
         bottomSheetClickListener()
+        finishBtnClickListener()
     }
 
     //뒤로가기 버튼
@@ -123,10 +124,11 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
         }
     }
 
-    //버튼 활성화
-    private fun isBtnActive() {
-        
+
+    //완료버튼 클릭 리스너
+    private fun finishBtnClickListener() {
+        binding.btnFinish.setOnClickListener {
+            finish()
+        }
     }
-
-
 }
