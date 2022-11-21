@@ -12,7 +12,7 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/ic_signup_white.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/ic_writing.xml" value="0.1235" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_e6e6e6_radius_10.xml" value="0.14" />
-        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_main.xml" value="0.536" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signin.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signup.xml" value="0.264" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_write_project.xml" value="0.2" />
@@ -37,41 +37,35 @@
         <entry key="app/src/main/res/drawable/rectangle_stroke_cecece_radius_10.xml" value="0.182" />
         <entry key="app/src/main/res/drawable/rectangle_stroke_e6e6e6_radius_10.xml" value="0.167" />
         <entry key="app/src/main/res/drawable/selector_signin_btn.xml" value="0.167" />
-        <entry key="app/src/main/res/drawable/selector_signin_org_btn.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/selector_signup_check_id.xml" value="0.157" />
         <entry key="app/src/main/res/drawable/selector_signup_default_btb.xml" value="0.1815" />
         <entry key="app/src/main/res/drawable/selector_signup_default_btn.xml" value="0.1815" />
         <entry key="app/src/main/res/drawable/selector_signup_default_one_btn.xml" value="0.182" />
         <entry key="app/src/main/res/drawable/selector_signup_default_position_btn.xml" value="0.186" />
         <entry key="app/src/main/res/drawable/selector_signup_design_btn.xml" value="0.186" />
-        <entry key="app/src/main/res/drawable/selector_signup_id_check_btn.xml" value="0.193" />
         <entry key="app/src/main/res/drawable/selector_signup_org_btn.xml" value="0.1815" />
         <entry key="app/src/main/res/drawable/selector_signup_plan_btn.xml" value="0.186" />
         <entry key="app/src/main/res/drawable/selector_signup_position_develop_btn.xml" value="0.186" />
         <entry key="app/src/main/res/drawable/selector_signup_position_plan_btn.xml" value="0.186" />
         <entry key="app/src/main/res/drawable/selector_signup_type_btn.xml" value="0.1815" />
-        <entry key="app/src/main/res/layout/activity_home_recommend.xml" value="0.2244165170556553" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.10677083333333333" />
-        <entry key="app/src/main/res/layout/activity_signin.xml" value="0.3852140077821012" />
+        <entry key="app/src/main/res/layout/activity_signin.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.18026428222656254" />
         <entry key="app/src/main/res/layout/activtiy_signin.xml" value="0.4825949367088608" />
         <entry key="app/src/main/res/layout/bottom_sheet_default.xml" value="0.24010416666666667" />
-        <entry key="app/src/main/res/layout/dialog_bottom_sheet_default.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/dialog_bottom_sheet_default.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/fragment_alarm.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.14114583333333333" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2865178426106771" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.14114583333333333" />
-        <entry key="app/src/main/res/layout/fragment_signup_default_step_one.xml" value="0.25346784363177804" />
+        <entry key="app/src/main/res/layout/fragment_signup_default_step_one.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_signup_default_step_two.xml" value="0.13011728922526045" />
         <entry key="app/src/main/res/layout/fragment_signup_org_step_one.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_signup_org_step_two.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_signup_step_one.xml" value="0.44454976303317534" />
         <entry key="app/src/main/res/layout/fragment_signup_step_two.xml" value="0.24427083333333333" />
-        <entry key="app/src/main/res/layout/item_belong_project.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_bottom_sheet_default_list.xml" value="0.24010416666666667" />
-        <entry key="app/src/main/res/layout/item_project.xml" value="0.3406443277994792" />
-        <entry key="app/src/main/res/layout/item_recommend_project.xml" value="0.24010416666666667" />
         <entry key="app/src/main/res/menu/menu_main_bottom_nav.xml" value="0.14114583333333333" />
       </map>
     </option>

@@ -5,15 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.DialogBottomSheetDefaultBinding
+import com.swu.aos_init.presentation.ui.sign.signin.SignInViewModel
 
 class BottomSheetDefaultUtil(val type: Int) :
     BottomSheetDialogFragment() {
+
 
     private var _binding: DialogBottomSheetDefaultBinding? = null
     val binding get() = _binding!!
@@ -23,7 +26,7 @@ class BottomSheetDefaultUtil(val type: Int) :
     private lateinit var selectedTxtAdapter: SelectedTxtAdapter
 
     interface BottomSheetClickListener {
-        fun getSelection(selectedTxt: String, selectedPosition:Int)
+        fun getSelection(selectedTxt: String, selectedPosition: Int, type : Int)
     }
 
     override fun onAttach(context: Context) {
@@ -137,7 +140,11 @@ class BottomSheetDefaultUtil(val type: Int) :
         binding.btnDone.setOnClickListener {
             val myItemList = selectedTxtAdapter.itemList
             val selectedPosition = myItemList.indexOf(myItemList.find { it.selectedState == true })
-            bottomSheetClickListener.getSelection(selectedTxtAdapter.getSelectedTxt(), selectedPosition)
+            bottomSheetClickListener.getSelection(
+                selectedTxtAdapter.getSelectedTxt(),
+                selectedPosition,
+                type
+            )
             dismiss()
         }
     }
@@ -150,6 +157,7 @@ class BottomSheetDefaultUtil(val type: Int) :
         super.onDestroyView()
         _binding = null
     }
+
 
     companion object {
         const val ORG_TYPE = 0
