@@ -165,4 +165,12 @@
     <string name="mypage_upload">업로드</string>
     <string name="mypage_approve">승인대기</string>
     <string name="mypage_zzim">찜</string>
+
+    <!--마이페이지 설정-->
+    <string name="mypage_change_password">비밀번호 재설정</string>
+    <string name="mypage_alarm_setting">알림 설정</string>
+    <string name="mypage_app_info">앱 정보</string>
+    <string name="mypage_app_logout">로그아웃</string>
+    <string name="mypage_app_quit">탈퇴</string>
+    <string name="mypage_setting">내 설정</string>
 </resources>
