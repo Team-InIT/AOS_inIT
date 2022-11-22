@@ -107,6 +107,7 @@
 
     <!-- Search -->
     <string name="search">검색</string>
+    <string name="search_hint">키워드를 입력해주세요</string>
 
     <!-- Feed -->
     <string name="feed">피드</string>
