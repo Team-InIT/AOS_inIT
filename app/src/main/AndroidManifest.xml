@@ -33,6 +33,9 @@
             android:name=".presentation.ui.sign.signup.SignUpActivity"
             android:exported="true" />
         <activity android:name=".presentation.ui.home.recommend.HomeRecommendActivity" />
+
+        <activity android:name=".presentation.ui.feed.write.WritingFeedActivity"/>
+
     </application>
 
 </manifest>

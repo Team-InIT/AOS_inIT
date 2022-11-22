@@ -113,6 +113,18 @@
     <string name="feed_project_kind">프로젝트 종류 ･ </string>
     <string name="feed_project_type">프로젝트 타입 ･ </string>
     <string name="feed_stack">기술스택</string>
+    <string name="feed_writing">피드 작성</string>
+    <string name="feed_write_project_select">프로젝트 선택</string>
+    <string name="feed_write_project_select_hint">선택해주세요</string>
+    <string name="feed_write_project_name">프로젝트 이름</string>
+    <string name="feed_write_project_type">프로젝트 타입</string>
+    <string name="feed_write_project_kind">프로젝트 종류</string>
+    <string name="feed_write_link">참고 링크</string>
+    <string name="feed_write_stack">기술 스택</string>
+    <string name="feed_write_stack_hint">ex ) javascript</string>
+    <string name="feed_write_detail_description">상세설명</string>
+
+
 
     <!-- Alarm -->
     <string name="alarm">알림</string>
