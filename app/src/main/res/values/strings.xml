@@ -6,6 +6,11 @@
     <string name="bottom_sheet_default_org_type">기업형태</string>
     <string name="bottom_sheet_default_done">완료</string>
 
+    <string name="bottom_sheet_project_type">프로젝트 타입</string>
+    <string name="bottom_sheet_project_kind">프로젝트 종류</string>
+    <string name="bottom_sheet_tech_stack">기술스택</string>
+
+
     <!-- Main -->
 
     <!-- Sign -->
@@ -123,6 +128,9 @@
     <string name="feed_write_stack">기술 스택</string>
     <string name="feed_write_stack_hint">ex ) javascript</string>
     <string name="feed_write_detail_description">상세설명</string>
+
+
+    <!-- Bottom Sheet -->
 
 
 

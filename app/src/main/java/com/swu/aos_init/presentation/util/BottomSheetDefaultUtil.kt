@@ -5,14 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.DialogBottomSheetDefaultBinding
-import com.swu.aos_init.presentation.ui.sign.signin.SignInViewModel
 
 class BottomSheetDefaultUtil(val type: Int) :
     BottomSheetDialogFragment() {
