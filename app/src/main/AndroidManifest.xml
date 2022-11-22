@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MyPageSettingActivity"
+            android:name=".presentation.ui.mypage.MyPageSettingActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.home.write.WriteProjectActivity"
