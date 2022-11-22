@@ -248,8 +248,8 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_view_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="8dp"
@@ -257,8 +257,11 @@
                     app:strokeWidth="1dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_feed_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
                         android:padding="26dp"
                         android:src="@drawable/ic_camera" />
                 </com.google.android.material.card.MaterialCardView>
@@ -267,8 +270,8 @@
                     android:id="@+id/et_project_detail_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
                     android:fontFamily="@font/pretendard_regular"
                     android:gravity="start"
@@ -279,7 +282,7 @@
                     android:paddingVertical="20dp"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_finish"
