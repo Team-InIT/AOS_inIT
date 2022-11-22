@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -49,7 +49,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -57,46 +57,252 @@
             app:layout_constraintVertical_bias="1.0"
             tools:layout_editor_absoluteX="44dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:id="@+id/cl_open_feed_bottom"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_project_name"
+                    android:id="@+id/tv_feed_project_select"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="24dp"
                     android:fontFamily="@font/pretandard_bold"
-                    android:text="@string/open_project_name"
+                    android:text="@string/feed_write_project_select"
                     android:textColor="@color/color_191919"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textSize="14sp" />
 
-                <EditText
-                    android:id="@+id/ev_project_name_answer"
+                <TextView
+                    android:id="@+id/tv_feed_project_select_open"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
-                    android:hint="@string/open_project_name"
+                    android:hint="@string/feed_write_project_select_hint"
                     android:maxLines="1"
                     android:paddingHorizontal="18dp"
                     android:paddingVertical="16dp"
                     android:textAlignment="center"
                     android:textColor="@color/color_000000"
                     android:textColorHint="@color/color_828282"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="@+id/tv_project_name"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_project_name" />
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/feed_write_project_name"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/ev_feed_project_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/feed_write_project_name"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/feed_write_project_type"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_type_open"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/feed_write_project_select_hint"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_kind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/feed_write_project_kind"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_kind_open"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/feed_write_project_select_hint"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/feed_write_link"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/ev_feed_project_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/feed_write_link"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_stack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/feed_write_stack"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_stack_open"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:hint="@string/feed_write_stack_hint"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="16dp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/color_000000"
+                    android:textColorHint="@color/color_828282"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/et_project_stack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_project_stack" />
+
+                <TextView
+                    android:id="@+id/tv_feed_project_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:text="@string/feed_write_detail_description"
+                    android:textColor="@color/color_191919"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_view_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:strokeColor="@color/color_E6E6E6"
+                    app:strokeWidth="1dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="26dp"
+                        android:src="@drawable/ic_camera" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <EditText
+                    android:id="@+id/et_project_detail_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:gravity="start"
+                    android:hint="@string/open_project_detail_description"
+                    android:includeFontPadding="false"
+                    android:minLines="11"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="20dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/rectangle_fill_1c2e52_radius_10"
+                    android:enabled="false"
+                    android:fontFamily="@font/pretandard_bold"
+                    android:paddingVertical="18dp"
+                    android:text="@string/sign_up_org_step_two_done"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_open_project_introduction" />
+
+            </LinearLayout>
 
 
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
