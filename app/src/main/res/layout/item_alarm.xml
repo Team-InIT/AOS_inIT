@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="ProjectData"
-            type="com.swu.aos_init.data.response.ResponseProject" />
+            name="Alarm"
+            type="com.swu.aos_init.data.response.ResponseAlarm" />
     </data>
 
 
@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:paddingVertical="20dp"
+            android:src="@{Alarm.src}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -36,6 +37,7 @@
             android:paddingEnd="16dp"
             android:textColor="@color/black"
             android:textSize="13dp"
+            android:text="@{Alarm.title}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -51,6 +53,7 @@
             android:fontFamily="@font/pretendard_regular"
             android:textColor="@color/color_6F6F6F"
             android:textSize="10dp"
+            android:text="@{Alarm.time}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="2022.04.28 오후 6: 01" />
