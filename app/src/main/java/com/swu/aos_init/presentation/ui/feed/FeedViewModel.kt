@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class FeedViewModel : ViewModel() {
 
+
     // 타입 필터 데이터
     private var _typeFilterList = MutableLiveData<MutableList<Int>>()
     val typeFilterList: LiveData<MutableList<Int>> = _typeFilterList

@@ -2,11 +2,13 @@ package com.swu.aos_init.presentation.ui.feed.bottomsheet
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,6 +51,8 @@ class TechBottomSheet() : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         editTextWatcher()
+        finishBtnListener()
+        editTextClickListener()
     }
 
     private fun editTextWatcher() = with(binding) {
@@ -134,5 +138,22 @@ class TechBottomSheet() : BottomSheetDialogFragment() {
                 }
             })
     }
+
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun finishBtnListener() {
+        binding.btnDone.setOnClickListener {
+            dismiss()
+        }
+
+    }
+
+    private fun editTextClickListener() {
+        binding.etStack.setOnClickListener {
+            binding.etStack.isSelected = true
+        }
+    }
+
+    override fun getTheme(): Int = R.style.BottomSheetDialogTheme
 
 }
