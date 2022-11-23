@@ -20,9 +20,9 @@ import com.swu.aos_init.databinding.DialogBottomSheetTechBinding
 import com.swu.aos_init.presentation.ui.feed.adapter.StackAdapter
 import com.swu.aos_init.presentation.util.AutoClearedValue
 
-class TechBottomSheet(): BottomSheetDialogFragment() {
+class TechBottomSheet() : BottomSheetDialogFragment() {
     private var binding by AutoClearedValue<DialogBottomSheetTechBinding>()
-    private lateinit var stackAdapter : StackAdapter
+    private lateinit var stackAdapter: StackAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,20 +56,53 @@ class TechBottomSheet(): BottomSheetDialogFragment() {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(p0: Editable?) {
-                val input = binding.etStack.text.toString()
-                searchingSubway(input)
+                var input = binding.etStack.text.toString()
+
+                val lowerInput = input.toLowerCase()
+                val upperInput = input.toUpperCase()
+
+                searchingTech(lowerInput)
+                searchingTech(upperInput)
+
             }
         })
     }
 
 
-
-    private fun searchingSubway(text1: String) {
+    private fun searchingTech(text1: String) {
         val tmpList = ArrayList<ResponseStack>()
-        val searchSubwayList = listOf(ResponseStack("Agit"), ResponseStack("Aws Athena"))
-        for (i in 0 until searchSubwayList.size) {
-            if (searchSubwayList.get(i).name.contains(text1)) {
-                tmpList.add(searchSubwayList.get(i))
+        val searchStackList = listOf(
+            ResponseStack("Agit"),
+            ResponseStack("Aws Athena"),
+            ResponseStack("AWS MariaDB"),
+            ResponseStack("BackboneJS"),
+            ResponseStack("Cubrid"),
+            ResponseStack("Dagger"),
+            ResponseStack("Flutter"),
+            ResponseStack("Flask"),
+            ResponseStack("Istio"),
+            ResponseStack("Jotai"),
+            ResponseStack("Kibana"),
+            ResponseStack("Karma"),
+            ResponseStack("MySQL"),
+            ResponseStack("NestJS"),
+            ResponseStack("Sinon"),
+            ResponseStack("Python"),
+            ResponseStack("Playwright"),
+            ResponseStack("Packer"),
+            ResponseStack("Presto"),
+            ResponseStack("Retrofit"),
+            ResponseStack("Rundeck"),
+            ResponseStack("Ruby"),
+            ResponseStack("Swift"),
+            ResponseStack("Spring"),
+            ResponseStack("Slack"),
+            ResponseStack("Tailwind"),
+            ResponseStack("Typescript"),
+            )
+        for (i in 0 until searchStackList.size) {
+            if (searchStackList.get(i).name.contains(text1)) {
+                tmpList.add(searchStackList.get(i))
             }
         }
         stackAdapter = StackAdapter()
