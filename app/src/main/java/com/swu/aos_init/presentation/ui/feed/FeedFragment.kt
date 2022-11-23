@@ -4,7 +4,6 @@ import KindBottomSheet
 import TypeBottomSheet
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.swu.aos_init.R
@@ -33,7 +32,6 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         moveToFeedWrite()
         initBottomSheetEvent()
     }
-
 
     // TODO: 추후 서버 통신 진행 예정
     private fun initAdapter() {
@@ -94,7 +92,6 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
         binding.tvProjectStack.setOnClickListener {
             val list = feedViewModel.stackFilterList
-            Log.d("제발", list.toString())
             TechBottomSheet(list).show(parentFragmentManager, "STACK_SHEET")
         }
     }

@@ -28,7 +28,6 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
     private val feedViewModel: FeedViewModel by viewModels()
     private var binding by AutoClearedValue<DialogBottomSheetTechBinding>()
     private lateinit var stackAdapter: StackAdapter
-    //private val chipList: ArrayList<String> = java.util.ArrayList<String>()
 
 
 
@@ -57,10 +56,8 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("뭘까", list.toString())
         binding.chipStack.removeAllViews()
         editTextWatcher()
-        //finishBtnListener()
         editTextClickListener()
         initDoneBtn()
         initChipBtn()
@@ -177,6 +174,9 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
             }
             if (list != null) {
                 feedViewModel.stackFilterList = list
+                feedViewModel.isStackSelect.value = true
+            } else {
+                feedViewModel.isStackSelect.value = false
             }
             dismiss()
         }
