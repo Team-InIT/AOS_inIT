@@ -16,8 +16,9 @@ import com.google.firebase.storage.StorageReference
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivityWriteFeedBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.util.BottomSheetDefaultUtil
 
-class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.activity_write_feed) {
+class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.activity_write_feed),BottomSheetDefaultUtil.BottomSheetClickListener {
 
     // 2. 갤러리에서 이미지를 받이오기 위한 런처
     private var activityResultLauncher: ActivityResultLauncher<Intent> =
@@ -40,6 +41,7 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
         mStorageRef = FirebaseStorage.getInstance().reference // storage 변수 선언
         initBackBtn()
         initImgPickEvent()
+        initBottomSheetEvent()
     }
 
     private fun initBackBtn() {
@@ -70,7 +72,7 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
             .addOnSuccessListener {   // Get a URL to the uploaded content
                 riversRef.downloadUrl.addOnSuccessListener { // 파이어베이스 업로드 성공
                     dismissLoadingDialog()
-                    binding.ivFeedImg.setPadding(0,0,0,0)
+                    binding.ivFeedImg.setPadding(0, 0, 0, 0)
                     Glide.with(this).load(uri).into(binding.ivFeedImg)
 
                     // TODO 추후 서버에 이 링크를 넘겨줄 예정
@@ -99,5 +101,18 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
             result = uri.lastPathSegment
         }
         return result
+    }
+
+    private fun initBottomSheetEvent() {
+        binding.tvFeedProjectKindOpen.setOnClickListener { BottomSheetDefaultUtil(1).show(supportFragmentManager,"KIND")}
+        binding.tvFeedProjectTypeOpen.setOnClickListener { BottomSheetDefaultUtil(2).show(supportFragmentManager,"TYPE")}
+        // TODO: 추후 기술스택과 프로젝트 선택 바텀시트 연결 예정
+    }
+
+    override fun getSelection(selectedTxt: String, selectedPosition: Int, type: Int) {
+       when(type) {
+           1 -> binding.tvFeedProjectKindOpen.text = selectedTxt
+           2 -> binding.tvFeedProjectTypeOpen.text = selectedTxt
+       }
     }
 }
