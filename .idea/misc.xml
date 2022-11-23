@@ -12,17 +12,28 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/ic_signup_back.xml" value="0.119" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/ic_signup_white.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/ic_writing.xml" value="0.1235" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_fill_e6e6e6_radius_10.xml" value="0.139" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_fill_white_top_11dp.xml" value="0.123" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_6f6f6f_radius_8.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_a3a3a3_radius_14.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_black_radius_10.xml" value="0.139" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_cecece_radius_10.xml" value="0.1145" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_cfcfcf_radius_8.xml" value="0.1145" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_e6e6e6_radius_10.xml" value="0.14" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/selector_signin_btn.xml" value="0.189" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/selector_signup_default_position_btn.xml" value="0.139" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/selector_signup_id_check_btn.xml" value="0.139" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/selector_signup_org_btn.xml" value="0.139" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/selector_stack_filter_edit_text.xml" value="0.139" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_setting.xml" value="0.2" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signin.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signup.xml" value="0.264" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_write_project.xml" value="0.2" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/dialog_bottom_sheet_default.xml" value="0.13229166666666667" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/dialog_bottom_sheet_kind.xml" value="0.10648148148148148" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/dialog_bottom_sheet_tech.xml" value="0.152" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/dialog_bottom_sheet_type.xml" value="0.264" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_alarm.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_feed.xml" value="0.23072916666666668" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_home.xml" value="0.264" />
@@ -39,6 +50,7 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_feed.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_mypage_feed_list.xml" value="0.25729166666666664" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_project.xml" value="0.2265625" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_stack.xml" value="0.2" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/menu/menu_main_bottom_nav.xml" value="0.11770833333333333" />
         <entry key="app/src/main/res/drawable/bg_bottom_sheet_default.xml" value="0.2105" />
         <entry key="app/src/main/res/drawable/custom_signup_progressbar.xml" value="0.1905" />

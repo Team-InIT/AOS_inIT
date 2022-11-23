@@ -49,6 +49,7 @@ class TypeBottomSheet(private val selectedList: MutableList<Int>? = null) :
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -57,6 +58,8 @@ class TypeBottomSheet(private val selectedList: MutableList<Int>? = null) :
 
         setSelectedUI()
     }
+
+
 
     // 기존에 데이터가 이미 있으면 UI 세팅해주기
     private fun setSelectedUI() {

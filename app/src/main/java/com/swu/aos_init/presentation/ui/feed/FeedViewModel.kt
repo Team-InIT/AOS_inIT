@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class FeedViewModel : ViewModel() {
 
+
     // 타입 필터 데이터
     private var _typeFilterList = MutableLiveData<MutableList<Int>>()
     val typeFilterList: LiveData<MutableList<Int>> = _typeFilterList
@@ -14,6 +15,11 @@ class FeedViewModel : ViewModel() {
     private var _kindFilterList = MutableLiveData<MutableList<Int>>()
     val kindFilterList: LiveData<MutableList<Int>> = _kindFilterList
 
+    private var _stackFilterList = ArrayList<String>()
+    var stackFilterList : ArrayList<String> = _stackFilterList
+
+    var isStackSelect = MutableLiveData<Boolean>()
+
     fun setKindFilter(kindList:MutableList<Int>) {
         _kindFilterList.value = kindList
     }
@@ -21,4 +27,5 @@ class FeedViewModel : ViewModel() {
     fun setTypeFilter(typeList:MutableList<Int>) {
         _typeFilterList.value = typeList
     }
+
 }

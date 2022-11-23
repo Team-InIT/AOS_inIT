@@ -4,7 +4,6 @@ import KindBottomSheet
 import TypeBottomSheet
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.swu.aos_init.R
@@ -12,6 +11,7 @@ import com.swu.aos_init.data.response.feed.ResponseFeed
 import com.swu.aos_init.databinding.FragmentFeedBinding
 import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.ui.feed.adapter.FeedAdapter
+import com.swu.aos_init.presentation.ui.feed.bottomsheet.TechBottomSheet
 import com.swu.aos_init.presentation.ui.feed.write.WritingFeedActivity
 
 class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
@@ -28,10 +28,8 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initAdapter()
         moveToFeedWrite()
-
         initBottomSheetEvent()
     }
 
@@ -82,7 +80,6 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
     private fun initBottomSheetEvent() {
 
-
         binding.tvProjectKind.setOnClickListener {
             val kindList = feedViewModel.kindFilterList.value
             KindBottomSheet(kindList).show(childFragmentManager, "KIND_SHEET")
@@ -94,7 +91,8 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         }
 
         binding.tvProjectStack.setOnClickListener {
-
+            val list = feedViewModel.stackFilterList
+            TechBottomSheet(list).show(parentFragmentManager, "STACK_SHEET")
         }
     }
 
