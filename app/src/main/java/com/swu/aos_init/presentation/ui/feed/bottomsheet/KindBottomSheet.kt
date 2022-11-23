@@ -1,6 +1,5 @@
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -68,10 +67,9 @@ class KindBottomSheet(private val selectedList: MutableList<Int>? = null) :
 
         if (selectedList != null) {
             for (data in selectedList) {
-                interestList[data-1].isChecked = true
+                interestList[data - 1].isChecked = true
             }
         }
-
     }
 
     private fun setHeight() {

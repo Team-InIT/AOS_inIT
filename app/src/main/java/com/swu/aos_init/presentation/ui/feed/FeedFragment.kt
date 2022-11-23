@@ -89,7 +89,8 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         }
 
         binding.tvProjectType.setOnClickListener {
-            TypeBottomSheet().show(childFragmentManager, "TYPE_SHEET")
+            val typeList = feedViewModel.typeFilterList.value
+            TypeBottomSheet(typeList).show(childFragmentManager, "TYPE_SHEET")
         }
 
         binding.tvProjectStack.setOnClickListener {
@@ -98,12 +99,13 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
     }
 
     override fun getSelectedKindList(selectedFilter: MutableList<Int>) {
-        feedViewModel.setTypeFilter(selectedFilter)
+        feedViewModel.setKindFilter(selectedFilter)
         kindState = !selectedFilter.isEmpty()
         setFilter()
     }
 
     override fun getSelectedTypeList(selectedFilter: MutableList<Int>) {
+        feedViewModel.setTypeFilter(selectedFilter)
         typeState = !selectedFilter.isEmpty()
         setFilter()
     }

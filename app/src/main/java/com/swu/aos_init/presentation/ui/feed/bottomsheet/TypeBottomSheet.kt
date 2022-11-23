@@ -14,7 +14,7 @@ import com.swu.aos_init.R
 import com.swu.aos_init.databinding.DialogBottomSheetTypeBinding
 
 // 타입 바텀시트
-class TypeBottomSheet() :
+class TypeBottomSheet(private val selectedList: MutableList<Int>? = null) :
     BottomSheetDialogFragment() {
 
     private var _binding: DialogBottomSheetTypeBinding? = null
@@ -54,6 +54,23 @@ class TypeBottomSheet() :
 
         setHeight()
         initDoneBtn()
+
+        setSelectedUI()
+    }
+
+    // 기존에 데이터가 이미 있으면 UI 세팅해주기
+    private fun setSelectedUI() {
+        val interestList = mutableListOf<Chip>()
+        for (i in binding.chipGroupInterest.indices) {
+            interestList.add(binding.chipGroupInterest[i] as Chip)
+        }
+
+        if (selectedList != null) {
+            for (data in selectedList) {
+                interestList[data-1].isChecked = true
+            }
+        }
+
     }
 
     private fun setHeight() {

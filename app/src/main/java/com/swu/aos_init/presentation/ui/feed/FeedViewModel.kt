@@ -14,7 +14,11 @@ class FeedViewModel : ViewModel() {
     private var _kindFilterList = MutableLiveData<MutableList<Int>>()
     val kindFilterList: LiveData<MutableList<Int>> = _kindFilterList
 
-    fun setTypeFilter(kindList:MutableList<Int>) {
+    fun setKindFilter(kindList:MutableList<Int>) {
         _kindFilterList.value = kindList
+    }
+
+    fun setTypeFilter(typeList:MutableList<Int>) {
+        _typeFilterList.value = typeList
     }
 }
