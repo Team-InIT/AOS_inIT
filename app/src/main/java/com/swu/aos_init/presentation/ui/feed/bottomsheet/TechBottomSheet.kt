@@ -58,10 +58,34 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("뭘까", list.toString())
+        binding.chipStack.removeAllViews()
         editTextWatcher()
         //finishBtnListener()
         editTextClickListener()
         initDoneBtn()
+        initChipBtn()
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun initChipBtn() {
+        if(list?.isNotEmpty() == true) {
+            for (i in 0 until list.size) {
+                binding.chipStack.addView(Chip(context).apply {
+                    val string = list[i]
+                    text = string
+                    setTextColor(Color.parseColor("#FFFFFF"))
+                    isCloseIconVisible = true
+                    setCloseIconResource(R.drawable.ic_close)
+                    setCloseIconTintResource(R.color.white)
+                    chipBackgroundColor = ColorStateList.valueOf(R.color.color_1C2E52)
+                    setOnCloseIconClickListener {
+                        binding.chipStack.removeView(this)
+                    }
+                    list.removeAt(i)
+                })
+
+            }
+        }
     }
 
     private fun editTextWatcher() = with(binding) {
@@ -128,12 +152,9 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
             object : StackAdapter.ItemClickListener {
                 @SuppressLint("ResourceAsColor")
                 override fun onClick(view: View, position: Int) {
-                    val subwayName = stackAdapter.dataList[position].name
-
-
+                    val stackName = stackAdapter.dataList[position].name
                     binding.chipStack.addView(Chip(context).apply {
-                        val string = "$subwayName"
-
+                        val string = "$stackName"
                         text = string
                         setTextColor(Color.parseColor("#FFFFFF"))
                         isCloseIconVisible = true
@@ -146,22 +167,6 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
                     })
                 }
             })
-    }
-
-
-    //확인 버튼 클릭 리스너
-    @SuppressLint("ClickableViewAccessibility")
-    private fun finishBtnListener() {
-        binding.btnDone.setOnClickListener {
-
-            for (i: Int in 1..binding.chipStack.childCount) {
-                val chip: Chip = binding.chipStack.getChildAt(i - 1) as Chip
-                list?.add(chip.text.toString())
-            }
-            feedViewModel.stackFilterList = (list ?: emptyList<String>()) as ArrayList<String>
-            Log.d("TEST", feedViewModel.stackFilterList.toString())
-            dismiss()
-        }
     }
 
     private fun initDoneBtn() {
