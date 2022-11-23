@@ -2,7 +2,6 @@ package com.swu.aos_init.presentation.ui.feed.bottomsheet
 
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -12,8 +11,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.get
-import androidx.core.view.indices
 import androidx.fragment.app.viewModels
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -31,7 +28,7 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
     private val feedViewModel: FeedViewModel by viewModels()
     private var binding by AutoClearedValue<DialogBottomSheetTechBinding>()
     private lateinit var stackAdapter: StackAdapter
-    private val chipList = java.util.ArrayList<String>()
+    //private val chipList: ArrayList<String> = java.util.ArrayList<String>()
 
 
 
@@ -62,7 +59,7 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
         super.onViewCreated(view, savedInstanceState)
         Log.d("뭘까", list.toString())
         editTextWatcher()
-        finishBtnListener()
+        //finishBtnListener()
         editTextClickListener()
         initDoneBtn()
     }
@@ -159,9 +156,9 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
 
             for (i: Int in 1..binding.chipStack.childCount) {
                 val chip: Chip = binding.chipStack.getChildAt(i - 1) as Chip
-                chipList.add(chip.text.toString())
+                list?.add(chip.text.toString())
             }
-            feedViewModel.stackFilterList = chipList
+            feedViewModel.stackFilterList = (list ?: emptyList<String>()) as ArrayList<String>
             Log.d("TEST", feedViewModel.stackFilterList.toString())
             dismiss()
         }
@@ -171,25 +168,14 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
         binding.btnDone.setOnClickListener {
             for (i: Int in 1..binding.chipStack.childCount) {
                 val chip: Chip = binding.chipStack.getChildAt(i - 1) as Chip
-                chipList.add(chip.text.toString())
+                list?.add(chip.text.toString())
             }
-            feedViewModel.stackFilterList = chipList
+            if (list != null) {
+                feedViewModel.stackFilterList = list
+            }
             dismiss()
         }
     }
-
-
-
-    private fun getSelectedFilter(): MutableList<String> {
-        val chipList = feedViewModel.stackFilterList
-        for (i: Int in 1..binding.chipStack.childCount) {
-            val chip: Chip = binding.chipStack.getChildAt(i - 1) as Chip
-            chipList.add(chip.text.toString())
-        }
-
-        return chipList
-    }
-
 
     //editText 클릭 리스너
     private fun editTextClickListener() {

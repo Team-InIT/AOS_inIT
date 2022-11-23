@@ -94,6 +94,7 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
         binding.tvProjectStack.setOnClickListener {
             val list = feedViewModel.stackFilterList
+            Log.d("제발", list.toString())
             TechBottomSheet(list).show(parentFragmentManager, "STACK_SHEET")
         }
     }
@@ -107,12 +108,6 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
     override fun getSelectedTypeList(selectedFilter: MutableList<Int>) {
         feedViewModel.setTypeFilter(selectedFilter)
         typeState = !selectedFilter.isEmpty()
-        setFilter()
-    }
-
-    private fun getSelectedStackList(selectedFilter: ArrayList<String>) {
-        feedViewModel.setStackFilter(selectedFilter)
-        stackState = !selectedFilter.isEmpty()
         setFilter()
     }
 
