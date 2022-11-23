@@ -1,4 +1,102 @@
 package com.swu.aos_init.presentation.ui.feed.bottomsheet
 
-class TechBottomSheet {
+import android.annotation.SuppressLint
+import android.app.Dialog
+import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.chip.Chip
+import com.swu.aos_init.data.response.ResponseStack
+import com.swu.aos_init.databinding.DialogBottomSheetTechBinding
+import com.swu.aos_init.presentation.ui.feed.adapter.StackAdapter
+import com.swu.aos_init.presentation.util.AutoClearedValue
+
+class TechBottomSheet(): BottomSheetDialogFragment() {
+    private var binding by AutoClearedValue<DialogBottomSheetTechBinding>()
+    private lateinit var stackAdapter : StackAdapter
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View = DialogBottomSheetTechBinding.inflate(inflater, container, false).run {
+        binding = this
+        this.root
+    }
+
+    @SuppressLint("RestrictedApi")
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = super.onCreateDialog(savedInstanceState)
+        dialog.setOnShowListener { dialogInterface ->
+            ((dialogInterface as BottomSheetDialog).findViewById<View>(com.google.android.material.R.id.design_bottom_sheet) as View).apply {
+                val behavior = BottomSheetBehavior.from(this)
+                val layoutParams = this.layoutParams
+                behavior.disableShapeAnimations()
+                behavior.state = BottomSheetBehavior.STATE_EXPANDED
+                this.layoutParams = layoutParams
+            }
+        }
+        return dialog
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        editTextWatcher()
+    }
+
+    private fun editTextWatcher() = with(binding) {
+        etStack.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                val input = binding.etStack.text.toString()
+                searchingSubway(input)
+            }
+        })
+    }
+
+
+
+    private fun searchingSubway(text1: String) {
+        val tmpList = ArrayList<ResponseStack>()
+        val searchSubwayList = listOf(ResponseStack("Agit"), ResponseStack("Aws Athena"))
+        for (i in 0 until searchSubwayList.size) {
+            if (searchSubwayList.get(i).name.contains(text1)) {
+                tmpList.add(searchSubwayList.get(i))
+            }
+        }
+        stackAdapter = StackAdapter()
+        binding.rvBottomSheetDefault.adapter = stackAdapter
+        stackAdapter.findText = text1
+        stackAdapter.setStackList(tmpList)
+
+        //adpater 클릭 리스너
+        stackAdapter.setItemClickListener(
+            object : StackAdapter.ItemClickListener {
+                @SuppressLint("ResourceAsColor")
+                override fun onClick(view: View, position: Int) {
+                    val subwayName = stackAdapter.dataList[position].name
+
+
+                    binding.chipStack.addView(Chip(context).apply {
+                        val string = "$subwayName"
+
+                        text = string
+                        //setTextColor(getColorStateList(R.color.white))
+                        isCloseIconVisible = true
+                        //setCloseIconResource(R.drawable.icn_exit)
+                        //setCloseIconTintResource(R.color.gray_999999)
+                        //chipBackgroundColor = getColorStateList(R.color.black)
+                        setOnCloseIconClickListener {
+                            binding.chipStack.removeView(this)
+                        }
+                    })
+                }
+            })
+    }
+
 }

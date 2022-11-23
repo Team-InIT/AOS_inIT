@@ -12,6 +12,7 @@ import com.swu.aos_init.data.response.feed.ResponseFeed
 import com.swu.aos_init.databinding.FragmentFeedBinding
 import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.ui.feed.adapter.FeedAdapter
+import com.swu.aos_init.presentation.ui.feed.bottomsheet.TechBottomSheet
 import com.swu.aos_init.presentation.ui.feed.write.WritingFeedActivity
 
 class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
@@ -94,7 +95,7 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         }
 
         binding.tvProjectStack.setOnClickListener {
-
+            TechBottomSheet().show(parentFragmentManager, "STACK_SHEET")
         }
     }
 
