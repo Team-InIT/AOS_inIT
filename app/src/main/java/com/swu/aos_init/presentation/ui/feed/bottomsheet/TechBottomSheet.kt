@@ -12,6 +12,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
+import androidx.core.view.indices
+import androidx.fragment.app.viewModels
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -19,12 +22,19 @@ import com.google.android.material.chip.Chip
 import com.swu.aos_init.R
 import com.swu.aos_init.data.response.ResponseStack
 import com.swu.aos_init.databinding.DialogBottomSheetTechBinding
+import com.swu.aos_init.presentation.ui.feed.FeedViewModel
 import com.swu.aos_init.presentation.ui.feed.adapter.StackAdapter
 import com.swu.aos_init.presentation.util.AutoClearedValue
 
-class TechBottomSheet() : BottomSheetDialogFragment() {
+class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment() {
+
+    private val feedViewModel: FeedViewModel by viewModels()
     private var binding by AutoClearedValue<DialogBottomSheetTechBinding>()
     private lateinit var stackAdapter: StackAdapter
+    private val chipList = java.util.ArrayList<String>()
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,9 +60,11 @@ class TechBottomSheet() : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d("뭘까", list.toString())
         editTextWatcher()
         finishBtnListener()
         editTextClickListener()
+        initDoneBtn()
     }
 
     private fun editTextWatcher() = with(binding) {
@@ -103,7 +115,7 @@ class TechBottomSheet() : BottomSheetDialogFragment() {
             ResponseStack("Slack"),
             ResponseStack("Tailwind"),
             ResponseStack("Typescript"),
-            )
+        )
         for (i in 0 until searchStackList.size) {
             if (searchStackList.get(i).name.contains(text1)) {
                 tmpList.add(searchStackList.get(i))
@@ -140,20 +152,53 @@ class TechBottomSheet() : BottomSheetDialogFragment() {
     }
 
 
+    //확인 버튼 클릭 리스너
     @SuppressLint("ClickableViewAccessibility")
     private fun finishBtnListener() {
         binding.btnDone.setOnClickListener {
+
+            for (i: Int in 1..binding.chipStack.childCount) {
+                val chip: Chip = binding.chipStack.getChildAt(i - 1) as Chip
+                chipList.add(chip.text.toString())
+            }
+            feedViewModel.stackFilterList = chipList
+            Log.d("TEST", feedViewModel.stackFilterList.toString())
             dismiss()
         }
-
     }
 
+    private fun initDoneBtn() {
+        binding.btnDone.setOnClickListener {
+            for (i: Int in 1..binding.chipStack.childCount) {
+                val chip: Chip = binding.chipStack.getChildAt(i - 1) as Chip
+                chipList.add(chip.text.toString())
+            }
+            feedViewModel.stackFilterList = chipList
+            dismiss()
+        }
+    }
+
+
+
+    private fun getSelectedFilter(): MutableList<String> {
+        val chipList = feedViewModel.stackFilterList
+        for (i: Int in 1..binding.chipStack.childCount) {
+            val chip: Chip = binding.chipStack.getChildAt(i - 1) as Chip
+            chipList.add(chip.text.toString())
+        }
+
+        return chipList
+    }
+
+
+    //editText 클릭 리스너
     private fun editTextClickListener() {
         binding.etStack.setOnClickListener {
             binding.etStack.isSelected = true
         }
     }
 
+    //바텀시트 스타일 적용
     override fun getTheme(): Int = R.style.BottomSheetDialogTheme
 
 }

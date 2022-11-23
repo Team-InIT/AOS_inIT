@@ -29,12 +29,11 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initAdapter()
         moveToFeedWrite()
-
         initBottomSheetEvent()
     }
+
 
     // TODO: 추후 서버 통신 진행 예정
     private fun initAdapter() {
@@ -83,7 +82,6 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
     private fun initBottomSheetEvent() {
 
-
         binding.tvProjectKind.setOnClickListener {
             val kindList = feedViewModel.kindFilterList.value
             KindBottomSheet(kindList).show(childFragmentManager, "KIND_SHEET")
@@ -95,7 +93,8 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         }
 
         binding.tvProjectStack.setOnClickListener {
-            TechBottomSheet().show(parentFragmentManager, "STACK_SHEET")
+            val list = feedViewModel.stackFilterList
+            TechBottomSheet(list).show(parentFragmentManager, "STACK_SHEET")
         }
     }
 
@@ -108,6 +107,12 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
     override fun getSelectedTypeList(selectedFilter: MutableList<Int>) {
         feedViewModel.setTypeFilter(selectedFilter)
         typeState = !selectedFilter.isEmpty()
+        setFilter()
+    }
+
+    private fun getSelectedStackList(selectedFilter: ArrayList<String>) {
+        feedViewModel.setStackFilter(selectedFilter)
+        stackState = !selectedFilter.isEmpty()
         setFilter()
     }
 

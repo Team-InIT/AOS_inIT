@@ -15,11 +15,18 @@ class FeedViewModel : ViewModel() {
     private var _kindFilterList = MutableLiveData<MutableList<Int>>()
     val kindFilterList: LiveData<MutableList<Int>> = _kindFilterList
 
+    private var _stackFilterList = ArrayList<String>()
+    var stackFilterList : ArrayList<String> = _stackFilterList
+
     fun setKindFilter(kindList:MutableList<Int>) {
         _kindFilterList.value = kindList
     }
 
     fun setTypeFilter(typeList:MutableList<Int>) {
         _typeFilterList.value = typeList
+    }
+
+    fun setStackFilter(stackList : ArrayList<String>) {
+        _stackFilterList = stackList
     }
 }
