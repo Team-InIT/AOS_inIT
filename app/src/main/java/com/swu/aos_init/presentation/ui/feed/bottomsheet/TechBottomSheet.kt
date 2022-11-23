@@ -2,6 +2,8 @@ package com.swu.aos_init.presentation.ui.feed.bottomsheet
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,6 +14,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.chip.Chip
+import com.swu.aos_init.R
 import com.swu.aos_init.data.response.ResponseStack
 import com.swu.aos_init.databinding.DialogBottomSheetTechBinding
 import com.swu.aos_init.presentation.ui.feed.adapter.StackAdapter
@@ -86,11 +89,11 @@ class TechBottomSheet(): BottomSheetDialogFragment() {
                         val string = "$subwayName"
 
                         text = string
-                        //setTextColor(getColorStateList(R.color.white))
+                        setTextColor(Color.parseColor("#FFFFFF"))
                         isCloseIconVisible = true
-                        //setCloseIconResource(R.drawable.icn_exit)
-                        //setCloseIconTintResource(R.color.gray_999999)
-                        //chipBackgroundColor = getColorStateList(R.color.black)
+                        setCloseIconResource(R.drawable.ic_close)
+                        setCloseIconTintResource(R.color.white)
+                        chipBackgroundColor = ColorStateList.valueOf(R.color.color_1C2E52)
                         setOnCloseIconClickListener {
                             binding.chipStack.removeView(this)
                         }
