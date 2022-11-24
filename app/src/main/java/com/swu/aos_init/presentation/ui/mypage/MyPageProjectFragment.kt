@@ -21,5 +21,9 @@ class MyPageProjectFragment : BaseFragment<FragmentMyPageProjectBinding>(R.layou
         binding.clMyPageHeart.setOnClickListener {
             startActivity(Intent(requireActivity(), MyPageZzimActivity::class.java))
         }
+
+        binding.clMyPageUpload.setOnClickListener {
+            startActivity(Intent(requireActivity(), MyPageUploadActivity::class.java))
+        }
     }
 }

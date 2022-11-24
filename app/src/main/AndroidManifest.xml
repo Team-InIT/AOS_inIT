@@ -15,6 +15,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.mypage.MyPageUploadActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.mypage.MyPageZzimActivity"
             android:exported="false" />
         <activity
