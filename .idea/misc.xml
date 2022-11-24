@@ -28,6 +28,7 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_setting.xml" value="0.2" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_upload.xml" value="0.2390625" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_wait.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_zzim.xml" value="0.15442278860569716" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signin.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signup.xml" value="0.264" />
@@ -52,6 +53,7 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_feed.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_mypage_feed_list.xml" value="0.25729166666666664" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_mypage_upload.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_mypage_wait.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_mypage_zzim.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_project.xml" value="0.2265625" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_stack.xml" value="0.2" />

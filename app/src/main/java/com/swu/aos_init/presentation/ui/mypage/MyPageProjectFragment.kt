@@ -25,5 +25,9 @@ class MyPageProjectFragment : BaseFragment<FragmentMyPageProjectBinding>(R.layou
         binding.clMyPageUpload.setOnClickListener {
             startActivity(Intent(requireActivity(), MyPageUploadActivity::class.java))
         }
+
+        binding.clMyPageApprove.setOnClickListener {
+            startActivity(Intent(requireActivity(), MyPageWaitActivity::class.java))
+        }
     }
 }
