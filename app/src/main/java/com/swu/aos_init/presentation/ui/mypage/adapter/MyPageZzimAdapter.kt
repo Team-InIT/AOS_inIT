@@ -8,21 +8,21 @@ import com.swu.aos_init.data.response.mypage.ResponseMyPageZzim
 import com.swu.aos_init.databinding.ItemMypageZzimBinding
 import com.swu.aos_init.presentation.util.DiffUtilCallback
 
-class MyPageZzimAdapter : ListAdapter<ResponseMyPageZzim, MyPageZzimAdapter.ProjectViewAdapter>(
+class MyPageZzimAdapter : ListAdapter<ResponseMyPageZzim, MyPageZzimAdapter.ZZimViewAdapter>(
     DiffUtilCallback<ResponseMyPageZzim>()
 ) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewAdapter {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ZZimViewAdapter {
         val binding =
             ItemMypageZzimBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ProjectViewAdapter(binding)
+        return ZZimViewAdapter(binding)
     }
 
-    override fun onBindViewHolder(holder: ProjectViewAdapter, position: Int) {
+    override fun onBindViewHolder(holder: ZZimViewAdapter, position: Int) {
         holder.onBind(getItem(position))
     }
 
-    class ProjectViewAdapter(val binding: ItemMypageZzimBinding) :
+    class ZZimViewAdapter(val binding: ItemMypageZzimBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseMyPageZzim) {
             binding.heart = data

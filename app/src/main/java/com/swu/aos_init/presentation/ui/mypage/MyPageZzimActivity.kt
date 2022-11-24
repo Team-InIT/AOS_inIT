@@ -1,13 +1,10 @@
 package com.swu.aos_init.presentation.ui.mypage
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.swu.aos_init.R
-import com.swu.aos_init.data.response.ResponseProject
 import com.swu.aos_init.data.response.mypage.ResponseMyPageZzim
 import com.swu.aos_init.databinding.ActivityMyPageZzimBinding
 import com.swu.aos_init.presentation.base.BaseActivity
-import com.swu.aos_init.presentation.ui.home.adapter.ProjectRvAdapter
 import com.swu.aos_init.presentation.ui.mypage.adapter.MyPageZzimAdapter
 
 class MyPageZzimActivity : BaseActivity<ActivityMyPageZzimBinding>(R.layout.activity_my_page_zzim) {
@@ -16,7 +13,6 @@ class MyPageZzimActivity : BaseActivity<ActivityMyPageZzimBinding>(R.layout.acti
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_page_zzim)
 
         initRvAdapter()
     }
@@ -24,8 +20,7 @@ class MyPageZzimActivity : BaseActivity<ActivityMyPageZzimBinding>(R.layout.acti
     // 더미 연결
     private fun initRvAdapter() {
         zzimAdapter = MyPageZzimAdapter()
-
-        // TODO 추후 서버통신 시 3개의 데이터만 잘라서 받아오기
+        binding.rvMypageZzim.adapter = zzimAdapter
         zzimAdapter.submitList(
             listOf(
                 ResponseMyPageZzim(
@@ -49,8 +44,5 @@ class MyPageZzimActivity : BaseActivity<ActivityMyPageZzimBinding>(R.layout.acti
                 )
             )
         )
-
-        binding.rvMypageZzim.adapter = zzimAdapter
-
     }
 }
