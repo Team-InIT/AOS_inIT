@@ -185,4 +185,6 @@
     <string name="mypage_app_logout">로그아웃</string>
     <string name="mypage_app_quit">탈퇴</string>
     <string name="mypage_setting">내 설정</string>
+    <string name="mypage_ing">참여중</string>
+    <string name="mypage_finish">참여완료</string>
 </resources>

@@ -29,5 +29,9 @@ class MyPageProjectFragment : BaseFragment<FragmentMyPageProjectBinding>(R.layou
         binding.clMyPageApprove.setOnClickListener {
             startActivity(Intent(requireActivity(), MyPageWaitActivity::class.java))
         }
+
+        binding.clMyPageJoin.setOnClickListener {
+            startActivity(Intent(requireActivity(), MyPageJoinActivity::class.java))
+        }
     }
 }
