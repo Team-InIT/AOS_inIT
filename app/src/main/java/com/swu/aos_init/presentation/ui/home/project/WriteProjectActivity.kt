@@ -4,16 +4,20 @@ import android.app.DatePickerDialog
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivityWriteProjectBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.ui.feed.FeedViewModel
+import com.swu.aos_init.presentation.ui.feed.bottomsheet.TechBottomSheet
 import com.swu.aos_init.presentation.util.BottomSheetDefaultUtil
 import java.util.*
 
 class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.activity_write_project),BottomSheetDefaultUtil.BottomSheetClickListener {
-
+    private val feedViewModel: FeedViewModel by viewModels()
     private var orgTypeState = false
     private var kindState = false
 
@@ -25,6 +29,7 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
         initProjectEndDatePickerDialog()
         bottomSheetClickListener()
         finishBtnClickListener()
+        stackBottomSheet()
     }
 
     //뒤로가기 버튼
@@ -123,6 +128,13 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
     private fun finishBtnClickListener() {
         binding.btnFinish.setOnClickListener {
             finish()
+        }
+    }
+
+    private fun stackBottomSheet() {
+        binding.etProjectStack.setOnClickListener {
+            val list = feedViewModel.stackFilterList
+            TechBottomSheet(list) {}.show(supportFragmentManager, "STACK_SHEET")
         }
     }
 }
