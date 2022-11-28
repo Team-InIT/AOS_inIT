@@ -81,6 +81,7 @@ class BottomSheetDefaultUtil(val type: Int) :
             PROJECT_TYPE -> binding.tvBottomTitle.text = "프로젝트 타입"
             PROJECT_KIND -> binding.tvBottomTitle.text = "프로젝트 종류"
             MY_PROJECT -> binding.tvBottomTitle.text = "프로젝트 선택"
+            PROJECT_APPLY -> binding.tvBottomTitle.text = "지원분야 선택"
         }
     }
 
@@ -138,6 +139,13 @@ class BottomSheetDefaultUtil(val type: Int) :
                     SelectedTxtData("우리도")
                 )
             )
+            PROJECT_APPLY -> selectedTxtList.addAll(
+                listOf(
+                    SelectedTxtData("기획"),
+                    SelectedTxtData("디자인"),
+                    SelectedTxtData("개발"),
+                )
+            )
         }
 
         return selectedTxtList
@@ -171,5 +179,6 @@ class BottomSheetDefaultUtil(val type: Int) :
         const val PROJECT_TYPE = 1
         const val PROJECT_KIND = 2
         const val MY_PROJECT = 3
+        const val PROJECT_APPLY = 4
     }
 }

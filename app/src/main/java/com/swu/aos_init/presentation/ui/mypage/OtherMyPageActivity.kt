@@ -17,6 +17,7 @@ class OtherMyPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout.act
         initAdapter()
         initTab()
         settingBtnListener()
+        backBtnListener()
 
     }
     //tab layout adapter
@@ -32,6 +33,12 @@ class OtherMyPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout.act
 
         binding.vpHome.adapter = myPageTabAdapter
 
+    }
+
+    private fun backBtnListener() {
+        binding.ivOpenProjectBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun initTab() {
