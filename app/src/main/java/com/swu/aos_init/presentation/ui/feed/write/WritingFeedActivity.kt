@@ -50,6 +50,7 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
         initBackBtn()
         initImgPickEvent()
         initBottomSheetEvent()
+        initDoneEvent()
     }
 
     private fun initBackBtn() {
@@ -150,5 +151,11 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
            2 -> binding.tvFeedProjectTypeOpen.text = selectedTxt
            3 -> binding.tvFeedProjectSelectOpen.text = selectedTxt
        }
+    }
+
+    private fun initDoneEvent(){
+        binding.btnFinish.setOnClickListener {
+            finish()
+        }
     }
 }

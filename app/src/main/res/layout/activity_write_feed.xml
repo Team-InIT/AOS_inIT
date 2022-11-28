@@ -293,7 +293,6 @@
                     android:layout_marginTop="80dp"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/rectangle_fill_1c2e52_radius_10"
-                    android:enabled="false"
                     android:fontFamily="@font/pretandard_bold"
                     android:paddingVertical="18dp"
                     android:text="@string/sign_up_org_step_two_done"
