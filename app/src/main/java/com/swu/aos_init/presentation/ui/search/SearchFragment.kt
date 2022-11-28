@@ -30,14 +30,14 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
                     "학습관리 시스템 플랫폼",
                     "기획자 1/1  ･  디자이너  2/2  ･  개발자 3/8",
                     "2022.11.28 ~ 2022.12.09",
-                    "D-Day"
+                    "D-DAY"
                 ),
                 ResponseProject(
                     "퍼블리싱",
                     "태양 컴퍼니 웹 페이지 & 어드민 페이지 개선 작업",
                     "기획자 1/2  ･  디자이너  2/4  ･  개발자 2/2",
                     "2022.11.28 ~ 2022.01.29",
-                    "D-Day"
+                    "D-DAY"
                 ),
                 ResponseProject(
                     "웹",
