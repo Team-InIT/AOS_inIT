@@ -1,11 +1,14 @@
 package com.swu.aos_init.presentation.ui.home.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.swu.aos_init.data.response.ResponseProject
 import com.swu.aos_init.databinding.ItemBelongProjectBinding
+import com.swu.aos_init.presentation.ui.home.project.ProjectDetailActivity
 
 class ProjectVpAdapter(private val itemList:MutableList<ResponseProject>, val myContext: Context):RecyclerView.Adapter<ProjectVpAdapter.ProjectVPHolder>() {
 
@@ -16,7 +19,11 @@ class ProjectVpAdapter(private val itemList:MutableList<ResponseProject>, val my
 
     override fun onBindViewHolder(holder: ProjectVPHolder, position: Int) {
         holder.bind(itemList[position])
-
+        val context = holder.itemView.context
+        holder.binding.root.setOnClickListener {
+            val intent = Intent(context, ProjectDetailActivity::class.java)
+            ContextCompat.startActivity(holder.itemView.context,intent, null)
+        }
         // 프로젝트 정보 보기 화면으로 이동
         /*holder.binding.root.setOnClickListener {
             val nextIntent = Intent(myContext, ProjectDetailActivity::class.java)

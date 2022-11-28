@@ -25,20 +25,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tv_my_page_main_title"
+                <ImageView
+                    android:id="@+id/iv_open_project_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:padding="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_back_white" />
+
+                <TextView
+                    android:id="@+id/tv_my_page_main_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="18dp"
                     android:fontFamily="@font/pretendard_medium"
-                    android:text="@string/mypage"
+                    android:text="이지연님 마이페이지"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_open_project_back"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/iv_mypage_setting"
@@ -58,7 +69,7 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
-                android:src="@drawable/img_profile_heaven"
+                android:src="@drawable/img_profile_kite"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cl_my_page_main_title" />
 
@@ -86,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:fontFamily="@font/pretendard_medium"
-                android:text="김혜빈"
+                android:text="이지연"
                 android:layout_marginTop="28dp"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -115,7 +126,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/pretendard_regular"
                 android:textColor="@color/black"
-                android:text="안녕하세요! 어제보다 오늘 더 발전하는 안드로이드 개발자 김혜빈입니다!"
+                android:text="안녕하세요! 24시간 코딩 가능 열정 가득 책임감 가득 장지연입니다!"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_my_page_profile_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_my_page_profile_name" />
