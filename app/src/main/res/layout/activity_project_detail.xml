@@ -551,7 +551,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/imageView10"
                     app:layout_goneMarginTop="92dp" />
 
-
+                <ImageView
+                    android:id="@+id/iv_project_detail_heart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView"
+                    app:srcCompat="@drawable/selector_heart" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
