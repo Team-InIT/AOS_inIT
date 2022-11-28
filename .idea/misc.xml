@@ -13,7 +13,9 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/ic_signup_back.xml" value="0.119" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/ic_signup_white.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/ic_writing.xml" value="0.1235" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/inset_horizontal_58.xml" value="0.1065" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_fill_e6e6e6_radius_10.xml" value="0.139" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_fill_white_border_black01_radius10.xml" value="0.1065" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_fill_white_top_11dp.xml" value="0.123" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_6f6f6f_radius_8.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/drawable/rectangle_stroke_a3a3a3_radius_14.xml" value="0.1" />
@@ -35,6 +37,7 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_upload.xml" value="0.2390625" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_wait.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_zzim.xml" value="0.15442278860569716" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_other_my_page.xml" value="0.264" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_project_detail.xml" value="0.176" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signin.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signup.xml" value="0.264" />
@@ -43,6 +46,7 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/dialog_bottom_sheet_kind.xml" value="0.10648148148148148" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/dialog_bottom_sheet_tech.xml" value="0.152" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/dialog_bottom_sheet_type.xml" value="0.264" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/dialog_yes_no.xml" value="0.1984375" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_alarm.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_feed.xml" value="0.23072916666666668" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_home.xml" value="0.264" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.swu.aos_init" >
+    package="com.swu.aos_init">
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AOS_inIT"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".presentation.ui.mypage.other.OtherMyPageActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.ui.home.project.ProjectDetailActivity"
             android:exported="false" />
@@ -37,7 +40,7 @@
             android:exported="false" />
         <activity
             android:name=".presentation.ui.MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,9 +52,9 @@
             android:name=".presentation.ui.sign.signup.SignUpActivity"
             android:exported="true" />
         <activity android:name=".presentation.ui.home.recommend.HomeRecommendActivity" />
-        <activity android:name=".presentation.ui.feed.write.WritingFeedActivity"
-            android:exported="true"/>
-
+        <activity
+            android:name=".presentation.ui.feed.write.WritingFeedActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
