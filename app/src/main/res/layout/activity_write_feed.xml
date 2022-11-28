@@ -191,6 +191,7 @@
                     android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
                     android:hint="@string/feed_write_link"
                     android:maxLines="1"
+                    android:inputType="text"
                     android:paddingHorizontal="18dp"
                     android:paddingVertical="16dp"
                     android:textAlignment="center"
@@ -227,7 +228,7 @@
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chip_group"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
@@ -292,7 +293,6 @@
                     android:layout_marginTop="80dp"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/rectangle_fill_1c2e52_radius_10"
-                    android:enabled="false"
                     android:fontFamily="@font/pretandard_bold"
                     android:paddingVertical="18dp"
                     android:text="@string/sign_up_org_step_two_done"

@@ -2,6 +2,7 @@ package com.swu.aos_init.presentation.ui.feed
 
 import KindBottomSheet
 import TypeBottomSheet
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -26,45 +27,55 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
     private var typeState: Boolean = false
     private var stackState: Boolean = false
 
+    private var count = 0
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initAdapter()
+
         moveToFeedWrite()
         initBottomSheetEvent()
+        initAdapter()
     }
 
     // TODO: 추후 서버 통신 진행 예정
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun initAdapter() {
         feedAdapter = FeedAdapter()
 
         feedAdapter.submitList(
             listOf(
                 ResponseFeed(
+                    resources.getDrawable(R.drawable.img_app_mument, null),
+                    "뮤멘트",
+                    "음악 감상을 손쉽게 기록하고, 다시 꺼내보고, 새롭게 발견하는 서비스",
+                    "#android #kotlin #MVVM"
+                ),
+                ResponseFeed(
+                    resources.getDrawable(R.drawable.img_app_playtogether, null),
                     "플투",
                     "대학교 및 소모임 단위의 번개 매칭 서비스",
                     "#android #kotlin #MVVM"
                 ),
                 ResponseFeed(
-                    "플투",
-                    "대학교 및 소모임 단위의 번개 매칭 서비스",
-                    "#android #kotlin #MVVM"
-                ),
-                ResponseFeed(
-                    "플투",
-                    "대학교 및 소모임 단위의 번개 매칭 서비스",
-                    "#android #kotlin #MVVM"
+                    resources.getDrawable(R.drawable.img_app_nadosunbae, null),
+                    "나도선배",
+                    "제2전공생을 위한 학과 후기, 전공 정보 공유 플랫폼",
+                    "#Hilt #MVVM #Coroutines"
                 ), ResponseFeed(
-                    "플투",
-                    "대학교 및 소모임 단위의 번개 매칭 서비스",
-                    "#android #kotlin #MVVM"
+                    resources.getDrawable(R.drawable.img_app_albazip, null),
+                    "알바집",
+                    "알바생 근태관리 어플",
+                    "#firebase #kotlin #MVP"
                 ), ResponseFeed(
-                    "플투",
-                    "대학교 및 소모임 단위의 번개 매칭 서비스",
-                    "#android #kotlin #MVVM"
+                    resources.getDrawable(R.drawable.img_app_zutdae, null),
+                    "줏대",
+                    "물음표로 시작하여 마침표로 끝나는 줏대 세우기 여정",
+                    "#android #kotlin #MVC #SQL"
                 ), ResponseFeed(
-                    "플투",
-                    "대학교 및 소모임 단위의 번개 매칭 서비스",
-                    "#android #kotlin #MVVM"
+                    resources.getDrawable(R.drawable.img_app_woorido, null),
+                    "우리도",
+                    "참여도 점수를 매겨 모임 점수 랭킹을 매기는 어플",
+                    "#android #kotlin #MVC"
                 )
             )
         )
@@ -92,7 +103,7 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
         binding.tvProjectStack.setOnClickListener {
             val list = feedViewModel.stackFilterList
-            TechBottomSheet(list).show(parentFragmentManager, "STACK_SHEET")
+            TechBottomSheet(list) {}.show(parentFragmentManager, "STACK_SHEET")
         }
     }
 
@@ -114,5 +125,58 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         binding.tvProjectStack.isSelected = stackState
 
         binding.ivFilter.isSelected = kindState || typeState || stackState
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    override fun onResume() {
+        super.onResume()
+
+        count++
+        if (count == 2) {
+            feedAdapter.submitList(
+                listOf(
+                    ResponseFeed(
+                        resources.getDrawable(R.drawable.img_app_init, null),
+                        "인잇",
+                        "기업의 인재 탐색 활용이 가능한 IT 프로젝트 커뮤니티 중개 서비스",
+                        "#android #kotlin #MVVM"
+                    ),
+                    ResponseFeed(
+                        resources.getDrawable(R.drawable.img_app_mument, null),
+                        "뮤멘트",
+                        "음악 감상을 손쉽게 기록하고, 다시 꺼내보고, 새롭게 발견하는 서비스",
+                        "#android #kotlin #MVVM"
+                    ),
+                    ResponseFeed(
+                        resources.getDrawable(R.drawable.img_app_playtogether, null),
+                        "플투",
+                        "대학교 및 소모임 단위의 번개 매칭 서비스",
+                        "#android #kotlin #MVVM"
+                    ),
+                    ResponseFeed(
+                        resources.getDrawable(R.drawable.img_app_nadosunbae, null),
+                        "나도선배",
+                        "제2전공생을 위한 학과 후기, 전공 정보 공유 플랫폼",
+                        "#Hilt #MVVM #Coroutines"
+                    ), ResponseFeed(
+                        resources.getDrawable(R.drawable.img_app_albazip, null),
+                        "알바집",
+                        "알바생 근태관리 어플",
+                        "#firebase #kotlin #MVP"
+                    ), ResponseFeed(
+                        resources.getDrawable(R.drawable.img_app_zutdae, null),
+                        "줏대",
+                        "물음표로 시작하여 마침표로 끝나는 줏대 세우기 여정",
+                        "#android #kotlin #MVC #SQL"
+                    ), ResponseFeed(
+                        resources.getDrawable(R.drawable.img_app_woorido, null),
+                        "우리도",
+                        "참여도 점수를 매겨 모임 점수 랭킹을 매기는 어플",
+                        "#android #kotlin #MVC"
+                    )
+                )
+            )
+
+        }
     }
 }

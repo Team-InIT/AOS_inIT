@@ -44,7 +44,7 @@
                         android:id="@+id/iv_feed"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@color/black" />
+                        android:src="@{FeedData.img}" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
