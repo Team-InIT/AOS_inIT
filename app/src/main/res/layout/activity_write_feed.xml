@@ -191,6 +191,7 @@
                     android:background="@drawable/rectangle_stroke_e6e6e6_radius_10"
                     android:hint="@string/feed_write_link"
                     android:maxLines="1"
+                    android:inputType="text"
                     android:paddingHorizontal="18dp"
                     android:paddingVertical="16dp"
                     android:textAlignment="center"

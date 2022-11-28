@@ -104,6 +104,7 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
     }
 
     private fun initBottomSheetEvent() {
+        binding.tvFeedProjectSelectOpen.setOnClickListener { BottomSheetDefaultUtil(3).show(supportFragmentManager,"PROJECT") }
         binding.tvFeedProjectKindOpen.setOnClickListener { BottomSheetDefaultUtil(1).show(supportFragmentManager,"KIND")}
         binding.tvFeedProjectTypeOpen.setOnClickListener { BottomSheetDefaultUtil(2).show(supportFragmentManager,"TYPE")}
         // TODO: 추후 기술스택과 프로젝트 선택 바텀시트 연결 예정
@@ -113,6 +114,7 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
        when(type) {
            1 -> binding.tvFeedProjectKindOpen.text = selectedTxt
            2 -> binding.tvFeedProjectTypeOpen.text = selectedTxt
+           3 -> binding.tvFeedProjectSelectOpen.text = selectedTxt
        }
     }
 }
