@@ -11,7 +11,7 @@ import com.swu.aos_init.presentation.base.BaseFragment
 import com.swu.aos_init.presentation.ui.home.adapter.ProjectRvAdapter
 import com.swu.aos_init.presentation.ui.home.adapter.ProjectVpAdapter
 import com.swu.aos_init.presentation.ui.home.recommend.HomeRecommendActivity
-import com.swu.aos_init.presentation.ui.home.write.WriteProjectActivity
+import com.swu.aos_init.presentation.ui.home.project.WriteProjectActivity
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 

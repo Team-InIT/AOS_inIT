@@ -1,20 +1,14 @@
-package com.swu.aos_init.presentation.ui.home.write
+package com.swu.aos_init.presentation.ui.home.project
 
 import android.app.DatePickerDialog
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.activityViewModels
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivityWriteProjectBinding
 import com.swu.aos_init.presentation.base.BaseActivity
-import com.swu.aos_init.presentation.ui.sign.signup.SignUpViewModel
 import com.swu.aos_init.presentation.util.BottomSheetDefaultUtil
 import java.util.*
 
