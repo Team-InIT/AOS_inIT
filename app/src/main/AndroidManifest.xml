@@ -15,6 +15,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".CheckApplicantActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.mypage.other.OtherMyPageActivity"
             android:exported="false" />
         <activity
