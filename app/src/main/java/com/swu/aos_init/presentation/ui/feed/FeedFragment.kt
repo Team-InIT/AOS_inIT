@@ -92,7 +92,7 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
         binding.tvProjectStack.setOnClickListener {
             val list = feedViewModel.stackFilterList
-            TechBottomSheet(list).show(parentFragmentManager, "STACK_SHEET")
+            TechBottomSheet(list){}.show(parentFragmentManager, "STACK_SHEET")
         }
     }
 

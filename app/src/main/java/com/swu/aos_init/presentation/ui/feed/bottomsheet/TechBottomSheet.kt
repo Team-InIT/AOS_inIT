@@ -23,12 +23,12 @@ import com.swu.aos_init.presentation.ui.feed.FeedViewModel
 import com.swu.aos_init.presentation.ui.feed.adapter.StackAdapter
 import com.swu.aos_init.presentation.util.AutoClearedValue
 
-class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment() {
+class TechBottomSheet(val list: ArrayList<String>?, val doAfterConfirm: () -> Unit?) :
+    BottomSheetDialogFragment() {
 
     private val feedViewModel: FeedViewModel by viewModels()
     private var binding by AutoClearedValue<DialogBottomSheetTechBinding>()
     private lateinit var stackAdapter: StackAdapter
-
 
 
     override fun onCreateView(
@@ -65,7 +65,7 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
 
     @SuppressLint("ResourceAsColor")
     private fun initChipBtn() {
-        if(list?.isNotEmpty() == true) {
+        if (list?.isNotEmpty() == true) {
             for (i in 0 until list.size) {
                 binding.chipStack.addView(Chip(context).apply {
                     val string = list[i]
@@ -178,6 +178,9 @@ class TechBottomSheet(val list: ArrayList<String>?) : BottomSheetDialogFragment(
             } else {
                 feedViewModel.isStackSelect.value = false
             }
+
+            doAfterConfirm()
+
             dismiss()
         }
     }

@@ -2,7 +2,9 @@ package com.swu.aos_init.presentation.ui.feed.write
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.database.Cursor
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
@@ -10,15 +12,21 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import com.bumptech.glide.Glide
+import com.google.android.material.chip.Chip
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivityWriteFeedBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.ui.feed.FeedViewModel
+import com.swu.aos_init.presentation.ui.feed.bottomsheet.TechBottomSheet
 import com.swu.aos_init.presentation.util.BottomSheetDefaultUtil
 
 class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.activity_write_feed),BottomSheetDefaultUtil.BottomSheetClickListener {
+
+    private val feedViewModel: FeedViewModel by viewModels()
 
     // 2. 갤러리에서 이미지를 받이오기 위한 런처
     private var activityResultLauncher: ActivityResultLauncher<Intent> =
@@ -107,7 +115,33 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
         binding.tvFeedProjectSelectOpen.setOnClickListener { BottomSheetDefaultUtil(3).show(supportFragmentManager,"PROJECT") }
         binding.tvFeedProjectKindOpen.setOnClickListener { BottomSheetDefaultUtil(1).show(supportFragmentManager,"KIND")}
         binding.tvFeedProjectTypeOpen.setOnClickListener { BottomSheetDefaultUtil(2).show(supportFragmentManager,"TYPE")}
-        // TODO: 추후 기술스택과 프로젝트 선택 바텀시트 연결 예정
+        binding.tvFeedProjectStackOpen.setOnClickListener {
+            val list = feedViewModel.stackFilterList
+            TechBottomSheet(list){initChipBtn()}.show(supportFragmentManager, "STACK_SHEET")
+        }
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun initChipBtn() {
+        val list = feedViewModel.stackFilterList
+        if (list.isNotEmpty()) {
+            for (i in 0 until list.size) {
+                binding.chipGroup.addView(Chip(this).apply {
+                    val string = list[i]
+                    text = string
+                    setTextColor(Color.parseColor("#FFFFFF"))
+                    isCloseIconVisible = true
+                    setCloseIconResource(R.drawable.ic_close)
+                    setCloseIconTintResource(R.color.white)
+                    chipBackgroundColor = ColorStateList.valueOf(R.color.color_1C2E52)
+                    setOnCloseIconClickListener {
+                        binding.chipGroup.removeView(this)
+                    }
+                    list.removeAt(i)
+                })
+
+            }
+        }
     }
 
     override fun getSelection(selectedTxt: String, selectedPosition: Int, type: Int) {
