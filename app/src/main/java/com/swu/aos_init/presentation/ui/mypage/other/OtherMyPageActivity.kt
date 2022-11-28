@@ -1,12 +1,15 @@
-package com.swu.aos_init.presentation.ui.mypage
+package com.swu.aos_init.presentation.ui.mypage.other
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayoutMediator
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivityOtherMyPageBinding
 import com.swu.aos_init.presentation.base.BaseActivity
+import com.swu.aos_init.presentation.ui.mypage.MyPageFeedFragment
+import com.swu.aos_init.presentation.ui.mypage.MyPageInfoFragment
+import com.swu.aos_init.presentation.ui.mypage.MyPageProjectFragment
+import com.swu.aos_init.presentation.ui.mypage.MyPageSettingActivity
 import com.swu.aos_init.presentation.ui.mypage.adapter.OtherPageTabAdapter
 
 class OtherMyPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout.activity_other_my_page) {

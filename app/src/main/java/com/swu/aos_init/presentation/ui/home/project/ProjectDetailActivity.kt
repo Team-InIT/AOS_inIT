@@ -7,7 +7,7 @@ import androidx.fragment.app.DialogFragment
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.ActivityProjectDetailBinding
 import com.swu.aos_init.presentation.base.BaseActivity
-import com.swu.aos_init.presentation.ui.mypage.OtherMyPageActivity
+import com.swu.aos_init.presentation.ui.mypage.other.OtherMyPageActivity
 import com.swu.aos_init.presentation.util.BottomSheetDefaultUtil
 import com.swu.aos_init.presentation.util.CustomDialog
 
