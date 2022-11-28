@@ -7,9 +7,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_init"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_init_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AOS_inIT"
         android:usesCleartextTraffic="true"
@@ -46,7 +46,9 @@
             android:name=".presentation.ui.sign.signup.SignUpActivity"
             android:exported="true" />
         <activity android:name=".presentation.ui.home.recommend.HomeRecommendActivity" />
-        <activity android:name=".presentation.ui.feed.write.WritingFeedActivity" />
+        <activity android:name=".presentation.ui.feed.write.WritingFeedActivity"
+            android:exported="true"/>
+
     </application>
 
 </manifest>
