@@ -4,6 +4,7 @@ import KindBottomSheet
 import TypeBottomSheet
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.swu.aos_init.R
@@ -26,11 +27,14 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
     private var typeState: Boolean = false
     private var stackState: Boolean = false
 
+    private var count = 0
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initAdapter()
+
         moveToFeedWrite()
         initBottomSheetEvent()
+        initAdapter()
     }
 
     // TODO: 추후 서버 통신 진행 예정
@@ -92,7 +96,7 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
 
         binding.tvProjectStack.setOnClickListener {
             val list = feedViewModel.stackFilterList
-            TechBottomSheet(list).show(parentFragmentManager, "STACK_SHEET")
+            TechBottomSheet(list) {}.show(parentFragmentManager, "STACK_SHEET")
         }
     }
 
@@ -114,5 +118,45 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         binding.tvProjectStack.isSelected = stackState
 
         binding.ivFilter.isSelected = kindState || typeState || stackState
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        count++
+        if (count == 2){
+            feedAdapter.submitList(
+                listOf(
+                    ResponseFeed(
+                        "뮤멘트",
+                        "음악감상 앱",
+                        "#android #kotlin #MVVM"
+                    ),
+                    ResponseFeed(
+                        "플투",
+                        "대학교 및 소모임 단위의 번개 매칭 서비스",
+                        "#android #kotlin #MVVM"
+                    ),
+                    ResponseFeed(
+                        "플투",
+                        "대학교 및 소모임 단위의 번개 매칭 서비스",
+                        "#android #kotlin #MVVM"
+                    ), ResponseFeed(
+                        "플투",
+                        "대학교 및 소모임 단위의 번개 매칭 서비스",
+                        "#android #kotlin #MVVM"
+                    ), ResponseFeed(
+                        "플투",
+                        "대학교 및 소모임 단위의 번개 매칭 서비스",
+                        "#android #kotlin #MVVM"
+                    ), ResponseFeed(
+                        "플투",
+                        "대학교 및 소모임 단위의 번개 매칭 서비스",
+                        "#android #kotlin #MVVM"
+                    )
+                )
+            )
+
+        }
     }
 }

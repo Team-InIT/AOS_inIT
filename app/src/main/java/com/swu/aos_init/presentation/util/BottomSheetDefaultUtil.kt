@@ -5,14 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.swu.aos_init.R
 import com.swu.aos_init.databinding.DialogBottomSheetDefaultBinding
-import com.swu.aos_init.presentation.ui.sign.signin.SignInViewModel
 
 class BottomSheetDefaultUtil(val type: Int) :
     BottomSheetDialogFragment() {
@@ -82,6 +80,7 @@ class BottomSheetDefaultUtil(val type: Int) :
             ORG_TYPE -> binding.tvBottomTitle.text = "기업형태"
             PROJECT_TYPE -> binding.tvBottomTitle.text = "프로젝트 타입"
             PROJECT_KIND -> binding.tvBottomTitle.text = "프로젝트 종류"
+            MY_PROJECT -> binding.tvBottomTitle.text = "프로젝트 선택"
         }
     }
 
@@ -131,6 +130,14 @@ class BottomSheetDefaultUtil(val type: Int) :
                     SelectedTxtData("기타"),
                 )
             )
+            MY_PROJECT -> selectedTxtList.addAll(
+                listOf(
+                    SelectedTxtData("나도선배"),
+                    SelectedTxtData("플투"),
+                    SelectedTxtData("뮤멘트"),
+                    SelectedTxtData("우리도")
+                )
+            )
         }
 
         return selectedTxtList
@@ -163,5 +170,6 @@ class BottomSheetDefaultUtil(val type: Int) :
         const val ORG_TYPE = 0
         const val PROJECT_TYPE = 1
         const val PROJECT_KIND = 2
+        const val MY_PROJECT = 3
     }
 }
