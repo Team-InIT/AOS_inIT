@@ -26,7 +26,7 @@ class OtherMyPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout.act
     //tab layout adapter
     private fun initAdapter() {
         val fragmentList = listOf(
-            MyPageInfoFragment(),
+            OtherPageInfoFragment(),
             MyPageProjectFragment(),
             MyPageFeedFragment(),
         )
