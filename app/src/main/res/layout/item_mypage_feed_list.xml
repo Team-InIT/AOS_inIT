@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="viewModel"
+            type="com.swu.aos_init.data.response.mypage.ResponseMyPageFeed" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,13 +68,14 @@
                         android:background="@color/color_C4C4C4"
                         android:gravity="center"
                         android:paddingVertical="8dp"
-                        android:text="inIT"
+                        android:text="@{viewModel.name}"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/iv_icon" />
+                        app:layout_constraintTop_toBottomOf="@+id/iv_icon"
+                        tools:text="inIT" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
