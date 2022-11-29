@@ -40,7 +40,7 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
     // TODO: 추후 서버 통신 진행 예정
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun initAdapter() {
-        feedAdapter = FeedAdapter()
+        feedAdapter = FeedAdapter(requireContext())
 
         feedAdapter.submitList(
             listOf(
