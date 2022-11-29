@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.swu.aos_init.data.response.ResponseApplicant" />
-
 
 
     </data>
@@ -27,10 +27,10 @@
             android:layout_height="52dp"
             android:layout_marginVertical="14dp"
             android:layout_marginStart="16dp"
-            tools:src="@drawable/img_person5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_person5" />
 
         <TextView
             android:id="@+id/textView17"
@@ -39,11 +39,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/pretendard_medium"
-            tools:text="정승민"
+            android:text="@{viewModel.name}"
             android:textColor="@color/black"
             android:textSize="16dp"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            tools:text="정승민" />
 
         <ImageView
             android:id="@+id/imageView6"
@@ -59,19 +60,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:fontFamily="@font/pretendard_regular"
-            tools:text="sss@gmail.com"
+            android:text="@{viewModel.email}"
             android:textColor="@color/color_6F6F6F"
             android:textSize="12dp"
-            android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
             app:layout_constraintStart_toEndOf="@+id/imageView6"
-            app:layout_constraintTop_toTopOf="@+id/imageView6" />
+            app:layout_constraintTop_toTopOf="@+id/imageView6"
+            tools:text="sss@gmail.com" />
 
         <TextView
             android:id="@+id/tv_approve"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/rectangle_fill_1c2e52_radius_10"
             android:paddingStart="8dp"
@@ -81,7 +84,6 @@
             android:text="승인"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
