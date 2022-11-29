@@ -126,7 +126,6 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="36dp"
             android:background="@drawable/selector_signin_btn"
-            android:enabled="false"
             android:fontFamily="@font/pretandard_bold"
             android:paddingVertical="18dp"
             android:text="@string/sign_up_org_step_one_next"

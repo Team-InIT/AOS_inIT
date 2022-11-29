@@ -45,23 +45,11 @@ class MyPageJoinActivity : BaseActivity<ActivityMyPageJoinBinding>(R.layout.acti
         joinAdapter.submitList(
             listOf(
                 ResponseMyPageJoin(
-                    "웹",
-                    "네이버 해커톤 같이 하실 분 구해요",
-                    "기획자 1/3  ･  디자이너  2/4  ･  개발자 3/8",
-                    "2022.11.09 ~ 2022.12.09",
-                    "D-3"
-                ), ResponseMyPageJoin(
-                    "웹",
-                    "네이버 해커톤 같이 하실 분 구해요",
-                    "기획자 1/3  ･  디자이너  2/4  ･  개발자 3/8",
-                    "2022.11.09 ~ 2022.12.09",
-                    "D-3"
-                ), ResponseMyPageJoin(
-                    "웹",
-                    "네이버 해커톤 같이 하실 분 구해요",
-                    "기획자 1/3  ･  디자이너  2/4  ･  개발자 3/8",
-                    "2022.11.09 ~ 2022.12.09",
-                    "D-3"
+                    "모바일",
+                    "[inIT] 안드로이드 개발자 모집",
+                    "기획자 2/2  ･  디자이너  3/3  ･  개발자 3/5",
+                    "2022.12.15 ~ 2023.04.15",
+                    "D-2"
                 )
             )
         )

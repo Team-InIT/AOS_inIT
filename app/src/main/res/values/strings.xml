@@ -75,7 +75,7 @@
     <string name="sign_up_default_step_two_ect">기타</string>
     <string name="sign_up_default_step_two_done">완료</string>
 
-    <string name="sign_up_org_step_one_info">인사담당자 정보를\n입력해주세요</string>
+    <string name="sign_up_org_step_one_info">가입자 정보를\n입력해주세요</string>
     <string name="sign_up_org_step_one_name">이름</string>
     <string name="sign_up_org_step_one_name_hint">이름 입력</string>
     <string name="sign_up_org_step_one_email">이메일</string>
