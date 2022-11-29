@@ -49,9 +49,9 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cl_open_project_top"
             app:layout_constraintVertical_bias="0.0">
@@ -59,12 +59,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="15dp">
 
                     <com.google.android.material.card.MaterialCardView
@@ -330,8 +330,99 @@
                     android:id="@+id/layout_team_info"
                     layout="@layout/inner_team_info" />
 
+                <TextView
+                    android:id="@+id/tv_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="댓글"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@color/color_A3A3A3" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_person_one_profile"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="17dp"
+                        android:src="@drawable/img_person6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_person_one_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:text="나재민"
+                        android:textColor="@color/color_000000"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@id/iv_person_one_profile"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_person_one_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="4dp"
+                        android:text="6분전"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_person_one_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="40dp"
+                        android:text="안녕하세요. 프로젝트에 관심이 생겨 댓글 남깁니다."
+                        android:textColor="@color/color_000000"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@id/iv_person_one_profile"
+                        app:layout_constraintTop_toBottomOf="@id/iv_person_one_profile" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:src="@drawable/img_comment" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="댓글을 작성해보세요!"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="12dp"
+                        android:textColorHint="@color/color_A3A3A3"
+                        android:textColor="@color/color_000000"
+                        android:textSize="14sp" />
+
+                </FrameLayout>
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
