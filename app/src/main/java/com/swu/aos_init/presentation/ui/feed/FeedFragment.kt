@@ -45,22 +45,22 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         feedAdapter.submitList(
             listOf(
                 ResponseFeed(
+                    resources.getDrawable(R.drawable.img_app_init, null),
+                    "인잇",
+                    "기업의 인재 탐색 활용이 가능한 IT 프로젝트 커뮤니티 중개 서비스",
+                    "#android #kotlin #MVVM"
+                ),
+                ResponseFeed(
                     resources.getDrawable(R.drawable.img_app_mument, null),
                     "뮤멘트",
                     "음악 감상을 손쉽게 기록하고, 다시 꺼내보고, 새롭게 발견하는 서비스",
-                    "#android #kotlin #MVVM"
+                    "#mutiModule #kotlin #MVVM"
                 ),
                 ResponseFeed(
                     resources.getDrawable(R.drawable.img_app_playtogether, null),
                     "플투",
                     "대학교 및 소모임 단위의 번개 매칭 서비스",
                     "#android #kotlin #MVVM"
-                ),
-                ResponseFeed(
-                    resources.getDrawable(R.drawable.img_app_nadosunbae, null),
-                    "나도선배",
-                    "제2전공생을 위한 학과 후기, 전공 정보 공유 플랫폼",
-                    "#Hilt #MVVM #Coroutines"
                 ), ResponseFeed(
                     resources.getDrawable(R.drawable.img_app_albazip, null),
                     "알바집",
@@ -75,7 +75,22 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
                     resources.getDrawable(R.drawable.img_app_woorido, null),
                     "우리도",
                     "참여도 점수를 매겨 모임 점수 랭킹을 매기는 어플",
+                    "#multipart #kotlin #MVC"
+                ), ResponseFeed(
+                    resources.getDrawable(R.drawable.ic_project_recordream, null),
+                    "레코드림",
+                    "가상 직후의 꿈 기록과 관리를 돕는 '꿈 기록 아카이빙 서비스",
                     "#android #kotlin #MVC"
+                ), ResponseFeed(
+                    resources.getDrawable(R.drawable.img_project_charo, null),
+                    "차로",
+                    "차에서의 오늘이 최고가 될 수 있게, 당신의 드라이브메이트 차로",
+                    "#navigationComponent #kotlin #MVVM"
+                ), ResponseFeed(
+                    resources.getDrawable(R.drawable.img_project_modem, null),
+                    "모듬",
+                    "어두운 환경을 밝혀주는 손전등 어플",
+                    "#BuiltIn #kotlin #MVVM"
                 )
             )
         )
@@ -136,6 +151,12 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
             feedAdapter.submitList(
                 listOf(
                     ResponseFeed(
+                        resources.getDrawable(R.drawable.img_app_nadosunbae, null),
+                        "나도선배",
+                        "제2전공생을 위한 학과 후기, 전공 정보 공유 플랫폼",
+                        "#Hilt #MVVM #Coroutines"
+                    ),
+                    ResponseFeed(
                         resources.getDrawable(R.drawable.img_app_init, null),
                         "인잇",
                         "기업의 인재 탐색 활용이 가능한 IT 프로젝트 커뮤니티 중개 서비스",
@@ -152,12 +173,6 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
                         "플투",
                         "대학교 및 소모임 단위의 번개 매칭 서비스",
                         "#android #kotlin #MVVM"
-                    ),
-                    ResponseFeed(
-                        resources.getDrawable(R.drawable.img_app_nadosunbae, null),
-                        "나도선배",
-                        "제2전공생을 위한 학과 후기, 전공 정보 공유 플랫폼",
-                        "#Hilt #MVVM #Coroutines"
                     ), ResponseFeed(
                         resources.getDrawable(R.drawable.img_app_albazip, null),
                         "알바집",
@@ -188,8 +203,8 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
                         "모듬",
                         "어두운 환경을 밝혀주는 손전등 어플",
                         "#BuiltIn #kotlin #MVVM"
+                    )
                 )
-            )
             )
 
 
