@@ -104,8 +104,8 @@ class SignUpDefaultStepOneFragment :
 
 
     private fun checkBtnState() {
-        binding.btnSignupDefaultOne.isEnabled =
-            nameState && emailState && belongState && linkState && academicStatusState && sexState
+        //binding.btnSignupDefaultOne.isEnabled =
+        //    nameState && emailState && belongState && linkState && academicStatusState && sexState
     }
 
     private fun moveToDefaultSignUpTwo() {

@@ -78,8 +78,8 @@ class SignUpOrgStepTwoFragment :
     }
 
     private fun checkBtnState() {
-        binding.btnSignupOrgTwo.isEnabled =
-            orgTypeState && businessNumState && orgNameState && ownerNameState && addressState
+       // binding.btnSignupOrgTwo.isEnabled =
+       //     orgTypeState && businessNumState && orgNameState && ownerNameState && addressState
     }
 
     private fun moveToLoginState() {

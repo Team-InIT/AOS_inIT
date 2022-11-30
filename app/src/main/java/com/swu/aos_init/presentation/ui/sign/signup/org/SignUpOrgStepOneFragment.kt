@@ -59,7 +59,7 @@ class SignUpOrgStepOneFragment :
     }
 
     private fun checkBtnState() {
-        binding.btnSignupOrgOne.isEnabled = nameState && emailState && phoneNumState
+        // binding.btnSignupOrgOne.isEnabled = nameState && emailState && phoneNumState
     }
 
     private fun moveToOrgSignUpTwo() {
