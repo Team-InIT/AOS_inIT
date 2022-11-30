@@ -1,6 +1,5 @@
 package com.swu.aos_init.presentation.ui.home.project
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayoutMediator
 import com.swu.aos_init.R
@@ -8,7 +7,7 @@ import com.swu.aos_init.databinding.ActivityCheckApplicantBinding
 import com.swu.aos_init.presentation.base.BaseActivity
 import com.swu.aos_init.presentation.ui.home.project.adapter.ApplicantTabAdapter
 
-class CheckApplicantActivity : BaseActivity<ActivityCheckApplicantBinding>(R.layout.activity_check_applicant) {
+class CheckApplicantApproveActivity : BaseActivity<ActivityCheckApplicantBinding>(R.layout.activity_check_applicant) {
     private lateinit var partnerTabAdapter: ApplicantTabAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +18,7 @@ class CheckApplicantActivity : BaseActivity<ActivityCheckApplicantBinding>(R.lay
 
     private fun initAdapter() {
         val fragmentList = listOf(
-            PlanFragment(),
+            PlanApproveFragment(),
             DesignFragment(),
             DevelopFragment()
 
