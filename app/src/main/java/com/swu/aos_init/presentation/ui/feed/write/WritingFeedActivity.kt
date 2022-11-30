@@ -62,7 +62,8 @@ class WritingFeedActivity : BaseActivity<ActivityWriteFeedBinding>(R.layout.acti
 
     private fun initImgPickEvent() {
         binding.cardViewImage.setOnClickListener {
-            openGallery() // 갤러리 열기
+            Glide.with(this).load(R.drawable.img_app_nadosunbae).into(binding.ivFeedImg)
+            //openGallery() // 갤러리 열기
         }
     }
 
