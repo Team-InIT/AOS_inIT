@@ -54,10 +54,7 @@ class OtherMyPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout.act
     }
 
     private fun settingBtnListener() {
-        binding.ivMypageSetting.setOnClickListener {
-            val intentSetting = Intent(this, MyPageSettingActivity::class.java)
-            startActivity(intentSetting)
-        }
+
     }
 
     private fun connectClickListener() {

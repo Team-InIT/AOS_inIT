@@ -2,6 +2,7 @@ package com.swu.aos_init.presentation.ui.home.project.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.library.baseAdapters.BR
@@ -13,6 +14,7 @@ import com.swu.aos_init.data.response.ResponseAlarm
 import com.swu.aos_init.data.response.ResponseApplicant
 import com.swu.aos_init.databinding.ItemAlarmBinding
 import com.swu.aos_init.databinding.ItemApplicantListBinding
+import com.swu.aos_init.presentation.ui.home.project.CheckApplicantApproveActivity
 import com.swu.aos_init.presentation.ui.home.project.ProjectDetailActivity
 import com.swu.aos_init.presentation.ui.mypage.adapter.OtherHyebinPageTabAdapter
 import com.swu.aos_init.presentation.ui.mypage.other.OtherHyebinPageActivity
@@ -37,8 +39,12 @@ class PartnerPlanAdapter(): ListAdapter<ResponseApplicant, PartnerPlanAdapter.Ap
     override fun onBindViewHolder(holder: ApplicantViewHolder, position: Int) {
         holder.onBind(getItem(position))
         val context = holder.itemView.context
-        holder.binding.root.setOnClickListener {
+        holder.binding.imageView2.setOnClickListener {
             val intent = Intent(context, OtherHyebinPageActivity::class.java)
+            ContextCompat.startActivity(holder.itemView.context,intent, null)
+        }
+        holder.binding.tvApprove.setOnClickListener {
+            val intent = Intent(context, CheckApplicantApproveActivity::class.java)
             ContextCompat.startActivity(holder.itemView.context,intent, null)
         }
     }

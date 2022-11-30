@@ -60,6 +60,10 @@
             android:exported="true" />
         <activity android:name=".presentation.ui.feed.FeedDetailActivity"
             android:exported="true"/>
+        <activity android:name=".presentation.ui.mypage.other.OtherHyebinPageActivity"
+            android:exported="true"/>
+        <activity android:name=".presentation.ui.home.project.CheckApplicantApproveActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

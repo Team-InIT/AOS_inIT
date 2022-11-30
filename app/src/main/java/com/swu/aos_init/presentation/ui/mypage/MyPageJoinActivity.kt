@@ -8,11 +8,13 @@ import com.swu.aos_init.data.response.mypage.ResponseMyPageZzim
 import com.swu.aos_init.databinding.ActivityMyPageJoinBinding
 import com.swu.aos_init.presentation.base.BaseActivity
 import com.swu.aos_init.presentation.ui.mypage.adapter.MyPageJoinAdapter
+import com.swu.aos_init.presentation.ui.mypage.adapter.MyPageJoinedAdapter
 import com.swu.aos_init.presentation.ui.mypage.adapter.MyPageZzimAdapter
 
 class MyPageJoinActivity : BaseActivity<ActivityMyPageJoinBinding>(R.layout.activity_my_page_join) {
 
     private lateinit var joinAdapter: MyPageJoinAdapter
+    private lateinit var joinedAdapter: MyPageJoinedAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,7 @@ class MyPageJoinActivity : BaseActivity<ActivityMyPageJoinBinding>(R.layout.acti
         binding.tvMypageJoinFinish.setOnClickListener {
             binding.tvMypageJoinIng.isSelected = false
             binding.tvMypageJoinFinish.isSelected = true
-            initRvAdapter()
+            initRvedAdapter()
         }
     }
 
@@ -46,10 +48,27 @@ class MyPageJoinActivity : BaseActivity<ActivityMyPageJoinBinding>(R.layout.acti
             listOf(
                 ResponseMyPageJoin(
                     "모바일",
-                    "[inIT] 안드로이드 개발자 모집",
-                    "기획자 2/2  ･  디자이너  3/3  ･  개발자 3/5",
-                    "2022.12.15 ~ 2023.04.15",
-                    "D-2"
+                    "[나도선배] 안드로이드 기획자 모집",
+                    "기획자 3/3  ･  디자이너  3/3  ･  개발자 8/8",
+                    "2022.1.05 ~ 2022.12.12",
+                    "D+328"
+                )
+            )
+        )
+    }
+
+    // 더미 연결
+    private fun initRvedAdapter() {
+        joinedAdapter = MyPageJoinedAdapter()
+        binding.rvMypageJoin.adapter = joinAdapter
+        joinAdapter.submitList(
+            listOf(
+                ResponseMyPageJoin(
+                    "모바일",
+                    "[플투] 안드로이드 PM 모집",
+                    "기획자 2/2  ･  디자이너  3/3  ･  개발자 12/12",
+                    "2022.4.05 ~ 2022.8.12",
+                    "D+156"
                 )
             )
         )

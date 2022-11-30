@@ -164,8 +164,8 @@ class SignUpStepTwoFragment :
     }
 
     private fun checkBtnState() {
-        binding.btnSignupTwo.isEnabled =
-            idState == true && pwState && true && pwConfirmState == true && idCheckState == true
+        //binding.btnSignupTwo.isEnabled =
+        //    idState == true && pwState && true && pwConfirmState == true && idCheckState == true
     }
 
     private fun initNextBtnEvent() {

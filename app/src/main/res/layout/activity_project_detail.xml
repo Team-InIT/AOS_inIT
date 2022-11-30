@@ -493,7 +493,7 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="18dp"
-                    android:src="@drawable/img_heaven"
+                    android:src="@drawable/img_person6"
                     app:layout_constraintStart_toEndOf="@+id/textView18"
                     app:layout_constraintTop_toBottomOf="@+id/tv_open_project_design" />
 
@@ -502,7 +502,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/pretendard_regular"
-                    android:text="이혜빈"
+                    android:text="박종찬"
                     android:layout_marginStart="6dp"
                     android:textColor="@color/black"
                     android:textSize="14dp"
@@ -582,16 +582,42 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_open_project_plan" />
 
                 <TextView
+                    android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
                     android:fontFamily="@font/pretendard_regular"
                     android:text="장윤정"
-                    android:layout_marginStart="6dp"
                     android:textColor="@color/black"
                     android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView1"
                     app:layout_constraintStart_toEndOf="@+id/imageView1"
                     app:layout_constraintTop_toTopOf="@+id/imageView1" />
+
+                <ImageView
+                    android:id="@+id/imageView24"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="18dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/img_heaven"
+                    app:layout_constraintStart_toEndOf="@+id/textView19"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_open_project_plan" />
+
+                <TextView
+                    android:id="@+id/tv_hyebin24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="김혜빈"
+                    android:visibility="gone"
+                    android:layout_marginStart="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+                    app:layout_constraintStart_toEndOf="@+id/imageView24"
+                    app:layout_constraintTop_toTopOf="@+id/imageView24" />
 
 
                 <TextView
@@ -688,7 +714,7 @@
                     android:background="@drawable/rectangle_fill_1c2e52_radius_10"
                     android:fontFamily="@font/pretandard_bold"
                     android:paddingVertical="18dp"
-                    android:text="지원하기"
+                    android:text="지원자 확인하기"
                     android:layout_marginTop="92dp"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"

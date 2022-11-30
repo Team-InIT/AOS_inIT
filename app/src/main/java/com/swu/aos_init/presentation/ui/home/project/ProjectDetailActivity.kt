@@ -2,6 +2,7 @@ package com.swu.aos_init.presentation.ui.home.project
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.swu.aos_init.R
@@ -36,7 +37,12 @@ class ProjectDetailActivity :
 
     private fun applyBtnListener() {
         binding.btnFinish.setOnClickListener {
-            initBottomSheet(4, "PROJECT_APPLY")
+            //initBottomSheet(4, "PROJECT_APPLY")
+
+            val intentSetting = Intent(this, CheckApplicantActivity::class.java)
+            binding.imageView24.visibility = View.VISIBLE
+            binding.tvHyebin24.visibility = View.VISIBLE
+            startActivity(intentSetting)
         }
     }
 

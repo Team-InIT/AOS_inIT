@@ -3,6 +3,7 @@ package com.swu.aos_init.presentation.ui.home.project
 import android.app.DatePickerDialog
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
@@ -30,12 +31,19 @@ class WriteProjectActivity : BaseActivity<ActivityWriteProjectBinding>(R.layout.
         bottomSheetClickListener()
         finishBtnClickListener()
         stackBottomSheet()
+        clickListener()
     }
 
     //뒤로가기 버튼
     private fun backBtnListener() {
         binding.ivOpenProjectBack.setOnClickListener {
             finish()
+        }
+    }
+
+    private fun clickListener() {
+        binding.etProjectStack.setOnClickListener {
+            binding.chipGroupInterest.visibility = View.VISIBLE
         }
     }
 
