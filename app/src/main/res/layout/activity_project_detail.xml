@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pretendard_regular"
                 android:includeFontPadding="false"
-                android:text="[inIT] 안드로이드 개발자 모집"
+                android:text="[inIT] 안드로이드 서비스 기획자 모집"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +95,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/pretendard_regular"
-                        android:text="[inIT] 안드로이드 개발자"
+                        android:text="[inIT] 안드로이드 서비스 기획자 모집"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -169,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:fontFamily="@font/pretendard_regular"
-                        android:text="2022.11.22 ~ 2022.11.31 (모집중)"
+                        android:text="2022.11.28 ~ 2022.12.08 (모집중)"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="@+id/textView6"
@@ -271,16 +271,16 @@
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/pretendard_regular"
                         android:text="[담당업무]\n
-• inIT Android 앱 신규 기능 개발 및 유지보수\n
+• inIT Android 앱 신규 기능 기획 및 사용자 분석\n
 \n
 [자격요건]\n
-• REST API 사용이 익숙하신 분\n
-• 디자인 패턴, 아키텍처를 적용해 본 경험이 있거나 이해가 있으신 분\n
-• 명확한 커뮤니케이션 능력을 가지신 분\n
+• 다양한 환경에서 소통을 즐기시는 분\n
+• 통계관련 코드를 작성하고 분석 및 이해하실 수 있으신 분\n
+• 자유로운 환경 속에서 서비스 향상을 위해 노력하고 싶으신 분\n
 \n\n
 [우대사항]\n
 • 업무협업을 중요하게 생각하시는 분\n
-• MVVM, MVP 등의 아키텍처 설계경험이 있으신 분"
+• QA 진행 경험이 있으신 분"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
