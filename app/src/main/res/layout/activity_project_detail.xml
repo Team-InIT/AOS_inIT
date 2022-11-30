@@ -598,8 +598,9 @@
                     android:id="@+id/imageView24"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="18dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
                     android:src="@drawable/img_heaven"
                     app:layout_constraintStart_toEndOf="@+id/textView19"
                     app:layout_constraintTop_toBottomOf="@+id/tv_open_project_plan" />
@@ -610,6 +611,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/pretendard_regular"
                     android:text="김혜빈"
+                    android:visibility="gone"
                     android:layout_marginStart="6dp"
                     android:textColor="@color/black"
                     android:textSize="14dp"

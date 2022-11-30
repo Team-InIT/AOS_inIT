@@ -45,7 +45,8 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_wait.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_my_page_zzim.xml" value="0.15442278860569716" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_other_my_page.xml" value="0.264" />
-        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_project_detail.xml" value="0.264" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_other_my_page_info.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_project_detail.xml" value="0.12" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signin.xml" value="0.1" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_signup.xml" value="0.264" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/activity_write_project.xml" value="0.2" />
@@ -70,6 +71,7 @@
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_signup_org_step_two.xml" value="0.20625" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_signup_step_one.xml" value="0.264" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/fragment_signup_step_two.xml" value="0.2" />
+        <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/inner_team_info.xml" value="0.4" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_alarm.xml" value="0.264" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_applicant_list.xml" value="0.2" />
         <entry key="..\:/Users/82104/AOS_inIT/app/src/main/res/layout/item_approve_list.xml" value="0.2078125" />
