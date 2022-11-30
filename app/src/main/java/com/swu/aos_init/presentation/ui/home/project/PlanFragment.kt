@@ -25,6 +25,7 @@ class PlanFragment : BaseFragment<FragmentPlanBinding>(R.layout.fragment_plan) {
         binding.rvApprovePlan.adapter = partnerPlanAdapter
         partnerPlanAdapter.submitList(
             listOf(
+                ResponseApplicant(R.drawable.img_heaven, "김혜빈","kite@gmail.com"),
                 ResponseApplicant(R.drawable.img_person6, "박신우","park98@gmail.com"),
                 ResponseApplicant(R.drawable.img_person4, "이민주","min123@gmail.com")
             )

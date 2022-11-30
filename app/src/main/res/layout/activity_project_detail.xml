@@ -289,6 +289,153 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_interest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="18dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:chipSpacingHorizontal="8dp"
+                    app:chipSpacingVertical="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/SignUpCustomChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingVertical="8dp"
+                        android:text="# Android"
+                        android:textColor="@color/selector_signup_default_one_txt"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:chipCornerRadius="12dp"
+                        app:chipEndPadding="8dp"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:chipStartPadding="8dp"
+                        app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/SignUpCustomChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingVertical="8dp"
+                        android:text="# Kotlin"
+                        android:textColor="@color/selector_signup_default_one_txt"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:chipCornerRadius="12dp"
+                        app:chipEndPadding="8dp"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:chipStartPadding="8dp"
+                        app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/SignUpCustomChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingVertical="8dp"
+                        android:text="# Java"
+                        android:textColor="@color/selector_signup_default_one_txt"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:chipCornerRadius="12dp"
+                        app:chipEndPadding="8dp"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:chipStartPadding="8dp"
+                        app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/SignUpCustomChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingVertical="8dp"
+                        android:text="# MVVM"
+                        android:textColor="@color/selector_signup_default_one_txt"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:chipCornerRadius="12dp"
+                        app:chipEndPadding="8dp"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:chipStartPadding="8dp"
+                        app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/SignUpCustomChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingVertical="8dp"
+                        android:text="# FLOW"
+                        android:textColor="@color/selector_signup_default_one_txt"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:chipCornerRadius="12dp"
+                        app:chipEndPadding="8dp"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:chipStartPadding="8dp"
+                        app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/SignUpCustomChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingVertical="8dp"
+                        android:text="# GITHUB"
+                        android:textColor="@color/selector_signup_default_one_txt"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:chipCornerRadius="12dp"
+                        app:chipEndPadding="8dp"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:chipStartPadding="8dp"
+                        app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/SignUpCustomChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingVertical="8dp"
+                        android:text="# FIGMA"
+                        android:textColor="@color/selector_signup_default_one_txt"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:chipCornerRadius="12dp"
+                        app:chipEndPadding="8dp"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:chipStartPadding="8dp"
+                        app:chipStrokeColor="@color/selector_signup_default_one_btn_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </com.google.android.material.chip.ChipGroup>
+
                 <TextView
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
@@ -300,7 +447,7 @@
                     android:textSize="16sp"
                     android:layout_marginTop="40dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+                    app:layout_constraintTop_toBottomOf="@+id/chip_group_interest" />
 
                 <TextView
                     android:id="@+id/tv_open_project_design"
