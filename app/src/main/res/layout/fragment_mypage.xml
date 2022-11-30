@@ -115,7 +115,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/pretendard_regular"
                 android:textColor="@color/black"
-                android:text="안녕하세요! 어제보다 오늘 더 발전하는 안드로이드 개발자 김혜빈입니다!"
+                android:text="안녕하세요! 어제보다 오늘 더 발전하는 기획자 김혜빈입니다!"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_my_page_profile_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_my_page_profile_name" />
