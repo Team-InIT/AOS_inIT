@@ -45,12 +45,6 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(R.layout.fragment_feed),
         feedAdapter.submitList(
             listOf(
                 ResponseFeed(
-                    resources.getDrawable(R.drawable.img_app_nadosunbae, null),
-                    "나도선배",
-                    "제2전공생을 위한 학과 후기, 전공 정보 공유 플랫폼",
-                    "#Hilt #MVVM #Coroutines"
-                ),
-                ResponseFeed(
                     resources.getDrawable(R.drawable.img_app_init, null),
                     "인잇",
                     "기업의 인재 탐색 활용이 가능한 IT 프로젝트 커뮤니티 중개 서비스",

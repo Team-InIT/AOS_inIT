@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:fontFamily="@font/pretendard_regular"
-            android:text="이혜빈"
+            android:text="김민희"
             android:textColor="@color/black"
             android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView4"
