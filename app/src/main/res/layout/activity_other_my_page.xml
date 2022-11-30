@@ -126,7 +126,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/pretendard_regular"
                 android:textColor="@color/black"
-                android:text="안녕하세요! 24시간 코딩 가능 열정 가득 책임감 가득 장지연입니다!"
+                android:text="안녕하세요! 24시간 코딩 가능 열정 가득 책임감 가득 이지연입니다!"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_my_page_profile_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_my_page_profile_name" />

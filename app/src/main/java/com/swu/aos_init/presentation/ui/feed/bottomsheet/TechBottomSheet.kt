@@ -118,6 +118,7 @@ class TechBottomSheet(val list: ArrayList<String>?, val doAfterConfirm: () -> Un
             ResponseStack("Jotai"),
             ResponseStack("Kibana"),
             ResponseStack("Karma"),
+            ResponseStack("MVVM"),
             ResponseStack("MySQL"),
             ResponseStack("NestJS"),
             ResponseStack("Sinon"),
