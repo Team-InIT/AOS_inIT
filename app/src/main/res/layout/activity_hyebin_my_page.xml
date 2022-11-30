@@ -24,7 +24,6 @@
                 android:background="@color/color_1C2E52"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
                 <ImageView
                     android:id="@+id/iv_open_project_back"
                     android:layout_width="wrap_content"
@@ -43,7 +42,7 @@
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="18dp"
                     android:fontFamily="@font/pretendard_medium"
-                    android:text="이지연님 마이페이지"
+                    android:text="김혜빈님 마이페이지"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:layout_marginStart="16dp"
@@ -60,7 +59,7 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
-                android:src="@drawable/img_profile_kite"
+                android:src="@drawable/img_profile_heaven"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cl_my_page_main_title" />
 
@@ -75,7 +74,7 @@
                 android:paddingTop="4dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="4dp"
-                android:text="컨택하기"
+                android:text="프로필 수정"
                 android:textColor="@color/color_A3A3A3"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/iv_my_page_profile"
@@ -88,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:fontFamily="@font/pretendard_medium"
-                android:text="이지연"
+                android:text="김혜빈"
                 android:layout_marginTop="28dp"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -98,7 +97,7 @@
 
             <TextView
                 android:id="@+id/tv_my_page_postion"
-                android:text="DEVELOPER"
+                android:text="PLANNER"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pretendard_medium"
@@ -107,8 +106,7 @@
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_my_page_profile_name"
                 app:layout_constraintStart_toEndOf="@+id/tv_my_page_profile_name"
-                app:layout_constraintTop_toTopOf="@+id/tv_my_page_profile_name"
-                tools:text="DEVELOPER" />
+                app:layout_constraintTop_toTopOf="@+id/tv_my_page_profile_name" />
 
             <TextView
                 android:layout_width="0dp"
@@ -117,7 +115,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/pretendard_regular"
                 android:textColor="@color/black"
-                android:text="안녕하세요! 24시간 코딩 가능 열정 가득 책임감 가득 이지연입니다!"
+                android:text="안녕하세요! 어제보다 오늘 더 발전하는 기획자 김혜빈입니다!"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_my_page_profile_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_my_page_profile_name" />

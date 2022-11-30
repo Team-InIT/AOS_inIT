@@ -36,7 +36,9 @@ class ProjectDetailActivity :
 
     private fun applyBtnListener() {
         binding.btnFinish.setOnClickListener {
-            initBottomSheet(4, "PROJECT_APPLY")
+            //initBottomSheet(4, "PROJECT_APPLY")
+            val intentSetting = Intent(this, CheckApplicantActivity::class.java)
+            startActivity(intentSetting)
         }
     }
 

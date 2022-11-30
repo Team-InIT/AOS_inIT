@@ -688,7 +688,7 @@
                     android:background="@drawable/rectangle_fill_1c2e52_radius_10"
                     android:fontFamily="@font/pretandard_bold"
                     android:paddingVertical="18dp"
-                    android:text="지원하기"
+                    android:text="지원자 확인하기"
                     android:layout_marginTop="92dp"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"

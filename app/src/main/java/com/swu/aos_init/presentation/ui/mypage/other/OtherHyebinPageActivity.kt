@@ -14,7 +14,7 @@ import com.swu.aos_init.presentation.ui.mypage.MyPageSettingActivity
 import com.swu.aos_init.presentation.ui.mypage.adapter.OtherHyebinPageTabAdapter
 import com.swu.aos_init.presentation.ui.mypage.adapter.OtherPageTabAdapter
 
-class OtherHyebinPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout.activity_other_my_page) {
+class OtherHyebinPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout.activity_hyebin_my_page) {
     private lateinit var myPageTabAdapter: OtherHyebinPageTabAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +29,7 @@ class OtherHyebinPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout
     //tab layout adapter
     private fun initAdapter() {
         val fragmentList = listOf(
-            OtherPageInfoFragment(),
+            MyPageInfoFragment(),
             MyPageProjectFragment(),
             MyPageFeedFragment(),
         )
@@ -55,10 +55,7 @@ class OtherHyebinPageActivity: BaseActivity<ActivityOtherMyPageBinding>(R.layout
     }
 
     private fun settingBtnListener() {
-        binding.ivMypageSetting.setOnClickListener {
-            val intentSetting = Intent(this, MyPageSettingActivity::class.java)
-            startActivity(intentSetting)
-        }
+
     }
 
     private fun connectClickListener() {
