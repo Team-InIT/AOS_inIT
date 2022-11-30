@@ -1,5 +1,6 @@
 package com.swu.aos_init.presentation.ui.sign.signup.default
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -71,14 +72,15 @@ class SignUpDefaultStepTwoFragment :
     }
 
     private fun checkBtnState() {
-        binding.btnSignupDefaultTwo.isEnabled = positionState && interestState
+        // binding.btnSignupDefaultTwo.isEnabled = positionState && interestState
     }
 
     private fun moveToLoginState() {
         binding.btnSignupDefaultTwo.setOnClickListener {
             Toast.makeText(requireContext(), "회원가입이 완료되었습니다", Toast.LENGTH_SHORT).show()
-            setDefaultTwoData()
-            tryPostSignUpGeneral()
+            activity?.finish()
+            //setDefaultTwoData()
+            //tryPostSignUpGeneral()
         }
     }
 

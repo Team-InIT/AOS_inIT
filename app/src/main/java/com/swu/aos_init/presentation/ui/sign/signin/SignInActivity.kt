@@ -75,7 +75,9 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
 
     private fun moveToMain() {
         binding.btnSignin.setOnClickListener {
-            tryPostSignIn()
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            //tryPostSignIn()
         }
     }
 
@@ -88,12 +90,12 @@ class SignInActivity : BaseActivity<ActivitySigninBinding>(R.layout.activity_sig
 
         signInViewModel.postSignIn(requestSignIn)
         signInViewModel.loginData.observe(this) { event ->
-            event.getContentIfNotHandled()?.let{
+            event.getContentIfNotHandled()?.let {
                 if (it.mNum != null && requestSignIn.isCompany == false) { // 일반 회원 로그인 성공
                     Toast.makeText(this, it.message.toString(), Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
-                } else if (it.cNum != null && requestSignIn.isCompany == true){ // 기업 회원 로그인 성공
+                } else if (it.cNum != null && requestSignIn.isCompany == true) { // 기업 회원 로그인 성공
                     Toast.makeText(this, it.message.toString(), Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()

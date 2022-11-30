@@ -64,9 +64,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             listOf(
                 ResponseProject(
                     "애플리케이션",
-                    "학습관리 시스템 플랫폼",
-                    "기획자 1/1  ･  디자이너  2/2  ･  개발자 3/8",
-                    "2022.11.28 ~ 2022.12.09",
+                    "[inIT] 안드로이드 서비스 기획자 모집",
+                    "기획자 2/3  ･  디자이너  3/3  ･  개발자 3/3",
+                    "2022.11.28 ~ 2022.12.08",
                     "D-DAY"
                 ),
                 ResponseProject(
