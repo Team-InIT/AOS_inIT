@@ -72,8 +72,8 @@ class SignUpStepOneFragment :
     }
 
     private fun checkBtnState() {
-        selectedState = binding.ivOrg.isSelected == true || binding.ivDefault.isSelected == true
-        binding.btnSignupOne.isEnabled = selectedState == true
+        //selectedState = binding.ivOrg.isSelected == true || binding.ivDefault.isSelected == true
+        //binding.btnSignupOne.isEnabled = selectedState == true
     }
 
     private fun setSelectedMemberType() {
